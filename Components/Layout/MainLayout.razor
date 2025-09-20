@@ -1,0 +1,191 @@
+﻿@using System;
+@using System.Globalization;
+@inherits LayoutComponentBase
+
+<!-- 
+    - #HEADER
+  -->
+
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__data">
+        <a href="#" class="nav__logo">
+          <img src="images/logo.png" width="128" height="63" alt="cse muscle cars home">
+        </a>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line nav__burger"></i>
+          <i class="ri-close-line nav__close"></i>
+        </div>
+      </div>
+
+      <!-- NAV MENU -->
+      <nav class="nav__menu" id="nav-menu">
+       <ul class="nav__list">
+        <li><a href="#" class="nav__link">Home</a></li>
+        <li><a href="#" class="nav__link">About</a></li>
+        <li class="dropdown__item">
+          <div class="nav__link">
+            Vehicles <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+          </div>
+
+          <ul class="dropdown__menu">
+            <li>
+              <a href="#" class="dropdown__link">
+                <i class="ri-car-line"></i> Chevrolet
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown__link">
+                <i class="ri-car-line"></i> Ford
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown__link">
+                <i class="ri-car-line"></i> Dodge
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#" class="nav__link">Services</a></li>
+        <li><a href="#" class="nav__link">Contact</a></li>
+       </ul>
+      </nav>
+    </nav>
+  </header>
+        
+    @Body
+
+    <!-- 
+    - #FOOTER
+  -->
+  <footer class="footer">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="images/logo.png" width="128" height="63" alt="autofix home">
+          </a>
+
+          <p class="footer-text">
+            CSE Muscle Cars is authorised and regulated by the Financial Conduct Authority. Our FCA firm reference number is 3344557.
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <img src="images/facebook.svg" alt="facebook">
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <img src="images/instagram.svg" alt="instagram">
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <img src="images/twitter.svg" alt="twitter">
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h3">Opening Hours</p>
+          </li>
+
+          <li>
+            <p class="p">Monday – Saturday</p>
+
+            <span class="span">12.00 – 14.45</span>
+          </li>
+
+          <li>
+            <p class="p">Sunday – Thursday</p>
+
+            <span class="span">17.30 – 00.00</span>
+          </li>
+
+          <li>
+            <p class="p">Friday – Saturday</p>
+
+            <span class="span">12.00 – 14.45</span>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h3">Contact Info</p>
+          </li>
+
+          <li>
+            <a href="tel:+01234567890" class="footer-link">
+              <span class="material-symbols-rounded">call</span>
+
+              <span class="span">+44 0113 243 2559</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:info@autofix.com" class="footer-link">
+              <span class="material-symbols-rounded">mail</span>
+
+              <span class="span">info@cse-muscle-cars.com</span>
+            </a>
+          </li>
+
+          <li>
+            <address class="footer-link address">
+              <span class="material-symbols-rounded">location_on</span>
+
+              <span class="span">88 Compton Road, LS9 6DG, Leeds, United Kingdom</span>
+            </address>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <img src="./images/footer-shape-3.png" width="637" height="173" loading="lazy" alt="Shape"
+        class="shape shape-3 move-anim">
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright"> &copy; CSE Muscle Cars @DateTime.UtcNow.Year, Team 6, All Rights Reserved, @(new RegionInfo(CultureInfo.CurrentCulture.Name).EnglishName) </p>
+
+        <img src="./images/footer-shape-2.png" width="778" height="335" loading="lazy" alt="Shape"
+          class="shape shape-2">
+
+        <img src="./images/footer-shape-1.png" width="805" height="652" loading="lazy" alt="Red Car"
+          class="shape shape-1 move-anim">
+
+      </div>
+    </div>
+
+  </footer>
+        
+   <!-- 
+    - custom js link
+  -->
+  <script src="js/script.js"></script>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>

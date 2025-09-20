@@ -1,0 +1,413 @@
+﻿@using System;
+@using System.Globalization;
+
+@page "/"
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>CSE Muscle Cars - Car Sales & Repair Service</title>
+  <meta name="title" content="CSE Muscle Cars - Car Sales & Repair Service">
+  <meta name="description" content="This is a car sales and repair service website">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - remixicon
+  -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - material icon font
+  -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/site.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="images/hero-banner.png">
+  <link rel="preload" as="image" href="images/hero-bg.jpg">
+
+</head>
+
+<body>
+
+  @* <!-- 
+    - #HEADER
+  -->
+
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__data">
+        <a href="#" class="nav__logo">
+          <img src="images/logo.png" width="128" height="63" alt="cse muscle cars home">
+        </a>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line nav__burger"></i>
+          <i class="ri-close-line nav__close"></i>
+        </div>
+      </div>
+
+      <!-- NAV MENU -->
+      <nav class="nav__menu" id="nav-menu">
+       <ul class="nav__list">
+        <li><a href="#" class="nav__link">Home</a></li>
+        <li><a href="#" class="nav__link">About</a></li>
+        <li class="dropdown__item">
+          <div class="nav__link">
+            Vehicles <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+          </div>
+
+          <ul class="dropdown__menu">
+            <li>
+              <a href="#" class="dropdown__link">
+                <i class="ri-car-line"></i> Chevrolet
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown__link">
+                <i class="ri-car-line"></i> Ford
+              </a>
+            </li>
+            <li>
+              <a href="#" class="dropdown__link">
+                <i class="ri-car-line"></i> Dodge
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#" class="nav__link">Services</a></li>
+        <li><a href="#" class="nav__link">Contact</a></li>
+       </ul>
+      </nav>
+    </nav>
+  </header> *@
+
+  <main>
+    <article>
+      <!-- 
+        - #HERO SECTION
+      -->
+      <section class="hero has-bg-image" aria-label="home" style="background-image: url('./images/hero-bg.jpg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 class="h1 section-title">Car Sales & Repair Service</h1>
+
+            <p class="section-text">
+              We offer a 12-month warranty on all of our cars, and we have the most talented engineers & mechanics on hand to assist you.
+            </p>
+
+            <a href="#" class="btn">
+              <span class="span">Buy a Car</span>
+
+              <span class="material-symbols-rounded">arrow_forward</span>
+            </a>
+
+          </div>
+
+          <figure class="hero-banner" style="--width: 1228; --height: 789;">
+            <img src="images/hero-banner.png" width="1228" height="610" alt="red motor vehicle"
+              class="move-anim">
+          </figure>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #WORK SECTION
+      -->
+      <section class="section work" aria-labelledby="work-label">
+        <div class="container">
+
+          <p class="section-subtitle :light" id="work-label">Latest Cars</p>
+
+          <h2 class="h2 section-title">Our newest muscle cars</h2>
+
+          <ul class="has-scrollbar">
+
+            <li class="scrollbar-item">
+              <div class="work-card">
+
+                <figure class="card-banner img-holder" style="--width: 650; --height: 433;">
+                  <img src="images/2024-camaro-9v2.jpg" width="650" height="433" loading="lazy" alt="2024 Camaro 9v2"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Chevrolet</p>
+
+                  <h3 class="h3 card-title">2024 Camaro 9v2</h3>
+
+                  <a href="#" class="card-btn">
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="work-card">
+
+                <figure class="card-banner img-holder" style="--width: 650; --height: 433;">
+                  <img src="images/2024-stingray.jpg" width="650" height="433" loading="lazy" alt="2024 Stingray"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Chevrolet</p>
+
+                  <h3 class="h3 card-title">2024 Stingray</h3>
+
+                  <a href="#" class="card-btn">
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="work-card">
+
+                <figure class="card-banner img-holder" style="--width: 650; --height: 433;">
+                  <img src="images/2024-mustang.jpg" width="650" height="433" loading="lazy" alt="2024 Mustang"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Ford</p>
+
+                  <h3 class="h3 card-title">2024 Mustang</h3>
+
+                  <a href="#" class="card-btn">
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #ABOUT SECTION
+      -->
+      <section class="section about has-before" aria-labelledby="about-label">
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="images/about-banner.png" width="540" height="540" loading="lazy"
+              alt="vehicle repire equipments" class="w-100">
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle :dark">About Us</p>
+
+            <h2 class="h2 section-title">We’re Commited to Meet the quality</h2>
+
+            <p class="section-text">
+              Established in 1999, CSE Muscle Cars has been an unparalled reputation for providing high quality new and used cars.  
+            </p>
+
+            <p class="section-text">
+              When you buy with us, you can put your mind at ease knowing that our mechanic and engineers will assist you with repairs, maintenance, and modifications to enhance the performance of your vehicle.
+            </p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <p>
+                  <strong class="display-1 strong">4K+</strong> Happy Clients
+                </p>
+              </li>
+
+              <li class="about-item">
+                <p>
+                  <strong class="display-1 strong">22+</strong> Instruments
+                </p>
+              </li>
+
+              <li class="about-item">
+                <p>
+                  <strong class="display-1 strong">25+</strong> Years in market
+                </p>
+              </li>
+
+              <li class="about-item">
+                <p>
+                  <strong class="display-1 strong">99%</strong> Repairs completed
+                </p>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #SERVICE SECTION
+      -->
+      <section class="section service has-bg-image" aria-labelledby="service-label"
+        style="background-image: url('./images/service-bg.jpg')">
+        <div class="container">
+
+          <p class="section-subtitle :light" id="service-label">Our services</p>
+
+          <h2 class="h2 section-title">We Provide Great Services For your Vehicle</h2>
+
+          <ul class="service-list">
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="images/services-1.png" width="110" height="110" loading="lazy" alt="Engine Repair">
+                </figure>
+
+                <h3 class="h3 card-title">Engine Repair</h3>
+
+                <p class="card-text">
+                  Autem velaum iure reare aenderit rui in ea roluptate esse ruam moles
+                </p>
+
+                <a href="#" class="btn-link">Read more</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="images/services-2.png" width="110" height="110" loading="lazy" alt="Brake Repair">
+                </figure>
+
+                <h3 class="h3 card-title">Brake Repair</h3>
+
+                <p class="card-text">
+                  Autem velaum iure reare aenderit rui in ea roluptate esse ruam moles
+                </p>
+
+                <a href="#" class="btn-link">Read more</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="images/services-3.png" width="110" height="110" loading="lazy" alt="Tire Repair">
+                </figure>
+
+                <h3 class="h3 card-title">Tire Repair</h3>
+
+                <p class="card-text">
+                  Autem velaum iure reare aenderit rui in ea roluptate esse ruam moles
+                </p>
+
+                <a href="#" class="btn-link">Read more</a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="images/services-4.png" width="110" height="110" loading="lazy"
+                    alt="Battery Repair">
+                </figure>
+
+                <h3 class="h3 card-title">Battery Repair</h3>
+
+                <p class="card-text">
+                  Autem velaum iure reare aenderit rui in ea roluptate esse ruam moles
+                </p>
+
+                <a href="#" class="btn-link">Read more</a>
+
+              </div>
+            </li>
+
+            <li class="service-banner">
+              <img src="images/services-5.png" width="646" height="380" loading="lazy" alt="Red Car"
+                class="move-anim">
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <figure class="card-icon">
+                  <img src="images/services-6.png" width="110" height="110" loading="lazy"
+                    alt="Steering Repair">
+                </figure>
+
+                <h3 class="h3 card-title">Steering Repair</h3>
+
+                <p class="card-text">
+                  Autem velaum iure reare aenderit rui in ea roluptate esse ruam moles
+                </p>
+
+                <a href="#" class="btn-link">Read more</a>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <a href="#" class="btn">
+            <span class="span">View All Services</span>
+
+            <span class="material-symbols-rounded">arrow_forward</span>
+          </a>
+
+        </div>
+      </section>
+
+
+    </article>
+  </main>
+
+</body>
+
+</html>
+		

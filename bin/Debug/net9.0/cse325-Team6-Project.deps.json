@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "cse325-Team6-Project/1.0.0": {
+        "runtime": {
+          "cse325-Team6-Project.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "cse325-Team6-Project/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
