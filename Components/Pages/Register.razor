@@ -1,0 +1,362 @@
+@page "/register"
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - CSE Muscle Cars</title>
+  <meta name="title" content="Register - CSE Muscle Cars">
+  <meta name="description" content="Create your account to purchase muscle cars">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - remixicon
+  -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - material icon font
+  -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/site.css">
+
+</head>
+
+<body>
+
+  @* <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__data">
+        <a href="/" class="nav__logo">
+          <img src="images/logo.png" width="128" height="63" alt="cse muscle cars home">
+        </a>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line nav__burger"></i>
+          <i class="ri-close-line nav__close"></i>
+        </div>
+      </div>
+
+      <!-- NAV MENU -->
+      <nav class="nav__menu" id="nav-menu">
+       <ul class="nav__list">
+        <li><a href="/" class="nav__link">Home</a></li>
+        <li><a href="/about" class="nav__link">About</a></li>
+        <li class="dropdown__item">
+          <div class="nav__link">
+            Vehicles <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+          </div>
+
+          <ul class="dropdown__menu">
+            <li>
+              <a href="/vehicles/chevrolet" class="dropdown__link">
+                <i class="ri-car-line"></i> Chevrolet
+              </a>
+            </li>
+            <li>
+              <a href="/vehicles/ford" class="dropdown__link">
+                <i class="ri-car-line"></i> Ford
+              </a>
+            </li>
+            <li>
+              <a href="/vehicles/dodge" class="dropdown__link">
+                <i class="ri-car-line"></i> Dodge
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/services" class="nav__link">Services</a></li>
+        <li><a href="/contact" class="nav__link">Contact</a></li>
+        <li><a href="/login" class="nav__link">Login</a></li>
+       </ul>
+      </nav>
+    </nav>
+  </header> *@
+
+  <main>
+    <article>
+      <!-- 
+        - #REGISTRATION SECTION
+      -->
+      <section class="section registration" aria-labelledby="registration-label">
+        <div class="container">
+
+          <p class="section-subtitle :light" id="registration-label">Join Our Community</p>
+
+          <h2 class="h2 section-title">Create Your Account</h2>
+
+          <div class="registration-container">
+            <div class="registration-form-container">
+              
+              <form class="registration-form" @onsubmit="HandleSubmit" @onsubmit:preventDefault="true">
+                
+                <div class="form-group">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" 
+                         id="firstName" 
+                         class="form-input" 
+                         @bind="registrationModel.FirstName" 
+                         placeholder="Enter your first name"
+                         required />
+                  <ValidationMessage For="@(() => registrationModel.FirstName)" />
+                </div>
+
+                <div class="form-group">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" 
+                         id="lastName" 
+                         class="form-input" 
+                         @bind="registrationModel.LastName" 
+                         placeholder="Enter your last name"
+                         required />
+                  <ValidationMessage For="@(() => registrationModel.LastName)" />
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" 
+                         id="email" 
+                         class="form-input" 
+                         @bind="registrationModel.Email" 
+                         placeholder="Enter your email"
+                         required />
+                  <ValidationMessage For="@(() => registrationModel.Email)" />
+                </div>
+
+                <div class="form-group">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" 
+                         id="password" 
+                         class="form-input" 
+                         @bind="registrationModel.Password" 
+                         placeholder="Create a secure password"
+                         required />
+                  <ValidationMessage For="@(() => registrationModel.Password)" />
+                </div>
+
+                <div class="form-group">
+                  <label for="confirmPassword" class="form-label">Confirm Password</label>
+                  <input type="password" 
+                         id="confirmPassword" 
+                         class="form-input" 
+                         @bind="registrationModel.ConfirmPassword" 
+                         placeholder="Confirm your password"
+                         required />
+                  <ValidationMessage For="@(() => registrationModel.ConfirmPassword)" />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label">Phone Number (Optional)</label>
+                  <input type="tel" 
+                         id="phone" 
+                         class="form-input" 
+                         @bind="registrationModel.Phone" 
+                         placeholder="Enter your phone number" />
+                  <ValidationMessage For="@(() => registrationModel.Phone)" />
+                </div>
+
+                @if (!string.IsNullOrEmpty(errorMessage))
+                {
+                      <div class="error-message">
+                        <i class="ri-error-warning-line"></i>
+                        @errorMessage
+                      </div>
+                }
+
+                @if (!string.IsNullOrEmpty(successMessage))
+                {
+                      <div class="success-message">
+                        <i class="ri-check-line"></i>
+                        @successMessage
+                      </div>
+                }
+
+                <button type="submit" class="btn registration-btn" disabled="@isLoading">
+                  @if (isLoading)
+                  {
+                        <span class="loading-spinner"></span>
+                        <span>Creating Account...</span>
+                  }
+                  else
+                  {
+                        <span class="span">Create Account</span>
+                        <span class="material-symbols-rounded">arrow_forward</span>
+                  }
+                </button>
+
+              </form>
+
+              <div class="registration-footer">
+                <p>Already have an account? <a href="/login" class="btn-link">Sign In</a></p>
+              </div>
+
+            </div>
+
+            <div class="registration-info">
+              <div class="info-card">
+                <figure class="info-icon">
+                  <img src="images/services-1.png" width="80" height="80" loading="lazy" alt="Car Purchase">
+                </figure>
+                <h3 class="h3 info-title">Purchase Cars</h3>
+                <p class="info-text">
+                  Browse and purchase from our collection of premium muscle cars including Chevrolet, Ford, and Dodge models.
+                </p>
+              </div>
+
+              <div class="info-card">
+                <figure class="info-icon">
+                  <img src="images/services-2.png" width="80" height="80" loading="lazy" alt="Repair Services">
+                </figure>
+                <h3 class="h3 info-title">Repair Services</h3>
+                <p class="info-text">
+                  Access our professional repair and maintenance services with expert mechanics and engineers.
+                </p>
+              </div>
+
+              <div class="info-card">
+                <figure class="info-icon">
+                  <img src="images/services-3.png" width="80" height="80" loading="lazy" alt="Warranty">
+                </figure>
+                <h3 class="h3 info-title">12-Month Warranty</h3>
+                <p class="info-text">
+                  All our cars come with a comprehensive 12-month warranty for your peace of mind.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <script>
+    // Navigation toggle functionality
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle?.addEventListener('click', () => {
+      navMenu.classList.toggle('show-menu');
+      navToggle.classList.toggle('show-icon');
+    });
+  </script>
+
+</body>
+
+</html>
+
+@code {
+    private RegistrationModel registrationModel = new();
+    private bool isLoading = false;
+    private string errorMessage = string.Empty;
+    private string successMessage = string.Empty;
+
+    private async Task HandleSubmit()
+    {
+        try
+        {
+            isLoading = true;
+            errorMessage = string.Empty;
+            successMessage = string.Empty;
+
+            // Basic validation
+            if (string.IsNullOrWhiteSpace(registrationModel.FirstName))
+            {
+                errorMessage = "First name is required.";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(registrationModel.LastName))
+            {
+                errorMessage = "Last name is required.";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(registrationModel.Email) || !IsValidEmail(registrationModel.Email))
+            {
+                errorMessage = "Please enter a valid email address.";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(registrationModel.Password) || registrationModel.Password.Length < 6)
+            {
+                errorMessage = "Password must be at least 6 characters long.";
+                return;
+            }
+
+            if (registrationModel.Password != registrationModel.ConfirmPassword)
+            {
+                errorMessage = "Passwords do not match.";
+                return;
+            }
+
+            // Simulate API call - replace with actual implementation
+            await Task.Delay(2000);
+
+            // For now, just show success message
+            successMessage = "Account created successfully! You can now log in.";
+            
+            // Reset form
+            registrationModel = new RegistrationModel();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "An error occurred while creating your account. Please try again.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private bool IsValidEmail(string email)
+    {
+        try
+        {
+            var addr = new System.Net.Mail.MailAddress(email);
+            return addr.Address == email;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public class RegistrationModel
+    {
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string ConfirmPassword { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
+    }
+}

@@ -1,0 +1,383 @@
+@page "/order"
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Cars - CSE Muscle Cars</title>
+  <meta name="title" content="Order Cars - CSE Muscle Cars">
+  <meta name="description" content="Browse and purchase premium muscle cars">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - remixicon
+  -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - material icon font
+  -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/site.css">
+
+</head>
+
+<body>
+
+  @* <!-- 
+    - #HEADER
+  -->
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__data">
+        <a href="/" class="nav__logo">
+          <img src="images/logo.png" width="128" height="63" alt="cse muscle cars home">
+        </a>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line nav__burger"></i>
+          <i class="ri-close-line nav__close"></i>
+        </div>
+      </div>
+
+      <!-- NAV MENU -->
+      <nav class="nav__menu" id="nav-menu">
+       <ul class="nav__list">
+        <li><a href="/" class="nav__link">Home</a></li>
+        <li><a href="/about" class="nav__link">About</a></li>
+        <li class="dropdown__item">
+          <div class="nav__link">
+            Vehicles <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+          </div>
+
+          <ul class="dropdown__menu">
+            <li>
+              <a href="/vehicles/chevrolet" class="dropdown__link">
+                <i class="ri-car-line"></i> Chevrolet
+              </a>
+            </li>
+            <li>
+              <a href="/vehicles/ford" class="dropdown__link">
+                <i class="ri-car-line"></i> Ford
+              </a>
+            </li>
+            <li>
+              <a href="/vehicles/dodge" class="dropdown__link">
+                <i class="ri-car-line"></i> Dodge
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/services" class="nav__link">Services</a></li>
+        <li><a href="/contact" class="nav__link">Contact</a></li>
+        <li><a href="/register" class="nav__link">Register</a></li>
+        <li><a href="/login" class="nav__link">Login</a></li>
+       </ul>
+      </nav>
+    </nav>
+  </header> *@
+
+  <main>
+    <article>
+      <!-- 
+        - #ORDER SECTION
+      -->
+      <section class="section order" aria-labelledby="order-label">
+        <div class="container">
+
+          <p class="section-subtitle :light" id="order-label">Premium Collection</p>
+
+          <h2 class="h2 section-title">Available Muscle Cars</h2>
+
+          <div class="order-container">
+            
+            <!-- Cars Grid -->
+            <div class="cars-grid">
+              @foreach (var car in availableCars)
+              {
+                    <div class="car-card">
+                      <div class="car-image">
+                        <img src="@car.ImageUrl" alt="@car.Model" loading="lazy">
+                      </div>
+                  
+                      <div class="car-content">
+                        <p class="car-make">@car.Make</p>
+                        <h3 class="car-title">@car.Model</h3>
+                    
+                        <div class="car-details">
+                          <div class="car-detail">
+                            <span class="car-detail-label">Year</span>
+                            <span class="car-detail-value">@car.Year</span>
+                          </div>
+                          <div class="car-detail">
+                            <span class="car-detail-label">Color</span>
+                            <span class="car-detail-value">@car.Color</span>
+                          </div>
+                          <div class="car-detail">
+                            <span class="car-detail-label">Engine</span>
+                            <span class="car-detail-value">@car.Engine</span>
+                          </div>
+                          <div class="car-detail">
+                            <span class="car-detail-label">Mileage</span>
+                            <span class="car-detail-value">@car.Mileage miles</span>
+                          </div>
+                        </div>
+                    
+                        <div class="car-price">$@car.Price.ToString("N0")</div>
+                    
+                        <p class="car-description">
+                          @car.Description
+                        </p>
+                    
+                        <button class="btn order-btn" @onclick="() => AddToCart(car)">
+                          <span class="span">Add to Cart</span>
+                          <span class="material-symbols-rounded">shopping_cart</span>
+                        </button>
+                      </div>
+                    </div>
+              }
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+              <h3 class="cart-title">
+                <i class="ri-shopping-cart-line"></i>
+                Shopping Cart
+              </h3>
+              
+              @if (cartItems.Any())
+              {
+                    @foreach (var item in cartItems)
+                    {
+                          <div class="cart-item">
+                            <span class="cart-item-name">@item.Car.Model</span>
+                            <span class="cart-item-price">$@item.Car.Price.ToString("N0")</span>
+                          </div>
+                    }
+                
+                    <div class="cart-total">
+                      <span class="cart-total-label">Total</span>
+                      <span class="cart-total-price">$@cartItems.Sum(x => x.Car.Price).ToString("N0")</span>
+                    </div>
+                
+                    <button class="btn checkout-btn" @onclick="ProceedToCheckout">
+                      <span class="span">Proceed to Checkout</span>
+                      <span class="material-symbols-rounded">arrow_forward</span>
+                    </button>
+              }
+              else
+              {
+                    <div class="empty-cart">
+                      <div class="empty-cart-icon">
+                        <i class="ri-shopping-cart-line"></i>
+                      </div>
+                      <p class="empty-cart-text">Your cart is empty</p>
+                      <p>Add some muscle cars to get started!</p>
+                    </div>
+              }
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <script>
+    // Navigation toggle functionality
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle?.addEventListener('click', () => {
+      navMenu.classList.toggle('show-menu');
+      navToggle.classList.toggle('show-icon');
+    });
+  </script>
+
+</body>
+
+</html>
+
+@code {
+    private List<Car> availableCars = new();
+    private List<CartItem> cartItems = new();
+    private bool isLoggedIn = false; // This should be checked from authentication service
+
+    protected override void OnInitialized()
+    {
+        LoadAvailableCars();
+    }
+
+    private void LoadAvailableCars()
+    {
+        // Sample data - in real app this would come from database
+        availableCars = new List<Car>
+        {
+            new Car
+            {
+                Id = 1,
+                Make = "Chevrolet",
+                Model = "2024 Camaro SS",
+                Year = 2024,
+                Color = "Racing Red",
+                Engine = "6.2L V8",
+                Mileage = 2500,
+                Price = 45000,
+                Description = "Experience the thrill of raw power with the 2024 Camaro SS. This beast delivers 455 horsepower and features the latest technology while maintaining the classic muscle car appeal.",
+                ImageUrl = "images/2024-camaro-9v2.jpg"
+            },
+            new Car
+            {
+                Id = 2,
+                Make = "Chevrolet",
+                Model = "2024 Corvette Stingray",
+                Year = 2024,
+                Color = "Arctic White",
+                Engine = "6.2L V8",
+                Mileage = 1800,
+                Price = 62000,
+                Description = "The iconic Corvette Stingray combines breathtaking performance with stunning design. With 495 horsepower and mid-engine layout, it's the pinnacle of American sports cars.",
+                ImageUrl = "images/2024-stingray.jpg"
+            },
+            new Car
+            {
+                Id = 3,
+                Make = "Ford",
+                Model = "2024 Mustang GT",
+                Year = 2024,
+                Color = "Oxford White",
+                Engine = "5.0L V8",
+                Mileage = 3200,
+                Price = 42000,
+                Description = "The legendary Mustang GT continues to define American muscle. With 450 horsepower and a refined interior, it's the perfect blend of power and comfort.",
+                ImageUrl = "images/2024-mustang.jpg"
+            },
+            new Car
+            {
+                Id = 4,
+                Make = "Dodge",
+                Model = "2024 Challenger SRT Hellcat",
+                Year = 2024,
+                Color = "Pitch Black",
+                Engine = "6.2L Supercharged V8",
+                Mileage = 1500,
+                Price = 68000,
+                Description = "Unleash the beast within. The Challenger Hellcat delivers an earth-shaking 717 horsepower, making it one of the most powerful production cars ever built.",
+                ImageUrl = "images/2024-challenger-hellcat.jpg"
+            },
+            new Car
+            {
+                Id = 5,
+                Make = "Ford",
+                Model = "2024 Mustang Shelby GT500",
+                Year = 2024,
+                Color = "Grabber Blue",
+                Engine = "5.2L Supercharged V8",
+                Mileage = 800,
+                Price = 75000,
+                Description = "The ultimate Mustang. The Shelby GT500 produces 760 horsepower and features track-tuned suspension for the ultimate driving experience.",
+                ImageUrl = "images/2024-mustang-shelby.jpg"
+            },
+            new Car
+            {
+                Id = 6,
+                Make = "Dodge",
+                Model = "2024 Charger Scat Pack",
+                Year = 2024,
+                Color = "Go Mango",
+                Engine = "6.4L V8",
+                Mileage = 2200,
+                Price = 48000,
+                Description = "Four doors, unlimited thrills. The Charger Scat Pack delivers 485 horsepower in a practical sedan package that doesn't compromise on performance.",
+                ImageUrl = "images/2024-charger-scat.jpg"
+            }
+        };
+    }
+
+    private void AddToCart(Car car)
+    {
+        if (!isLoggedIn)
+        {
+            // In a real app, redirect to login or show login modal
+            // For now, we'll just show a message
+            return;
+        }
+
+        var existingItem = cartItems.FirstOrDefault(x => x.Car.Id == car.Id);
+        if (existingItem != null)
+        {
+            // Car already in cart, could increment quantity or show message
+            return;
+        }
+
+        cartItems.Add(new CartItem { Car = car, Quantity = 1 });
+        StateHasChanged();
+    }
+
+    private void RemoveFromCart(Car car)
+    {
+        var item = cartItems.FirstOrDefault(x => x.Car.Id == car.Id);
+        if (item != null)
+        {
+            cartItems.Remove(item);
+            StateHasChanged();
+        }
+    }
+
+    private void ProceedToCheckout()
+    {
+        if (!isLoggedIn)
+        {
+            // Redirect to login
+            return;
+        }
+
+        // In a real app, this would redirect to checkout page or open checkout modal
+        // For now, we'll just show a success message
+    }
+
+    public class Car
+    {
+        public int Id { get; set; }
+        public string Make { get; set; } = string.Empty;
+        public string Model { get; set; } = string.Empty;
+        public int Year { get; set; }
+        public string Color { get; set; } = string.Empty;
+        public string Engine { get; set; } = string.Empty;
+        public int Mileage { get; set; }
+        public decimal Price { get; set; }
+        public string Description { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = string.Empty;
+    }
+
+    public class CartItem
+    {
+        public Car Car { get; set; } = new();
+        public int Quantity { get; set; }
+    }
+}

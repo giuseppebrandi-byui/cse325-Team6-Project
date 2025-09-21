@@ -860,6 +860,374 @@ body {
 
 
 /*-----------------------------------*\
+  #REGISTRATION FORM
+\*-----------------------------------*/
+.registration {
+  padding-block: 120px 80px;
+  background-color: var(--light-gray);
+}
+
+.registration-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.registration-form-container {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .1);
+}
+
+.registration-form {
+  display: grid;
+  gap: 24px;
+}
+
+.form-group {
+  display: grid;
+  gap: 8px;
+}
+
+.form-label {
+  font-family: var(--ff-chakra-petch);
+  font-weight: var(--fw-600);
+  color: var(--oxford-blue-3);
+  font-size: var(--fs-6);
+  text-transform: uppercase;
+}
+
+.form-input {
+  padding: 16px 20px;
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+  font-size: 1.6rem;
+  font-family: var(--ff-mulish);
+  transition: var(--transition);
+  background-color: var(--white);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--international-orange-engineering);
+  box-shadow: 0 0 0 3px hsla(1, 91%, 37%, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--cadet-blue-creyola);
+}
+
+.registration-btn {
+  margin-block-start: 20px;
+  padding: 18px 32px;
+  font-size: 1.8rem;
+  justify-content: center;
+  gap: 12px;
+}
+
+.registration-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--white);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.registration-footer {
+  text-align: center;
+  margin-block-start: 30px;
+  padding-block-start: 30px;
+  border-top: 1px solid var(--light-gray);
+}
+
+.registration-footer p {
+  color: var(--sonic-silver);
+  font-size: 1.6rem;
+}
+
+.registration-info {
+  display: grid;
+  gap: 30px;
+}
+
+.info-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px hsla(220, 32%, 8%, .05);
+  transition: var(--transition);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .1);
+}
+
+.info-icon {
+  margin-block-end: 20px;
+}
+
+.info-title {
+  margin-block-end: 12px;
+  color: var(--oxford-blue-3);
+}
+
+.info-text {
+  color: var(--sonic-silver);
+  line-height: 1.6;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c33;
+  padding: 16px 20px;
+  border-radius: 10px;
+  border: 1px solid #fcc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: var(--fw-600);
+}
+
+.success-message {
+  background-color: #efe;
+  color: #363;
+  padding: 16px 20px;
+  border-radius: 10px;
+  border: 1px solid #cfc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: var(--fw-600);
+}
+
+/*-----------------------------------*\
+  #ORDER PAGE
+\*-----------------------------------*/
+.order {
+  padding-block: 120px 80px;
+  background-color: var(--light-gray);
+}
+
+.order-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.car-card {
+  background-color: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .1);
+  transition: var(--transition);
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px hsla(220, 32%, 8%, .15);
+}
+
+.car-image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.car-card:hover .car-image img {
+  transform: scale(1.05);
+}
+
+.car-content {
+  padding: 30px;
+}
+
+.car-make {
+  font-family: var(--ff-chakra-petch);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  color: var(--international-orange-engineering);
+  text-transform: uppercase;
+  margin-block-end: 8px;
+}
+
+.car-title {
+  font-family: var(--ff-chakra-petch);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-700);
+  color: var(--oxford-blue-3);
+  margin-block-end: 12px;
+}
+
+.car-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-block-end: 20px;
+}
+
+.car-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.car-detail-label {
+  font-size: 1.2rem;
+  color: var(--sonic-silver);
+  text-transform: uppercase;
+  font-weight: var(--fw-600);
+}
+
+.car-detail-value {
+  font-size: 1.6rem;
+  color: var(--oxford-blue-3);
+  font-weight: var(--fw-700);
+}
+
+.car-price {
+  font-family: var(--ff-chakra-petch);
+  font-size: 2.4rem;
+  font-weight: var(--fw-700);
+  color: var(--international-orange-engineering);
+  margin-block-end: 20px;
+}
+
+.car-description {
+  color: var(--sonic-silver);
+  line-height: 1.6;
+  margin-block-end: 24px;
+}
+
+.order-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 16px 24px;
+  font-size: 1.6rem;
+  gap: 12px;
+}
+
+.cart-summary {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .1);
+  height: fit-content;
+  position: sticky;
+  top: 120px;
+}
+
+.cart-title {
+  font-family: var(--ff-chakra-petch);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-700);
+  color: var(--oxford-blue-3);
+  margin-block-end: 24px;
+  text-align: center;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-name {
+  font-weight: var(--fw-600);
+  color: var(--oxford-blue-3);
+}
+
+.cart-item-price {
+  font-weight: var(--fw-700);
+  color: var(--international-orange-engineering);
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-block-start: 20px;
+  border-top: 2px solid var(--international-orange-engineering);
+}
+
+.cart-total-label {
+  font-family: var(--ff-chakra-petch);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-700);
+  color: var(--oxford-blue-3);
+  text-transform: uppercase;
+}
+
+.cart-total-price {
+  font-family: var(--ff-chakra-petch);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-700);
+  color: var(--international-orange-engineering);
+}
+
+.checkout-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 18px 24px;
+  font-size: 1.8rem;
+  margin-block-start: 20px;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--sonic-silver);
+}
+
+.empty-cart-icon {
+  font-size: 6rem;
+  color: var(--cadet-blue-creyola);
+  margin-block-end: 20px;
+}
+
+.empty-cart-text {
+  font-size: 1.8rem;
+  margin-block-end: 30px;
+}
+
+/*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
 @media (min-width: 575px) {
@@ -1054,7 +1422,7 @@ body {
 @media (min-width: 992px) {
   /**
    * Typography
-  */
+   */
   :root {
     --fs-2: 4.4rem;
     --fs-3: 3.8rem;
@@ -1062,8 +1430,27 @@ body {
 
   /**
    * Spacing
-  */
+   */
   --section-padding: 100px;
+  }
+
+  /**
+   * Registration Form
+   */
+  .registration-container {
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+  }
+
+  /**
+   * Order Page
+   */
+  .order-container {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .cars-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /**
@@ -1246,7 +1633,7 @@ body {
 @media (min-width: 1200px) {
   /**
    * Typography
-  */
+   */
   :root {
     --fs-2: 5rem;
     --fs-3: 4.6rem;
@@ -1254,11 +1641,29 @@ body {
 
   /**
    * Reused Style
-  */
+   */
   .container,
   .hero .container {
     max-width: 1140px;
-  } 
+  }
+
+  /**
+   * Registration Form
+   */
+  .registration-form-container {
+    padding: 50px;
+  }
+
+  /**
+   * Order Page
+   */
+  .cars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .car-content {
+    padding: 40px;
+  }
 
   .btn {
     padding: 18px 36px;
