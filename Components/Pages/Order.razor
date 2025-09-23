@@ -14,7 +14,7 @@
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./favicon.png" type="image/png">
 
   <!-- 
     - remixicon
@@ -112,47 +112,47 @@
 
           <h2 class="h2 section-title">Available Muscle Cars</h2>
 
-          <div class="order-container">
+          <div class="order-container" style="display: flex; gap: 2rem; align-items: flex-start;">
             
             <!-- Cars Grid -->
-            <div class="cars-grid">
+            <div class="cars-grid" style="flex: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem;">
               @foreach (var car in availableCars)
               {
-                    <div class="car-card">
-                      <div class="car-image">
-                        <img src="@car.ImageUrl" alt="@car.Model" loading="lazy">
+                    <div class="car-card" style="background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease;">
+                      <div class="car-image" style="height: 200px; overflow: hidden;">
+                        <img src="@car.ImageUrl" alt="@car.Model" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                       </div>
                   
-                      <div class="car-content">
-                        <p class="car-make">@car.Make</p>
-                        <h3 class="car-title">@car.Model</h3>
+                      <div class="car-content" style="padding: 1.5rem;">
+                        <p class="car-make" style="color: #666; font-size: 0.9rem; margin: 0 0 0.5rem 0;">@car.Make</p>
+                        <h3 class="car-title" style="font-size: 1.4rem; margin: 0 0 1rem 0; color: #333;">@car.Model</h3>
                     
-                        <div class="car-details">
-                          <div class="car-detail">
-                            <span class="car-detail-label">Year</span>
+                        <div class="car-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem;">
+                          <div class="car-detail" style="display: flex; justify-content: space-between;">
+                            <span class="car-detail-label" style="font-weight: 500;">Year:</span>
                             <span class="car-detail-value">@car.Year</span>
                           </div>
-                          <div class="car-detail">
-                            <span class="car-detail-label">Color</span>
+                          <div class="car-detail" style="display: flex; justify-content: space-between;">
+                            <span class="car-detail-label" style="font-weight: 500;">Color:</span>
                             <span class="car-detail-value">@car.Color</span>
                           </div>
-                          <div class="car-detail">
-                            <span class="car-detail-label">Engine</span>
+                          <div class="car-detail" style="display: flex; justify-content: space-between;">
+                            <span class="car-detail-label" style="font-weight: 500;">Engine:</span>
                             <span class="car-detail-value">@car.Engine</span>
                           </div>
-                          <div class="car-detail">
-                            <span class="car-detail-label">Mileage</span>
+                          <div class="car-detail" style="display: flex; justify-content: space-between;">
+                            <span class="car-detail-label" style="font-weight: 500;">Mileage:</span>
                             <span class="car-detail-value">@car.Mileage miles</span>
                           </div>
                         </div>
                     
-                        <div class="car-price">$@car.Price.ToString("N0")</div>
+                        <div class="car-price" style="font-size: 1.8rem; font-weight: bold; color: #e74c3c; margin-bottom: 1rem;">$@car.Price.ToString("N0")</div>
                     
-                        <p class="car-description">
+                        <p class="car-description" style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem; line-height: 1.4;">
                           @car.Description
                         </p>
                     
-                        <button class="btn order-btn" @onclick="() => AddToCart(car)">
+                        <button class="btn order-btn" @onclick="() => AddToCart(car)" style="width: 100%; background: #3498db; color: white; border: none; padding: 0.8rem; border-radius: 6px; font-weight: 500; cursor: pointer; transition: background 0.3s ease;">
                           <span class="span">Add to Cart</span>
                           <span class="material-symbols-rounded">shopping_cart</span>
                         </button>
@@ -162,8 +162,8 @@
             </div>
 
             <!-- Cart Summary -->
-            <div class="cart-summary">
-              <h3 class="cart-title">
+            <div class="cart-summary" style="width: 300px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1.5rem; position: sticky; top: 2rem;">
+              <h3 class="cart-title" style="display: flex; align-items: center; gap: 0.5rem; margin: 0 0 1.5rem 0; font-size: 1.2rem;">
                 <i class="ri-shopping-cart-line"></i>
                 Shopping Cart
               </h3>
@@ -172,30 +172,30 @@
               {
                     @foreach (var item in cartItems)
                     {
-                          <div class="cart-item">
-                            <span class="cart-item-name">@item.Car.Model</span>
-                            <span class="cart-item-price">$@item.Car.Price.ToString("N0")</span>
+                          <div class="cart-item" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid #eee;">
+                            <span class="cart-item-name" style="font-size: 0.9rem; font-weight: 500;">@item.Car.Model</span>
+                            <span class="cart-item-price" style="font-weight: bold; color: #e74c3c;">$@item.Car.Price.ToString("N0")</span>
                           </div>
                     }
                 
-                    <div class="cart-total">
-                      <span class="cart-total-label">Total</span>
-                      <span class="cart-total-price">$@cartItems.Sum(x => x.Car.Price).ToString("N0")</span>
+                    <div class="cart-total" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; margin: 1rem 0; border-top: 2px solid #333; font-size: 1.1rem;">
+                      <span class="cart-total-label" style="font-weight: bold;">Total</span>
+                      <span class="cart-total-price" style="font-weight: bold; color: #e74c3c;">$@cartItems.Sum(x => x.Car.Price).ToString("N0")</span>
                     </div>
                 
-                    <button class="btn checkout-btn" @onclick="ProceedToCheckout">
+                    <button class="btn checkout-btn" @onclick="ProceedToCheckout" style="width: 100%; background: #27ae60; color: white; border: none; padding: 0.8rem; border-radius: 6px; font-weight: 500; cursor: pointer;">
                       <span class="span">Proceed to Checkout</span>
                       <span class="material-symbols-rounded">arrow_forward</span>
                     </button>
               }
               else
               {
-                    <div class="empty-cart">
-                      <div class="empty-cart-icon">
+                    <div class="empty-cart" style="text-align: center; padding: 2rem 0;">
+                      <div class="empty-cart-icon" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;">
                         <i class="ri-shopping-cart-line"></i>
                       </div>
-                      <p class="empty-cart-text">Your cart is empty</p>
-                      <p>Add some muscle cars to get started!</p>
+                      <p class="empty-cart-text" style="font-weight: 500; margin-bottom: 0.5rem;">Your cart is empty</p>
+                      <p style="font-size: 0.9rem; color: #666;">Add some muscle cars to get started!</p>
                     </div>
               }
             </div>
@@ -244,7 +244,7 @@
                 Make = "Chevrolet",
                 Model = "2024 Camaro SS",
                 Year = 2024,
-                Color = "Racing Red",
+                Color = "White",
                 Engine = "6.2L V8",
                 Mileage = 2500,
                 Price = 45000,
@@ -257,7 +257,7 @@
                 Make = "Chevrolet",
                 Model = "2024 Corvette Stingray",
                 Year = 2024,
-                Color = "Arctic White",
+                Color = "Blue",
                 Engine = "6.2L V8",
                 Mileage = 1800,
                 Price = 62000,
@@ -270,7 +270,7 @@
                 Make = "Ford",
                 Model = "2024 Mustang GT",
                 Year = 2024,
-                Color = "Oxford White",
+                Color = "Blue",
                 Engine = "5.0L V8",
                 Mileage = 3200,
                 Price = 42000,
@@ -283,12 +283,12 @@
                 Make = "Dodge",
                 Model = "2024 Challenger SRT Hellcat",
                 Year = 2024,
-                Color = "Pitch Black",
+                Color = "White",
                 Engine = "6.2L Supercharged V8",
                 Mileage = 1500,
                 Price = 68000,
                 Description = "Unleash the beast within. The Challenger Hellcat delivers an earth-shaking 717 horsepower, making it one of the most powerful production cars ever built.",
-                ImageUrl = "images/2024-challenger-hellcat.jpg"
+                ImageUrl = "images/2024-camaro-9v2.jpg"
             },
             new Car
             {
@@ -301,7 +301,7 @@
                 Mileage = 800,
                 Price = 75000,
                 Description = "The ultimate Mustang. The Shelby GT500 produces 760 horsepower and features track-tuned suspension for the ultimate driving experience.",
-                ImageUrl = "images/2024-mustang-shelby.jpg"
+                ImageUrl = "images/2024-mustang.jpg"
             },
             new Car
             {
@@ -309,12 +309,12 @@
                 Make = "Dodge",
                 Model = "2024 Charger Scat Pack",
                 Year = 2024,
-                Color = "Go Mango",
+                Color = "Blue",
                 Engine = "6.4L V8",
                 Mileage = 2200,
                 Price = 48000,
                 Description = "Four doors, unlimited thrills. The Charger Scat Pack delivers 485 horsepower in a practical sedan package that doesn't compromise on performance.",
-                ImageUrl = "images/2024-charger-scat.jpg"
+                ImageUrl = "images/2024-stingray.jpg"
             }
         };
     }
