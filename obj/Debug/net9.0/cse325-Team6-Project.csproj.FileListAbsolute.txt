@@ -37,3 +37,42 @@ C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\xvx4qeryzw-8byfsegdpl.gz
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\wbkyswzg7x-p7gtsab6vk.gz
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\u2fxs5c1re-p7gtsab6vk.gz
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\appsettings.Development.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\appsettings.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\cse325-Team6-Project.staticwebassets.runtime.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\cse325-Team6-Project.staticwebassets.endpoints.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\cse325-Team6-Project.exe
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\cse325-Team6-Project.deps.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\cse325-Team6-Project.runtimeconfig.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\cse325-Team6-Project.dll
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\cse325-Team6-Project.pdb
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.AssemblyInfoInputs.cache
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.AssemblyInfo.cs
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.csproj.CoreCompileInputs.cache
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.MvcApplicationPartsAssemblyInfo.cache
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.sourcelink.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\scopedcss\bundle\cse325-Team6-Project.styles.css
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\scopedcss\projectbundle\cse325-Team6-Project.bundle.scp.css
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\8oq0eahf3j-{0}-6xa98ux3b4-6xa98ux3b4.gz
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\2s5g48xdg8-{0}-ryr1z86v24-ryr1z86v24.gz
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\w4fcckk0ei-{0}-2im35ytxel-2im35ytxel.gz
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\711z1svxnr-{0}-aoynmk2tpr-aoynmk2tpr.gz
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\g9g2mkzzox-{0}-9l687hjp5p-9l687hjp5p.gz
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\tgi3s0l6lh-{0}-f5ce5wcnix-f5ce5wcnix.gz
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\yor3xrcapb-{0}-f5ce5wcnix-f5ce5wcnix.gz
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\staticwebassets.build.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\staticwebassets.development.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.dll
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\refint\cse325-Team6-Project.dll
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.pdb
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.genruntimeconfig.cache
+C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\ref\cse325-Team6-Project.dll
