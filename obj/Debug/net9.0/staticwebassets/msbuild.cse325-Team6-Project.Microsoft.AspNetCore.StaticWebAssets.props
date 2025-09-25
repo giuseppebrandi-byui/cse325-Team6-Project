@@ -1,22 +1,22 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\cse325-Team6-Project.p7gtsab6vk.bundle.scp.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\cse325-Team6-Project.30oywe91x0.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>cse325-Team6-Project</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/cse325-Team6-Project</BasePath>
-      <RelativePath>cse325-Team6-Project.p7gtsab6vk.bundle.scp.css</RelativePath>
+      <RelativePath>cse325-Team6-Project.30oywe91x0.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
-      <Fingerprint>p7gtsab6vk</Fingerprint>
-      <Integrity>VStHRaly9kwrrHdmBPNB+9M/EzgnCqwV7+OAZyRpsEY=</Integrity>
+      <Fingerprint>30oywe91x0</Fingerprint>
+      <Integrity>A5aouqKQdeE/hq9Ao6h4mpWcS80LvrvqHYS8jyrfBV8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\cse325-Team6-Project.p7gtsab6vk.bundle.scp.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\cse325-Team6-Project.30oywe91x0.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))">
       <SourceType>Package</SourceType>
@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>6xa98ux3b4</Fingerprint>
-      <Integrity>dlBGuDOO/tXdLplPZj8hySI6R9V7rCkkXhTlMukBJmc=</Integrity>
+      <Fingerprint>p0saruzqz9</Fingerprint>
+      <Integrity>WY/jvuVU6gp54QkhLMST6TAF4MqzO/mC6zoiJCFxvQk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
