@@ -31,8 +31,6 @@ C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.pdb
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.genruntimeconfig.cache
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\ref\cse325-Team6-Project.dll
-C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\wbkyswzg7x-p7gtsab6vk.gz
-C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\u2fxs5c1re-p7gtsab6vk.gz
 C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\appsettings.Development.json
 C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\appsettings.json
 C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\cse325-Team6-Project.staticwebassets.runtime.json
@@ -76,4 +74,6 @@ C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\iojjayntvy-2im35ytxel.gz
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\hp31tr84ki-aoynmk2tpr.gz
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\ywlpsypaa8-9l687hjp5p.gz
-C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\xvx4qeryzw-l0osdb5m7j.gz
+C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\xvx4qeryzw-p0saruzqz9.gz
+C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\wbkyswzg7x-30oywe91x0.gz
+C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\u2fxs5c1re-30oywe91x0.gz
