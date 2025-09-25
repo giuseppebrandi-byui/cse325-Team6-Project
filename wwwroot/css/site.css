@@ -157,6 +157,11 @@ body {
   padding-inline: 16px;
 }
 
+.grid {
+  display: grid;
+  gap: 4rem;
+}
+
 .material-symbols-rounded {
   --fs: 1em;
   font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 40;
@@ -1320,6 +1325,10 @@ body {
     max-width: 720px;
   }
 
+  .grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .btn {
     padding: 16px 32px;
   }
@@ -1494,7 +1503,7 @@ body {
   }
 
   /**
-   * About
+   * About Section
   */
   .about {
     position: relative;
