@@ -153,6 +153,10 @@
       "PackagePath": "staticwebassets\\images\\work-3.jpg"
     },
     {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.cse325-Team6-Project.props",
       "PackagePath": "build\\cse325-Team6-Project.props"
     },

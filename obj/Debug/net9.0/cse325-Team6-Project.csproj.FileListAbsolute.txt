@@ -17,9 +17,6 @@ C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\scopedcss\bundle\cse325-Team6-Project.styles.css
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\scopedcss\projectbundle\cse325-Team6-Project.bundle.scp.css
-C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\ymyfoeztlp-f8vkdjbp6c.gz
-C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\iojjayntvy-l4umkzyhdu.gz
-C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\hp31tr84ki-ns70fd10bj.gz
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -34,7 +31,6 @@ C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.pdb
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.genruntimeconfig.cache
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\ref\cse325-Team6-Project.dll
-C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\xvx4qeryzw-8byfsegdpl.gz
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\wbkyswzg7x-p7gtsab6vk.gz
 C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\u2fxs5c1re-p7gtsab6vk.gz
 C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\bin\Debug\net9.0\appsettings.Development.json
@@ -76,3 +72,8 @@ C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\
 C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.pdb
 C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\cse325-Team6-Project.genruntimeconfig.cache
 C:\School assignments\2025 Term 5 Fall\NET Software Development\Group 6 Project\cse325-Team6-Project\obj\Debug\net9.0\ref\cse325-Team6-Project.dll
+C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\xvx4qeryzw-6xa98ux3b4.gz
+C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\ymyfoeztlp-ryr1z86v24.gz
+C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\iojjayntvy-2im35ytxel.gz
+C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\hp31tr84ki-aoynmk2tpr.gz
+C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\obj\Debug\net9.0\compressed\ywlpsypaa8-9l687hjp5p.gz

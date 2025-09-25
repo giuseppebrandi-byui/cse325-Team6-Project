@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>8byfsegdpl</Fingerprint>
-      <Integrity>dC+F5rIHWr8GZXofwWdmvVPGFwaPpAVAE61hKsflIDs=</Integrity>
+      <Fingerprint>6xa98ux3b4</Fingerprint>
+      <Integrity>dlBGuDOO/tXdLplPZj8hySI6R9V7rCkkXhTlMukBJmc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -210,8 +210,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>f8vkdjbp6c</Fingerprint>
-      <Integrity>HyTGUDkPy6Zs7MLjUgUhB79NojtbKyc4ta+vvUEN8ZI=</Integrity>
+      <Fingerprint>ryr1z86v24</Fingerprint>
+      <Integrity>04bdHw6lcSAeRnFdYjmKxhKVCVYwFKNi0JAq1fv0mbM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\facebook.svg'))</OriginalItemSpec>
@@ -354,8 +354,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>l4umkzyhdu</Fingerprint>
-      <Integrity>+11TkHI3rhCL+rSlRxzGAVYiUMKHYEGio8dQE+pXffg=</Integrity>
+      <Fingerprint>2im35ytxel</Fingerprint>
+      <Integrity>Vm7W0BJHMa2cDFaSh14pHZUXEIZUQZWfNNu0+KG62KY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\instagram.svg'))</OriginalItemSpec>
@@ -624,8 +624,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ns70fd10bj</Fingerprint>
-      <Integrity>iQXPg0lsqObgq/6/9fzKjtxdGJQo4NLYoueDg7Sov90=</Integrity>
+      <Fingerprint>aoynmk2tpr</Fingerprint>
+      <Integrity>tuq1Y7Q1Q/6XttqMG+3iedd4pSzHbkPpE8+NzJOZQp0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\twitter.svg'))</OriginalItemSpec>
@@ -683,6 +683,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\work-3.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\script.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>cse325-Team6-Project</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/cse325-Team6-Project</BasePath>
+      <RelativePath>js/script.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>9l687hjp5p</Fingerprint>
+      <Integrity>XY5ZWk/eF31Ym14y+SVPGwatZUCbCVYokWckgOgtV3E=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\script.js'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>
