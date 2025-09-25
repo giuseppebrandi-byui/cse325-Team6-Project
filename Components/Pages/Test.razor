@@ -1,0 +1,29 @@
+@page "/cars"
+@inject NavigationManager NavigationManager
+@using MyMuscleCars.Data
+
+<h3>Car List</h3>
+
+@if (cars == null || cars.Count == 0)
+{
+    <p>Loading cars...</p>
+}
+else
+{
+    <ul>
+        @foreach (var car in cars)
+        {
+            <li>@car.Make @car.Model @car.Year</li>
+        }
+    </ul>
+}
+
+@code {
+    private List<Car> cars = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var http = new HttpClient { BaseAddress = new Uri(NavigationManager.BaseUri) };
+        cars = await http.GetFromJsonAsync<List<Car>>("api/cars");
+    }
+}
