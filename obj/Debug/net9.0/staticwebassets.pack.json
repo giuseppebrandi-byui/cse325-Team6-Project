@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\images\\about-shape.png"
     },
     {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\cse325-muscle-cars.jpg",
+      "PackagePath": "staticwebassets\\images\\cse325-muscle-cars.jpg"
+    },
+    {
       "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\facebook.svg",
       "PackagePath": "staticwebassets\\images\\facebook.svg"
     },
