@@ -1,6 +1,6 @@
 @page "/cars"
 @inject NavigationManager NavigationManager
-@using MyMuscleCars.Data
+@using MyMuscleCars.Models
 
 <h3>Car List</h3>
 
@@ -13,17 +13,25 @@ else
     <ul>
         @foreach (var car in cars)
         {
-            <li>@car.Make @car.Model @car.Year</li>
+            <li>@car.InvModel</li>
         }
     </ul>
 }
 
 @code {
-    private List<Car> cars = new();
+    private List<Inventory> cars = new();
 
     protected override async Task OnInitializedAsync()
     {
-        var http = new HttpClient { BaseAddress = new Uri(NavigationManager.BaseUri) };
-        cars = await http.GetFromJsonAsync<List<Car>>("api/cars");
+        try
+        {   Console.WriteLine("Fetching inventories...");
+            var http = new HttpClient { BaseAddress = new Uri(NavigationManager.BaseUri) };
+            cars = await http.GetFromJsonAsync<List<Inventory>>("api/inventory");
+            Console.WriteLine($"Fetched {cars.Count} inventories.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error fetching inventories: " + ex.Message);
+        }
     }
 }
