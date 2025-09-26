@@ -1,6 +1,24 @@
+
 using cse325_Team6_Project.Components;
+using Microsoft.EntityFrameworkCore;
+using DotNetEnv;
+using MyMuscleCars.Data;
+
+Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Get connection string from environment variable (from .env)
+var connectionString = Env.GetString("DATABASE_URL") 
+                       ?? builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddControllers(); //this registers controllers
+
+// Register EF Core DbContext with PostgreSQL
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(connectionString));
+
+
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -16,12 +34,18 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
+
 app.UseHttpsRedirection();
 
 
 app.UseAntiforgery();
 
 app.MapStaticAssets();
+
+app.MapControllers(); //this maps controller routes
+
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
