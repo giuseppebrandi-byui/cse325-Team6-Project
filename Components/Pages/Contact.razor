@@ -1,0 +1,50 @@
+@page "/contact"
+@using cse325_Team6_Project.Models
+
+<div class="contact-container">
+    <h1 class="contact-title">Contact Us</h1>
+
+    <EditForm Model="@message" OnValidSubmit="HandleValidSubmit" class="contact-form">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label>Name</label>
+            <InputText @bind-Value="message.Name" class="form-control" />
+            <ValidationMessage For="@(() => message.Name)" />
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <InputText @bind-Value="message.Email" class="form-control" />
+            <ValidationMessage For="@(() => message.Email)" />
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <InputTextArea @bind-Value="message.Message" class="form-control message-box" />
+            <ValidationMessage For="@(() => message.Message)" />
+        </div>
+
+        <button type="submit" class="btn-send">SEND</button>
+    </EditForm>
+
+    @if (submitted)
+    {
+        <div class="alert alert-success mt-3">
+            ✅ Thank you, your message has been received.
+        </div>
+    }
+</div>
+
+@code {
+    private ContactMessage message = new();
+    private bool submitted = false;
+
+    private async Task HandleValidSubmit()
+    {
+        await Task.Delay(300);
+        submitted = true;
+        message = new ContactMessage(); // reset
+    }
+}

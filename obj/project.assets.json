@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\info\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\cse325-Team6-Project.csproj",
+      "projectUniqueName": "C:\\Users\\user\\cse325\\cse325-Team6-Project\\cse325-Team6-Project.csproj",
       "projectName": "cse325-Team6-Project",
-      "projectPath": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\cse325-Team6-Project.csproj",
-      "packagesPath": "C:\\Users\\info\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\obj\\",
+      "projectPath": "C:\\Users\\user\\cse325\\cse325-Team6-Project\\cse325-Team6-Project.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\cse325\\cse325-Team6-Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\info\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -44,7 +44,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -68,7 +68,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.205/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
