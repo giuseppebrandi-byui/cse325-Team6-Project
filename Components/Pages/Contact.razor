@@ -1,40 +1,46 @@
 @page "/contact"
 @using cse325_Team6_Project.Models
 
-<div class="contact-container">
-    <h1 class="contact-title">Contact Us</h1>
+<div class="contact-page">
+    <div class="contact-card">
+        <p class="contact-welcome">WELCOME TO OUR SUPPORT</p>
+        <h1 class="contact-title">We’d Love to Hear from You</h1>
+        <p class="contact-subtitle">Fill out the form below and we’ll get back to you as soon as possible.</p>
 
-    <EditForm Model="@message" OnValidSubmit="HandleValidSubmit" class="contact-form">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
+        <EditForm Model="@message" OnValidSubmit="HandleValidSubmit" class="contact-form">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
 
-        <div class="form-group">
-            <label>Name</label>
-            <InputText @bind-Value="message.Name" class="form-control" />
-            <ValidationMessage For="@(() => message.Name)" />
-        </div>
+            <div class="form-group">
+                <label>FULL NAME</label>
+                <InputText @bind-Value="message.Name" class="form-control" placeholder="Enter your full name" />
+                <ValidationMessage For="@(() => message.Name)" />
+            </div>
 
-        <div class="form-group">
-            <label>Email</label>
-            <InputText @bind-Value="message.Email" class="form-control" />
-            <ValidationMessage For="@(() => message.Email)" />
-        </div>
+            <div class="form-group">
+                <label>EMAIL ADDRESS</label>
+                <InputText @bind-Value="message.Email" class="form-control" placeholder="Enter your email" />
+                <ValidationMessage For="@(() => message.Email)" />
+            </div>
 
-        <div class="form-group">
-            <label>Message</label>
-            <InputTextArea @bind-Value="message.Message" class="form-control message-box" />
-            <ValidationMessage For="@(() => message.Message)" />
-        </div>
+            <div class="form-group">
+                <label>MESSAGE</label>
+                <InputTextArea @bind-Value="message.Message" class="form-control message-box" placeholder="Write your message here..." />
+                <ValidationMessage For="@(() => message.Message)" />
+            </div>
 
-        <button type="submit" class="btn-send">SEND</button>
-    </EditForm>
+            <button type="submit" class="btn-send">
+                SEND MESSAGE <span class="arrow">➝</span>
+            </button>
+        </EditForm>
 
-    @if (submitted)
-    {
-        <div class="alert alert-success mt-3">
-            ✅ Thank you, your message has been received.
-        </div>
-    }
+        @if (submitted)
+        {
+            <div class="alert alert-success mt-3">
+                ✅ Thank you, your message has been received.
+            </div>
+        }
+    </div>
 </div>
 
 @code {

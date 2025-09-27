@@ -1206,34 +1206,49 @@ body {
 }
 
 
-/* Contact Section */
-.contact {
-  padding-block: 120px 80px;
-  background-color: var(--light-gray);
+/* Full page grey background like login/register */
+.contact-page {
+  min-height: 100vh;
+  background-color: #d3d3d3; /* same grey as login */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-.contact-container {
+/* White card container */
+.contact-card {
   max-width: 700px;
-  margin-inline: auto;
+  width: 100%;
   background-color: var(--white);
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .1);
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .15);
+  text-align: center;
 }
 
 .contact-title {
-  text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   font-family: var(--ff-chakra-petch);
-  font-size: var(--fs-3);
+  font-size: 2.8rem;
   font-weight: var(--fw-700);
-  color: var(--oxford-blue-3);
+  color: var(--international-orange-engineering);
   text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-subtitle {
+  margin-bottom: 32px;
+  font-family: var(--ff-mulish);
+  font-size: 1.6rem;
+  color: var(--oxford-blue-3);
+  opacity: 0.9;
 }
 
 .contact-form {
   display: grid;
   gap: 24px;
+  text-align: left;
 }
 
 .contact-form .form-group {
@@ -1269,6 +1284,18 @@ body {
   min-height: 120px;
 }
 
+.contact-welcome {
+  font-family: var(--ff-chakra-petch);
+  font-size: 1.4rem;
+  font-weight: var(--fw-600);
+  color: var(--international-orange-engineering);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+
+/* Button matches login style */
 .btn-send {
   background-color: var(--international-orange-engineering);
   color: var(--white);
@@ -1278,21 +1305,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   padding: 16px 24px;
-  border: 1px solid transparent;
+  border: none;
   border-radius: var(--radius-pill);
   font-size: 1.8rem;
   transition: var(--transition);
   width: 100%;
+  cursor: pointer;
 }
 
 .btn-send:hover {
   transform: translateY(-5px);
   background-color: var(--oxford-blue-3);
-  border-color: var(--white);
 }
 
+.btn-send .arrow {
+  font-size: 2rem;
+  line-height: 1;
+}
 
 
 /*-----------------------------------*\
