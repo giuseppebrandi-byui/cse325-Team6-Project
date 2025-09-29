@@ -1,0 +1,56 @@
+@page "/contact"
+@using cse325_Team6_Project.Models
+
+<div class="contact-page">
+    <div class="contact-card">
+        <p class="contact-welcome">WELCOME TO OUR SUPPORT</p>
+        <h1 class="contact-title">We’d Love to Hear from You always</h1>
+        <p class="contact-subtitle">Fill out the form below and we’ll get back to you as soon as possible.</p>
+
+        <EditForm Model="@message" OnValidSubmit="HandleValidSubmit" class="contact-form">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+                <label>FULL NAME</label>
+                <InputText @bind-Value="message.Name" class="form-control" placeholder="Enter your full name" />
+                <ValidationMessage For="@(() => message.Name)" />
+            </div>
+
+            <div class="form-group">
+                <label>EMAIL ADDRESS</label>
+                <InputText @bind-Value="message.Email" class="form-control" placeholder="Enter your email" />
+                <ValidationMessage For="@(() => message.Email)" />
+            </div>
+
+            <div class="form-group">
+                <label>MESSAGE</label>
+                <InputTextArea @bind-Value="message.Message" class="form-control message-box" placeholder="Write your message here..." />
+                <ValidationMessage For="@(() => message.Message)" />
+            </div>
+
+            <button type="submit" class="btn-send">
+                SEND MESSAGE <span class="material-symbols-rounded">arrow_forward</span>
+            </button>
+        </EditForm>
+
+        @if (submitted)
+        {
+            <div class="alert alert-success mt-3">
+                ✅ Thank you, your message has been received.
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private ContactMessage message = new();
+    private bool submitted = false;
+
+    private async Task HandleValidSubmit()
+    {
+        await Task.Delay(300);
+        submitted = true;
+        message = new ContactMessage(); // reset
+    }
+}

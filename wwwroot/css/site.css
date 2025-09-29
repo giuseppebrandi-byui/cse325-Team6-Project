@@ -1205,6 +1205,126 @@ body {
   margin-block-end: 30px;
 }
 
+/* Full page grey background like login/register */
+.contact-page {
+  min-height: 100vh;
+  background-color: #d3d3d3;
+  /* same grey as login */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* White card container */
+.contact-card {
+  max-width: 700px;
+  width: 100%;
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .15);
+  text-align: center;
+}
+
+.contact-title {
+  margin-bottom: 12px;
+  font-family: var(--ff-chakra-petch);
+  font-size: 2.8rem;
+  font-weight: var(--fw-700);
+  color: var(--international-orange-engineering);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-subtitle {
+  margin-bottom: 32px;
+  font-family: var(--ff-mulish);
+  font-size: 1.6rem;
+  color: var(--oxford-blue-3);
+  opacity: 0.9;
+}
+
+.contact-form {
+  display: grid;
+  gap: 24px;
+  text-align: left;
+}
+
+.contact-form .form-group {
+  display: grid;
+  gap: 8px;
+}
+
+.contact-form label {
+  font-family: var(--ff-chakra-petch);
+  font-weight: var(--fw-600);
+  color: var(--oxford-blue-3);
+  font-size: var(--fs-6);
+  text-transform: uppercase;
+}
+
+.contact-form .form-control {
+  padding: 16px 20px;
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+  font-size: 1.6rem;
+  font-family: var(--ff-mulish);
+  transition: var(--transition);
+  background-color: var(--white);
+}
+
+.contact-form .form-control:focus {
+  outline: none;
+  border-color: var(--international-orange-engineering);
+  box-shadow: 0 0 0 3px hsla(1, 91%, 37%, 0.1);
+}
+
+.contact-form .message-box {
+  min-height: 120px;
+}
+
+.contact-welcome {
+  font-family: var(--ff-chakra-petch);
+  font-size: 1.4rem;
+  font-weight: var(--fw-600);
+  color: var(--international-orange-engineering);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+
+/* Button matches login style */
+.btn-send {
+  background-color: var(--international-orange-engineering);
+  color: var(--white);
+  font-family: var(--ff-chakra-petch);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 1.8rem;
+  transition: var(--transition);
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn-send:hover {
+  transform: translateY(-5px);
+  background-color: var(--oxford-blue-3);
+}
+
+.btn-send .arrow {
+  font-size: 2rem;
+  line-height: 1;
+}
+
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
