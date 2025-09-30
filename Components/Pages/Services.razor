@@ -1,0 +1,54 @@
+@page "/services"
+<PageTitle>Our Services - CSE Muscle Cars</PageTitle>
+
+<main>
+    <section class="section service-page" aria-labelledby="service-label">
+        <div class="container">
+
+            <p class="section-subtitle :light" id="service-label">Our Services</p>
+            <h2 class="h2 section-title">We Provide Top-Quality Services for Your Vehicle</h2>
+
+
+            <p class="section-text">
+                At CSE Muscle Cars, we go beyond selling cars. Our skilled mechanics and engineers provide expert care for every part of your vehicle to keep it running at its best.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach (var service in services)
+                {
+                    <div class="service-card">
+
+                        <figure class="card-icon">
+                            <img src="@service.Image" width="110" height="110" alt="@service.Title">
+                        </figure>
+
+                        <h3 class="h3 card-title">@service.Title</h3>
+                        <p class="card-text">@service.ShortDescription</p>
+
+                    </div>
+                }
+            </div>
+
+            <div class="mt-8" style="display: flex; justify-content: center; margin: 3rem 0;">
+                <NavLink href="/contact" class="btn">
+                    <span class="span">Book a Service</span>
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                </NavLink>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+@code {
+    private List<Service> services = new()
+    {
+        new("Engine Repair", "Our expert mechanics handle everything from diagnostics and tune-ups to complete engine rebuilds, ensuring maximum performance and reliability.", "images/services-1.png", "engine-repair"),
+        new("Brake Repair", "Safety comes first. We provide full brake system inspections, pad and rotor replacement, and repairs to keep your stopping power sharp.", "images/services-2.png", "brake-repair"),
+        new("Tire Repair", "Whether it’s a flat repair, rotation, alignment, or new tire installation, we keep your car’s grip and ride quality at its best.", "images/services-3.png", "tire-repair"),
+        new("Battery Repair", "Don’t get stranded with a dead battery. We test, repair, and replace batteries to ensure your car starts every time.", "images/services-4.png", "battery-repair"),
+        new("Steering Repair", "From steering alignment to power steering system maintenance, we keep your handling smooth and precise for safer driving.", "images/services-6.png", "steering-repair")
+    };
+
+    public record Service(string Title, string ShortDescription, string Image, string Slug);
+}
