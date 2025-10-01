@@ -10,12 +10,15 @@
 }
 else
 {
-    <ul>
-        @foreach (var car in cars)
-        {
-            <li>@car.InvModel</li>
-        }
-    </ul>
+     <div class="container">
+        <div class="grid grid--2-cols">
+            @foreach (var car in cars)
+            {
+                <img src="@car.InvImage"/>
+            }
+        </div> 
+     </div>
+    
 }
 
 @code {

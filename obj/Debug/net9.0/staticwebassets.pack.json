@@ -13,18 +13,6 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\2024-camaro-9v2.jpg",
-      "PackagePath": "staticwebassets\\images\\2024-camaro-9v2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\2024-mustang.jpg",
-      "PackagePath": "staticwebassets\\images\\2024-mustang.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\2024-stingray.jpg",
-      "PackagePath": "staticwebassets\\images\\2024-stingray.jpg"
-    },
-    {
       "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\Engine.png",
       "PackagePath": "staticwebassets\\images\\Engine.png"
     },
@@ -143,6 +131,86 @@
     {
       "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\twitter.svg",
       "PackagePath": "staticwebassets\\images\\twitter.svg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2016-ford-mustang-tn.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2016-ford-mustang-tn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2016-ford-mustang.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2016-ford-mustang.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2016-stingray-tn.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2016-stingray-tn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2016-stingray.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2016-stingray.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2017-camaro-tn.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2017-camaro-tn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2017-camaro.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2017-camaro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2022-ford-mustang-tn.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2022-ford-mustang-tn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2022-ford-mustang.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2022-ford-mustang.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2023-charger-scat-pack-tn.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2023-charger-scat-pack-tn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2023-charger-scat-pack.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2023-charger-scat-pack.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2023-dodge-challenger-gt-tn.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2023-dodge-challenger-gt-tn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2023-dodge-challenger-gt.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2023-dodge-challenger-gt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2024-camaro-9v2-tn.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2024-camaro-9v2-tn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2024-camaro-9v2.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2024-camaro-9v2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2024-mustang-tn.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2024-mustang-tn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2024-mustang.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2024-mustang.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2024-stingray-tn.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2024-stingray-tn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\2024-stingray.jpg",
+      "PackagePath": "staticwebassets\\images\\vehicles\\2024-stingray.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\no-image-tn.png",
+      "PackagePath": "staticwebassets\\images\\vehicles\\no-image-tn.png"
+    },
+    {
+      "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\vehicles\\no-image.png",
+      "PackagePath": "staticwebassets\\images\\vehicles\\no-image.png"
     },
     {
       "Id": "C:\\Users\\Giuseppe\\BYU\\cse325\\Team6Project\\cse325-Team6-Project\\wwwroot\\images\\work-1.jpg",
