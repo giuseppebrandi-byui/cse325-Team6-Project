@@ -17,77 +17,77 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = cse325-Team6-Project
 build_property.RootNamespace = cse325-Team6-Project
-build_property.ProjectDir = /Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/
+build_property.ProjectDir = C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project
+build_property.MSBuildProjectDirectory = C:\Users\Giuseppe\BYU\cse325\Team6Project\cse325-Team6-Project
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/App.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/About.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BYm91dC5yYXpvcg==
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/About.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBYm91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/Contact.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db250YWN0LnJhem9y
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/Contact.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb250YWN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db3VudGVyLnJhem9y
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/Error.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/Login.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Mb2dpbi5yYXpvcg==
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/Order.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9PcmRlci5yYXpvcg==
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/Order.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xPcmRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/Register.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9SZWdpc3Rlci5yYXpvcg==
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/Services.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9TZXJ2aWNlcy5yYXpvcg==
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/Services.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXJ2aWNlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/Test.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UZXN0LnJhem9y
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/Vehicles.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xWZWhpY2xlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9XZWF0aGVyLnJhem9y
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Routes.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/_Imports.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Layout/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-iyikc2hfmr
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-xx2hk6x1m9
 
-[/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/Components/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-lkf05vpfry
+[C:/Users/Giuseppe/BYU/cse325/Team6Project/cse325-Team6-Project/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-jqx6r8purh

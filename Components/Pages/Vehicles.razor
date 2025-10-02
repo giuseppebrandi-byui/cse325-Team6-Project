@@ -1,0 +1,82 @@
+@using System;
+@using System.Globalization;
+@inject NavigationManager NavigationManager
+@using MyMuscleCars.Models
+
+@page "/vehicles"
+
+<PageTitle>CSE Muscle Cars - Car Sales & Repair Service</PageTitle>
+
+<main>
+    <article>
+      <!-- 
+        - #VEHICLES SECTION
+      -->
+      <section class="section about-page" aria-labelledby="about-label">
+        <div class="container">
+
+          <p class="section-subtitle :light" id="about-label">Turn the Key. Ignite the Fury</p>
+          <h2 class="h2 section-title">Our Cars</h2>
+          <div class="grid grid--3-cols grid--2-cols">
+
+          @if (cars == null || cars.Count == 0)
+          {
+              <p>Loading cars...</p>
+          }
+          else
+          {
+            // Loop through the list of and diplay cars on vehicle's page
+            @foreach (var car in cars)
+            {
+              <div class="work-card">
+
+              <figure class="card-banner img-holder" style="--width: 650; --height: 433;">
+                <img src="@car.InvImage" width="650" height="433" loading="lazy" alt="2024 Camaro 9v2"
+                  class="img-cover">
+              </figure>
+
+              <div class="card-content">
+                <p class="card-subtitle">@car.InvMake</p>
+
+                <h3 class="h3 card-title">@car.InvModel</h3>
+                <div class="info-vehicle">
+                  <p>Price: $@car.InvPrice</p>
+                  <p>Year: @car.InvYear</p>
+                </div>  
+
+                <a href="#" class="card-btn">
+                  <span class="material-symbols-rounded">arrow_forward</span>
+                </a>
+              </div>
+
+            </div>
+            }       
+          }
+
+          </div>    
+                     
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+@code {
+    private List<Inventory> cars = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {   Console.WriteLine("Fetching inventories...");
+            var http = new HttpClient { BaseAddress = new Uri(NavigationManager.BaseUri) };
+            cars = await http.GetFromJsonAsync<List<Inventory>>("api/inventory");
+            Console.WriteLine($"Fetched {cars.Count} inventories.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error fetching inventories: " + ex.Message);
+        }
+    }
+}
