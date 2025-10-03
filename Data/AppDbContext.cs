@@ -11,12 +11,14 @@ namespace MyMuscleCars.Data
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Make> Makes { get; set; }
+        public DbSet<ContactMessage> ContactMessages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>().ToTable("account");
             modelBuilder.Entity<Inventory>().ToTable("inventory");
             modelBuilder.Entity<Make>().ToTable("make");
+            modelBuilder.Entity<ContactMessage>().ToTable("contact_message");
 
             modelBuilder.Entity<Inventory>()
                 .HasOne(i => i.MakeRef)

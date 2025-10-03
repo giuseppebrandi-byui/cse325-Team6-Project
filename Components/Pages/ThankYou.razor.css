@@ -1,0 +1,146 @@
+.thank-you-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.thank-you-card {
+    background: white;
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    animation: slideUp 0.6s ease-out;
+}
+
+.success-icon {
+    margin-bottom: 30px;
+}
+
+.success-icon .material-symbols-rounded {
+    font-size: 80px;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 50%;
+    padding: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thank-you-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.thank-you-subtitle {
+    font-size: 1.3rem;
+    color: #6b7280;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.thank-you-message {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-left: 5px solid #10b981;
+}
+
+.thank-you-message p {
+    margin: 0;
+    color: #374151;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.thank-you-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.material-symbols-rounded {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;      
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .thank-you-card {
+        padding: 40px 20px;
+    }
+    
+    .thank-you-title {
+        font-size: 2.5rem;
+    }
+    
+    .thank-you-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
