@@ -3,13 +3,14 @@ using cse325_Team6_Project.Components;
 using Microsoft.EntityFrameworkCore;
 using DotNetEnv;
 using MyMuscleCars.Data;
+using MyMuscleCars.Services;
 
 Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Get connection string from environment variable (from .env)
-var connectionString = Env.GetString("DATABASE_URL") 
+var connectionString = Env.GetString("DATABASE_URL")
                        ?? builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddControllers(); //this registers controllers
@@ -18,7 +19,8 @@ builder.Services.AddControllers(); //this registers controllers
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 
-
+// Register ContactService
+builder.Services.AddScoped<IContactService, ContactService>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
