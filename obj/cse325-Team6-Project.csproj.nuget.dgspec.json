@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/cse325-Team6-Project.csproj": {}
+    "C:\\Users\\user\\cse325project\\cse325-Team6-Project\\cse325-Team6-Project.csproj": {}
   },
   "projects": {
-    "/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/cse325-Team6-Project.csproj": {
+    "C:\\Users\\user\\cse325project\\cse325-Team6-Project\\cse325-Team6-Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/cse325-Team6-Project.csproj",
+        "projectUniqueName": "C:\\Users\\user\\cse325project\\cse325-Team6-Project\\cse325-Team6-Project.csproj",
         "projectName": "cse325-Team6-Project",
-        "projectPath": "/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/cse325-Team6-Project.csproj",
-        "packagesPath": "/Users/antoniomelendez/.nuget/packages/",
-        "outputPath": "/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/",
+        "projectPath": "C:\\Users\\user\\cse325project\\cse325-Team6-Project\\cse325-Team6-Project.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\cse325project\\cse325-Team6-Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/antoniomelendez/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -52,6 +52,16 @@
               "target": "Package",
               "version": "[9.0.9, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -82,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

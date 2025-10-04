@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using MyMuscleCars.Models; // Make sure your models namespace is correct
+using MyMuscleCars.Models; 
 
 namespace MyMuscleCars.Data
 {
@@ -12,11 +12,17 @@ namespace MyMuscleCars.Data
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Make> Makes { get; set; }
 
+  
+        public DbSet<Car> Cars { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>().ToTable("account");
             modelBuilder.Entity<Inventory>().ToTable("inventory");
             modelBuilder.Entity<Make>().ToTable("make");
+
+            //  Added a  table mapping for Car
+            modelBuilder.Entity<Car>().ToTable("car");
 
             modelBuilder.Entity<Inventory>()
                 .HasOne(i => i.MakeRef)

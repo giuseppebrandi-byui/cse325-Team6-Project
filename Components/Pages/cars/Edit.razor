@@ -1,0 +1,81 @@
+@page "/cars/edit"
+@page "/cars/edit/{Id:int}"
+@using MyMuscleCars.Models
+@using Microsoft.EntityFrameworkCore
+@inject MyMuscleCars.Data.AppDbContext Db
+@inject NavigationManager Nav
+
+<h2 class="h2 section-title">Edit Car</h2>
+
+@if (Id == 0)
+{
+    <p style="color:red;">Please select a car to edit from the inventory list.</p>
+}
+else if (car == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="car" OnValidSubmit="HandleValidSubmit" class="registration-form">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            <label class="form-label">Make</label>
+            <InputText @bind-Value="car.Make" class="form-input" />
+            <ValidationMessage For="@(() => car.Make)" />
+        </div>
+        <div class="form-group">
+            <label class="form-label">Model</label>
+            <InputText @bind-Value="car.Model" class="form-input" />
+            <ValidationMessage For="@(() => car.Model)" />
+        </div>
+        <div class="form-group">
+            <label class="form-label">Year</label>
+            <InputNumber @bind-Value="car.Year" class="form-input" />
+            <ValidationMessage For="@(() => car.Year)" />
+        </div>
+        <div class="form-group">
+            <label class="form-label">Price</label>
+            <InputNumber @bind-Value="car.Price" class="form-input" />
+            <ValidationMessage For="@(() => car.Price)" />
+        </div>
+        <div class="form-group">
+            <label class="form-label">Color</label>
+            <InputText @bind-Value="car.Color" class="form-input" />
+        </div>
+        <div class="form-group">
+            <label class="form-label">Description</label>
+            <InputTextArea @bind-Value="car.Description" class="form-input message-box" />
+        </div>
+
+        <div style="display:flex; gap:8px;">
+            <button type="submit" class="registration-btn">Save</button>
+            <button type="button" class="btn" @onclick="Cancel">Cancel</button>
+        </div>
+    </EditForm>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Car? car;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id != 0)
+        {
+            car = await Db.Cars.FindAsync(Id);
+            if (car == null)
+                Nav.NavigateTo("/cars");
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        Db.Cars.Update(car!);
+        await Db.SaveChangesAsync();
+        Nav.NavigateTo("/cars");
+    }
+
+    private void Cancel() => Nav.NavigateTo("/cars");
+}
