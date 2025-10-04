@@ -23,6 +23,6 @@ namespace MyMuscleCars.Models
         public string Password { get; set; } = string.Empty;
 
         [Column("account_type")]
-        public string AccountType { get; set; } = "Client";
+        public string AccountType { get; set; } = "client";
     }
 }

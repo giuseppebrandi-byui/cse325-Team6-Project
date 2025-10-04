@@ -18,6 +18,10 @@ builder.Services.AddControllers(); //this registers controllers
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 
+builder.Services.AddHttpClient("MyMuscleCars", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5154/"); // 👈 change to match your app's URL
+});
 
 
 // Add services to the container.
