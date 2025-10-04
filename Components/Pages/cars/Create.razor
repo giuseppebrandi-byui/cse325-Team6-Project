@@ -1,60 +1,75 @@
 @page "/cars/create"
+<PageTitle>CSE Muscle Cars - Car Sales & Repair Service</PageTitle>
+
 @using MyMuscleCars.Models
 @inject MyMuscleCars.Data.AppDbContext Db
 @inject NavigationManager Nav
 
-<section class="section">
-    <div class="form-container">
-        <h2 class="section-title">Add a New Car</h2>
-        <p class="section-subtitle">Fill out the form below to add a new vehicle to your inventory.</p>
+<main>
+    <article>
+        <!-- 
+        - #CREATE SECTION
+      -->
+        <section class="section create" aria-labelledby="create-label">
+            <div class="container">
+                <p class="section-subtitle :light" id="registration-label">Fill out the form below to add a new vehicle to your inventory.</p>
+                <h2 class="h2 section-title">Add a New Car</h2>
 
-        <EditForm Model="car" OnValidSubmit="HandleValidSubmit" class="styled-form">
-            <DataAnnotationsValidator />
-            <ValidationSummary />
+                <div class="create-container">
+                    <div class="create-form-container">
+                <EditForm Model="car" OnValidSubmit="HandleValidSubmit" class="styled-form">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
 
-            <div class="form-grid">
-                <div class="form-group">
-                    <label class="form-label">Make</label>
-                    <InputText @bind-Value="car.Make" class="form-input" />
-                    <ValidationMessage For="@(() => car.Make)" />
-                </div>
+                    <div class="form-group">
+                        <label for="make" class="form-label">Make</label>
+                        <InputText id="make" @bind-Value="car.Make" class="form-input mb" />
+                        <ValidationMessage For="@(() => car.Make)" />
+                    </div>
 
-                <div class="form-group">
-                    <label class="form-label">Model</label>
-                    <InputText @bind-Value="car.Model" class="form-input" />
-                    <ValidationMessage For="@(() => car.Model)" />
-                </div>
+                    <div class="form-group">
+                        <label for="model" class="form-label">Model</label>
+                        <InputText id="model" @bind-Value="car.Model" class="form-input mb" />
+                        <ValidationMessage For="@(() => car.Model)" />
+                    </div>
 
-                <div class="form-group">
-                    <label class="form-label">Year</label>
-                    <InputNumber @bind-Value="car.Year" class="form-input" />
-                    <ValidationMessage For="@(() => car.Year)" />
-                </div>
+                    <div class="form-group">
+                        <label for="year" class="form-label">Year</label>
+                        <InputNumber id="year" @bind-Value="car.Year" class="form-input mb" />
+                        <ValidationMessage For="@(() => car.Year)" />
+                    </div>
 
-                <div class="form-group">
-                    <label class="form-label">Price</label>
-                    <InputNumber @bind-Value="car.Price" class="form-input" />
-                    <ValidationMessage For="@(() => car.Price)" />
-                </div>
+                    <div class="form-group">
+                        <label for="price" class="form-label">Price</label>
+                        <InputNumber id="price" @bind-Value="car.Price" class="form-input mb" />
+                        <ValidationMessage For="@(() => car.Price)" />
+                    </div>
 
-                <div class="form-group">
-                    <label class="form-label">Color</label>
-                    <InputText @bind-Value="car.Color" class="form-input" />
-                </div>
+                    <div class="form-group">
+                        <label for="color" class="form-label">Color</label>
+                        <InputText id="color" @bind-Value="car.Color" class="form-input mb" />
+                    </div>
 
-                <div class="form-group form-full">
-                    <label class="form-label">Description</label>
-                    <InputTextArea @bind-Value="car.Description" class="form-input message-box" />
-                </div>
+                    <div class="form-group">
+                        <label for="description" class="form-label">Description</label>
+                        <InputTextArea id="description" @bind-Value="car.Description" class="form-input mb message-box" />
+                    </div>
+                
+
+                    <div class="form-actions">
+                        <button type="submit" class="save-btn"><i class="ri-save-line"></i> Save Car <span class="material-symbols-rounded">arrow_forward</span></button>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" @onclick="Cancel">Cancel</button>
+                    </div>
+
+                </EditForm>
             </div>
-
-            <div class="form-actions">
-                <button type="submit" class="registration-btn save-btn">💾 Save Car <span class="material-symbols-rounded">arrow_forward</span></button>
-                <button type="button" class="btn cancel-btn" @onclick="Cancel">Cancel</button>
             </div>
-        </EditForm>
-    </div>
-</section>
+            </div>
+        </section>
+    </article>
+</main>
 
 @code {
     private Car car = new();
