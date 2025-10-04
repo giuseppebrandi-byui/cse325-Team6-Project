@@ -826,13 +826,19 @@ body {
   #REGISTRATION AND LOGIN FORMS
 \*-----------------------------------*/
 .registration,
-.login {
+.login,
+.create {
   padding-block: 120px 80px;
+}
+
+.registration,
+.login {
   background-color: var(--light-gray);
 }
 
 .registration-container,
-.login-container {
+.login-container,
+.create-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 60px;
@@ -843,7 +849,8 @@ body {
   max-width: 1000px;
 }
 
-.login-container {
+.login-container,
+.create-container {
   max-width: 600px;
 }
 
@@ -852,7 +859,8 @@ body {
 }
 
 .registration-form-container,
-.login-form-container {
+.login-form-container,
+.create-form-container {
   background-color: var(--white);
   padding: 40px;
   border-radius: 20px;
@@ -860,7 +868,8 @@ body {
 }
 
 .registration-form,
-.login-form {
+.login-form,
+.create-form {
   display: grid;
   gap: 24px;
 }
@@ -896,6 +905,10 @@ body {
 
 .form-input::placeholder {
   color: var(--cadet-blue-creyola);
+}
+
+.form-input.mb {
+  margin-block-end: 20px;
 }
 
 .registration-btn,
@@ -1338,72 +1351,9 @@ body {
 
 
 /* === CRUD === */
-.form-container {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: #d3d3d3;
-    background: #fff;
-    padding: 32px 40px;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
 
-.section-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 8px;
-}
-
-.section-subtitle {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 24px;
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.form-full {
-    grid-column: 1 / -1;
-}
-
-.form-label {
-    font-weight: 500;
-    color: #34495e;
-    margin-bottom: 6px;
-    display: block;
-}
-
-.form-input,
-.message-box {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.form-input:focus,
-.message-box:focus {
-  outline: none;
-  border-color: var(--international-orange-engineering);
-  box-shadow: 0 0 0 3px hsla(1, 91%, 37%, 0.1);
-}
-
-.form-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    margin-top: 28px;
-}
-
-.registration-btn.save-btn {
-  background-color: var(--international-orange-engineering);
+.save-btn,
+.cancel-btn {
   color: var(--white);
   font-family: var(--ff-chakra-petch);
   font-weight: var(--fw-600);
@@ -1419,24 +1369,25 @@ body {
   transition: var(--transition);
   width: 100%;
   cursor: pointer;
+  margin-block-start: 20px;
 }
 
-.registration-btn.save-btn:hover {
+.save-btn {
+  background-color: var(--international-orange-engineering);
+}
+
+.cancel-btn {
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
+.save-btn:hover {
   transform: translateY(-5px);
   background-color: var(--oxford-blue-3);
 }
 
-.btn.cancel-btn {
-    background-color: #f5f5f5;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.btn.cancel-btn:hover {
-    background-color: #e6e6e6;
+.cancel-btn:hover {
+  background-color: #e6e6e6;
 }
 
 
