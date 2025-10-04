@@ -1,0 +1,60 @@
+@page "/cars/delete"
+@page "/cars/delete/{Id:int}"
+@using MyMuscleCars.Models
+@using Microsoft.EntityFrameworkCore
+@inject MyMuscleCars.Data.AppDbContext Db
+@inject NavigationManager Nav
+
+<h2 class="h2 section-title">Delete Car</h2>
+
+@if (Id == 0)
+{
+    <p style="color:red;">Please select a car to delete from the inventory list.</p>
+}
+else if (car == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="car-card">
+        <div class="car-content">
+            <div class="car-make">@car.Make</div>
+            <div class="car-title">@($"{car.Model} — {car.Year}")</div>
+            <div class="car-price">£@car.Price</div>
+            <p>@car.Description</p>
+
+            <div style="margin-top:16px;">
+                <button class="btn" @onclick="ConfirmDelete">Yes, delete</button>
+                <button class="btn" @onclick="Cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Car? car;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id != 0)
+        {
+            car = await Db.Cars.FindAsync(Id);
+            if (car == null)
+                Nav.NavigateTo("/cars");
+        }
+    }
+
+    private async Task ConfirmDelete()
+    {
+        if (car != null)
+        {
+            Db.Cars.Remove(car);
+            await Db.SaveChangesAsync();
+        }
+        Nav.NavigateTo("/cars");
+    }
+
+    private void Cancel() => Nav.NavigateTo("/cars");
+}

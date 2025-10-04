@@ -1,52 +1,71 @@
-
 using cse325_Team6_Project.Components;
 using Microsoft.EntityFrameworkCore;
-using DotNetEnv;
 using MyMuscleCars.Data;
-
-Env.Load();
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Get connection string from environment variable (from .env)
-var connectionString = Env.GetString("DATABASE_URL") 
-                       ?? builder.Configuration.GetConnectionString("DefaultConnection");
+// First we  Read connection string from appsettings.json
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+                       ?? Environment.GetEnvironmentVariable("DEFAULT_CONNECTION");
 
-builder.Services.AddControllers(); //this registers controllers
+// then Register controllers
+builder.Services.AddControllers();
 
-// Register EF Core DbContext with PostgreSQL
+// We need to Register EF Core DbContext with Postgres + retry policy
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseNpgsql(connectionString, npgsqlOptions =>
+        npgsqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5,
+            maxRetryDelay: TimeSpan.FromSeconds(10),
+            errorCodesToAdd: null
+        )
+    )
+);
 
-
-
-// Add services to the container.
+// Adding Razor components
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+// Ensuring database migrations are applied
+using (var scope = app.Services.CreateScope())
 {
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+    try
+    {
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        db.Database.Migrate(); // applies migrations at startup
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "An error occurred while applying migrations.");
+    }
 }
 
+// Environment-specific config
+if (!app.Environment.IsDevelopment())
+{
+    // Production
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
+    app.UseHsts();
+    app.UseHttpsRedirection(); // only in prod
+}
+else
+{
+    // Development
+    app.UseDeveloperExceptionPage();
+    // Do NOT force HTTPS locally
+}
 
-
-
-app.UseHttpsRedirection();
-
-
+// Middlewares
 app.UseAntiforgery();
-
 app.MapStaticAssets();
+app.MapControllers();
 
-app.MapControllers(); //this maps controller routes
-
+//  Razor pages
 app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+   .AddInteractiveServerRenderMode();
 
 app.Run();

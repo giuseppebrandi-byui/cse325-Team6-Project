@@ -1,0 +1,72 @@
+@page "/cars"
+@using MyMuscleCars.Models
+@using Microsoft.EntityFrameworkCore
+@inject MyMuscleCars.Data.AppDbContext Db
+@inject NavigationManager Nav
+
+<section class="section" style="background-color: #d3d3d3;">
+    <h2 class="section-title">Our Car Inventory</h2>
+    <p class="section-subtitle">Explore and manage all cars in the collection.</p>
+
+    <div style="display: flex; gap: 16px; margin-bottom: 16px;"> 
+        <NavLink class="btn" href="/cars/create"> 
+            Add Car <span class="material-symbols-rounded">arrow_forward</span>
+        </NavLink> 
+    </div>
+
+    @if (isLoading)
+    {
+        <div class="cars-grid">
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="car-card skeleton-card">
+                    <div class="skeleton skeleton-img"></div>
+                    <div class="skeleton skeleton-text" style="width:70%"></div>
+                    <div class="skeleton skeleton-text" style="width:50%"></div>
+                    <div class="skeleton skeleton-text" style="width:90%"></div>
+                </div>
+            }
+        </div>
+    }
+    else if (cars == null || !cars.Any())
+    {
+        <p>No cars found. Click <b>"Add Car"</b> to create one.</p>
+    }
+    else
+    {
+        <div class="cars-grid">
+            @foreach (var car in cars)
+            {
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="images/default-car.jpg" alt="@car.Make @car.Model" />
+                    </div>
+
+                    <div class="car-content">
+                        <h3 class="car-make">@car.Make</h3>
+                        <h4 class="car-title">@($"{car.Model} — {car.Year}")</h4>
+                        <p class="car-price">£@car.Price</p>
+                        <p class="car-description">@car.Description</p>
+
+                        <div class="btn-group">
+                            <button class="btn small-btn" @onclick="@(() => Nav.NavigateTo($"/cars/edit/{car.Id}"))">Edit</button>
+                            <button class="btn small-btn danger" @onclick="@(() => Nav.NavigateTo($"/cars/delete/{car.Id}"))">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</section>
+
+@code {
+    private List<Car> cars = new();
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(300); 
+        cars = await Db.Cars.AsNoTracking().ToListAsync();
+        isLoading = false;
+    }
+}
