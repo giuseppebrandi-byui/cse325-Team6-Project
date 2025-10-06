@@ -1,147 +1,120 @@
 @page "/register"
 @using MyMuscleCars.Models
 @using System.ComponentModel.DataAnnotations
+@using System.Text.Json.Serialization;
+@inject ILogger<Register> Logger
 @inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
 
-
-<EditForm Model="@registrationModel"
-          OnValidSubmit="HandleSubmit"
-          OnInvalidSubmit="HandleInvalidSubmit"
-          FormName="RegisterForm">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-<InputText @bind-Value="registrationModel.FirstName" @bind-Value:event="oninput" placeholder="First Name" />
-<InputText @bind-Value="registrationModel.LastName" @bind-Value:event="oninput" placeholder="Last Name" />
-<InputText @bind-Value="registrationModel.Email" @bind-Value:event="oninput" placeholder="Email" />
-<InputText @bind-Value="registrationModel.Password" @bind-Value:event="oninput" placeholder="Password" type="password" />
-<InputText @bind-Value="registrationModel.ConfirmPassword" @bind-Value:event="oninput" placeholder="Confirm Password" type="password" />
-
-
-    <!-- submit button does NOT need a form="" attribute -->
-    <button type="submit">Submit</button>
-</EditForm>
-
-@code {
-    private RegistrationModel registrationModel = new();
-
-    private void HandleSubmit()
-    {
-        Console.WriteLine("✅ HandleSubmit triggered");
-    }
-
-    private void HandleInvalidSubmit(EditContext ctx)
-    {
-        Console.WriteLine("❌ Invalid submit triggered: " + string.Join(", ", ctx.GetValidationMessages()));
-    }
-}
-
-
-
-
-@* <PageTitle>CSE Muscle Cars - Register</PageTitle>
+<PageTitle>CSE Muscle Cars - Register</PageTitle>
 
 <main>
     <article>
         <section class="section registration" aria-labelledby="registration-label">
             <div class="container">
-
                 <p class="section-subtitle :light" id="registration-label">Join Our Community</p>
                 <h2 class="h2 section-title">Create Your Account</h2>
 
                 <div class="registration-container">
                     <div class="registration-form-container">
+                        <EditForm Model="@RegisterModel"
+                                  OnValidSubmit="HandleSubmit"
+                                  OnInvalidSubmit="HandleInvalidSubmit"
+                                  FormName="RegisterForm"
+                                  class="registration-form">
+                            <DataAnnotationsValidator />
 
-                <EditForm Model="@registrationModel" 
-                        OnValidSubmit="HandleSubmit" 
-                        OnInvalidSubmit="HandleInvalidSubmit"
-                        FormName="RegisterForm" 
-                        class="registration-form">
+                            <!-- First Name -->
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <InputText id="firstName"
+                                           class="form-input"
+                                           @bind-Value="RegisterModel!.FirstName"
+                                           @bind-Value:event="oninput"
+                                           placeholder="Enter your first name" />
+                                <ValidationMessage For="@(() => RegisterModel!.FirstName)" />
+                            </div>
 
-                    <DataAnnotationsValidator />
-                    <ValidationSummary />
+                            <!-- Last Name -->
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <InputText id="lastName"
+                                           class="form-input"
+                                           @bind-Value="RegisterModel!.LastName"
+                                           @bind-Value:event="oninput"
+                                           placeholder="Enter your last name" />
+                                <ValidationMessage For="@(() => RegisterModel!.LastName)" />
+                            </div>
 
-                    <!-- First Name -->
-                    <div class="form-group">
-                        <label for="firstName" class="form-label">First Name</label>
-                        <InputText id="firstName" 
-                                class="form-input" 
-                                @bind-Value="registrationModel.FirstName" 
-                                placeholder="Enter your first name" />
-                        <ValidationMessage For="@(() => registrationModel.FirstName)" />
-                    </div>
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <InputText id="email"
+                                           class="form-input"
+                                           @bind-Value="RegisterModel!.Email"
+                                           @bind-Value:event="oninput"
+                                           placeholder="Enter your email" />
+                                <ValidationMessage For="@(() => RegisterModel!.Email)" />
+                            </div>
 
-                    <!-- Last Name -->
-                    <div class="form-group">
-                        <label for="lastName" class="form-label">Last Name</label>
-                        <InputText id="lastName" 
-                                class="form-input" 
-                                @bind-Value="registrationModel.LastName" 
-                                placeholder="Enter your last name" />
-                        <ValidationMessage For="@(() => registrationModel.LastName)" />
-                    </div>
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label for="password" class="form-label">Password</label>
+                                <InputText id="password"
+                                           class="form-input"
+                                           @bind-Value="RegisterModel!.Password"
+                                           @bind-Value:event="oninput"
+                                           placeholder="Create a secure password"
+                                           type="password" />
+                                <ValidationMessage For="@(() => RegisterModel!.Password)" />
+                            </div>
 
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address</label>
-                        <InputText id="email" 
-                                class="form-input" 
-                                @bind-Value="registrationModel.Email" 
-                                placeholder="Enter your email" />
-                        <ValidationMessage For="@(() => registrationModel.Email)" />
-                    </div>
+                            <!-- Confirm Password -->
+                            <div class="form-group">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <InputText id="confirmPassword"
+                                           class="form-input"
+                                           @bind-Value="RegisterModel!.ConfirmPassword"
+                                           @bind-Value:event="oninput"
+                                           placeholder="Confirm your password"
+                                           type="password" />
+                                <ValidationMessage For="@(() => RegisterModel!.ConfirmPassword)" />
+                            </div>
 
-                    <!-- Password -->
-                    <div class="form-group">
-                        <label for="password" class="form-label">Password</label>
-                        <InputText id="password" 
-                                class="form-input" 
-                                @bind-Value="registrationModel.Password" 
-                                placeholder="Create a secure password" 
-                                type="password" />
-                        <ValidationMessage For="@(() => registrationModel.Password)" />
-                    </div>
+                            <!-- Error / Success Messages -->
+                            @if (!string.IsNullOrEmpty(errorMessage))
+                            {
+                                <div class="error-message">
+                                    <i class="ri-error-warning-line"></i> @errorMessage
+                                </div>
+                            }
 
-                    <!-- Confirm Password -->
-                    <div class="form-group">
-                        <label for="confirmPassword" class="form-label">Confirm Password</label>
-                        <InputText id="confirmPassword" 
-                                class="form-input" 
-                                @bind-Value="registrationModel.ConfirmPassword" 
-                                placeholder="Confirm your password" 
-                                type="password" />
-                        <ValidationMessage For="@(() => registrationModel.ConfirmPassword)" />
-                    </div>
+                            @if (!string.IsNullOrEmpty(successMessage))
+                            {
+                                <div class="success-message">
+                                    <i class="ri-check-line"></i> @successMessage
+                                </div>
+                            }
 
-                    <!-- Error / Success Messages -->
-                    @if (!string.IsNullOrEmpty(errorMessage))
-                    {
-                        <div class="error-message">
-                            <i class="ri-error-warning-line"></i> @errorMessage
-                        </div>
-                    }
-
-                    @if (!string.IsNullOrEmpty(successMessage))
-                    {
-                        <div class="success-message">
-                            <i class="ri-check-line"></i> @successMessage
-                        </div>
-                    }
-
-                    <!-- Submit Button -->
-                    <button type="submit" class="btn registration-btn">
-
-                            <span>Create Account</span>
-                            <span class="material-symbols-rounded">arrow_forward</span>
-
-                    </button>
-                </EditForm>
-
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn registration-btn" disabled="@isLoading">
+                                @if (isLoading)
+                                {
+                                    <span class="loading-spinner"></span>
+                                    <span>Creating Account...</span>
+                                }
+                                else
+                                {
+                                    <span>Create Account</span>
+                                    <span class="material-symbols-rounded">arrow_forward</span>
+                                } 
+                            </button>
+                        </EditForm>
 
                         <div class="registration-footer">
                             <p>Already have an account? <a href="/login" class="btn-link">Sign In</a></p>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -150,54 +123,124 @@
 </main>
 
 @code {
-    private RegistrationModel registrationModel = new RegistrationModel();
+    [SupplyParameterFromForm]
+    private RegistrationModel? RegisterModel { get; set; }
 
+    private bool isLoading = false;
     private string errorMessage = string.Empty;
     private string successMessage = string.Empty;
 
-    private void HandleInvalidSubmit(EditContext context)
+    private string? _pendingToken = null;
+    private bool _browserRendered = false;
+
+    protected override void OnInitialized()
     {
-        Console.WriteLine("❌ Invalid submit triggered");
-        foreach (var error in context.GetValidationMessages())
-        {
-            Console.WriteLine("Validation error: " + error);
-        }
+        Logger.LogInformation("🔹 Register component initialized");
+        RegisterModel ??= new();
     }
 
-    private async Task HandleSubmit()
-{
-    Console.WriteLine("✅ HandleSubmit triggered");
-    errorMessage = string.Empty;
-    successMessage = string.Empty;
-
-    try
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (registrationModel.Password != registrationModel.ConfirmPassword)
+        Logger.LogInformation("🔹 OnAfterRenderAsync triggered. firstRender={FirstRender}, pendingToken={Token}", firstRender, _pendingToken);
+
+        if (firstRender)
         {
-            errorMessage = "Passwords do not match.";
-            return;
+            _browserRendered = true;
+            Logger.LogInformation("🔹 First render complete, browserRendered set to true");
         }
 
-        var client = HttpClientFactory.CreateClient("ServerAPI");
-
-        var response = await client.PostAsJsonAsync("api/register", registrationModel);
-
-        if (response.IsSuccessStatusCode)
+        if (_browserRendered && !string.IsNullOrEmpty(_pendingToken))
         {
-            successMessage = "Account created successfully! You can now log in.";
-            registrationModel = new RegistrationModel();
+            try
+            {
+                Logger.LogInformation("💾 Attempting to store JWT in localStorage: {Token}", _pendingToken);
+                await JS.InvokeVoidAsync("localStorage.setItem", "jwtToken", _pendingToken);
+                Logger.LogInformation("✅ JWT token stored successfully in localStorage");
+
+                _pendingToken = null;
+
+                Logger.LogInformation("➡ Redirecting to homepage...");
+                Navigation.NavigateTo("/");
+            }
+            catch (JSException jsEx)
+            {
+                Logger.LogError("❌ JSException while storing JWT: {Message}", jsEx.Message);
+                errorMessage = $"JSException storing token: {jsEx.Message}";
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("❌ Exception while storing JWT: {Message}", ex.Message);
+                errorMessage = $"Exception storing token: {ex.Message}";
+            }
+
+            StateHasChanged();
         }
         else
         {
-            var error = await response.Content.ReadAsStringAsync();
-            errorMessage = $"Error: {error}";
+            Logger.LogInformation("⏳ Skipping token storage. _browserRendered={BrowserRendered}, _pendingToken={Token}", _browserRendered, _pendingToken);
         }
     }
-    catch (Exception ex)
+
+    private void HandleInvalidSubmit(EditContext ctx)
     {
-        errorMessage = $"Unexpected error: {ex.Message}";
+        errorMessage = "Please fix the highlighted errors.";
+        Logger.LogWarning("❌ Invalid submit triggered: {Errors}", string.Join(", ", ctx.GetValidationMessages()));
     }
 
-}
+    private async Task HandleSubmit()
+    {
+        Logger.LogInformation("📝 HandleSubmit triggered");
+        errorMessage = string.Empty;
+        successMessage = string.Empty;
+        isLoading = true;
 
-} *@
+        try
+        {
+            if (RegisterModel?.Password != RegisterModel?.ConfirmPassword)
+            {
+                errorMessage = "Passwords do not match.";
+                Logger.LogWarning("❌ Password mismatch");
+                return;
+            }
+
+            var client = HttpClientFactory.CreateClient();
+            Logger.LogInformation("📡 Sending POST request to /api/register");
+            var response = await client.PostAsJsonAsync("http://localhost:5154/api/register", RegisterModel);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<RegisterResult>();
+                successMessage = "Account created successfully! Redirecting...";
+                Logger.LogInformation("✅ Received response from API: {Token}", result?.Token);
+
+                _pendingToken = result?.Token;
+                StateHasChanged(); // Trigger OnAfterRenderAsync
+                Logger.LogInformation("⏳ Triggered StateHasChanged to store JWT in OnAfterRenderAsync");
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                errorMessage = $"Server error: {error}";
+                Logger.LogError("❌ Server error: {Error}", error);
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+            Logger.LogError("❌ Exception in HandleSubmit: {Message}", ex.Message);
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    public class RegisterResult
+    {
+        [JsonPropertyName("token")]
+        public string Token { get; set; } = string.Empty;
+
+        [JsonPropertyName("user")]
+        public string User { get; set; } = string.Empty;
+    }
+}

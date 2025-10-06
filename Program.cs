@@ -2,6 +2,10 @@ using cse325_Team6_Project.Components;
 using Microsoft.EntityFrameworkCore;
 using MyMuscleCars.Data;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +33,27 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         )
     )
 );
+// ✅ Add JWT Authentication
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+        )
+    };
+});
 
 // Adding Razor components
 builder.Services.AddRazorComponents()
@@ -69,6 +94,8 @@ else
 // Middlewares
 app.UseAntiforgery();
 app.MapStaticAssets();
+app.UseAuthentication();  
+app.UseAuthorization();
 app.MapControllers();
 
 //  Razor pages
