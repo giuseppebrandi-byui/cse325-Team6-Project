@@ -12,6 +12,13 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // then Register controllers
 builder.Services.AddControllers();
 
+builder.Services.AddHttpClient("ServerAPI", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5154/"); // your backend API base URL
+});
+
+
+
 // We need to Register EF Core DbContext with Postgres + retry policy
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString, npgsqlOptions =>
