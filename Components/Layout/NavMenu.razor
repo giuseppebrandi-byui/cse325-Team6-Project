@@ -31,7 +31,9 @@
             <a href="#" class="nav__link" @onclick="ToggleAccountMenu" @onclick:preventDefault="true">My Account ▾</a>
             <ul class="nav__submenu @(showAccountMenu ? "visible" : "")">
               <li><a href="/account" class="nav__link">Profile</a></li>
-              <li><a href="#" class="nav__link" @onclick="OnLogoutClicked" @onclick:preventDefault="true">Logout</a></li>
+              <li>
+                <a href="/api/auth/logout?redirect=/" class="nav__link" @onclick="OnLogoutClicked" @onclick:preventDefault="true">Logout</a>
+              </li>
             </ul>
           </li>
         </Authorized>
@@ -56,10 +58,22 @@
     {
       try
       {
-        // call JS helper to POST /api/auth/logout (credentials included)
-        var result = await JS.InvokeAsync<object>("logout", "/api/auth/logout");
-        // force navigation to home so auth state refreshes
-        Nav.NavigateTo("/", forceLoad: true);
+        // Perform a full navigation to the server logout endpoint so the browser
+        // receives the Set-Cookie on the navigation response (more reliable than
+        // expecting Set-Cookie from a fetch response in all environments).
+        var ts = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+        // redirect param instructs server where to send the browser after cookie is cleared
+        var redirectTarget = "/?t=" + ts;
+        var logoutUrl = "/api/auth/logout?redirect=" + Uri.EscapeDataString(redirectTarget);
+
+        try
+        {
+          await JS.InvokeVoidAsync("redirect", logoutUrl);
+        }
+        catch
+        {
+          Nav.NavigateTo(logoutUrl, forceLoad: true);
+        }
       }
       catch
       {

@@ -53,4 +53,11 @@ window.logout = async function (url) {
   return { status: res.status, body: text };
 };
 
+// Simple redirect helper used by Blazor after logout to ensure a full browser load
+window.redirect = function (url) {
+  console.debug('[redirect] to', url);
+  // use replace to avoid creating a history entry
+  window.location.replace(url);
+};
+
 // (debug helper removed)

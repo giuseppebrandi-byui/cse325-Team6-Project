@@ -80,5 +80,32 @@ namespace cse325_Team6_Project.Controllers
                 return StatusCode(500, "Failed to logout");
             }
         }
+
+        [HttpGet("logout")]
+        public IActionResult LogoutGet([FromQuery] string? redirect = "/")
+        {
+            _logger.LogInformation("[AuthController] logout (GET) requested, redirect={Redirect}", redirect);
+            try
+            {
+                var cookieOptions = new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = Request.IsHttps,
+                    Expires = DateTimeOffset.UtcNow.AddDays(-1),
+                    Path = "/",
+                };
+
+                Response.Cookies.Append("jwtToken", string.Empty, cookieOptions);
+                _logger.LogInformation("[AuthController] cleared jwtToken cookie (GET)");
+
+                // Redirect the browser to the provided redirect location (default: home)
+                return Redirect(redirect ?? "/");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "[AuthController] error during logout (GET)");
+                return StatusCode(500, "Failed to logout");
+            }
+        }
     }
 }
