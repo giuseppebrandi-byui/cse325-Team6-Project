@@ -38,7 +38,7 @@ namespace MyMuscleCars.Controllers
                 return Unauthorized(new { message = "Invalid email or password." });
 
             // ✅ Hash entered password to compare
-            var hashedPassword = HashPassword(login.Password);
+            var hashedPassword = MyMuscleCars.Services.PasswordHasher.HashPassword(login.Password);
 
             if (existingAccount.Password != hashedPassword)
                 return Unauthorized(new { message = "Invalid email or password." });
@@ -70,14 +70,7 @@ namespace MyMuscleCars.Controllers
             });
         }
 
-        // 🔐 Secure password hashing (SHA-256)
-        private static string HashPassword(string password)
-        {
-            using var sha256 = SHA256.Create();
-            var bytes = Encoding.UTF8.GetBytes(password);
-            var hash = sha256.ComputeHash(bytes);
-            return Convert.ToBase64String(hash);
-        }
+        // Password hashing now centralized in Services/PasswordHasher
 
         private string GenerateJwtToken(Account account)
         {

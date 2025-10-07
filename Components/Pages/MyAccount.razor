@@ -64,6 +64,21 @@
                                 <div class="account-footer">
                                     <p><a href="/account/edit" class="btn-link">Edit Profile</a></p>
                                 </div>
+                                @if (profile.AccountType == "Admin")
+                                {
+                                    <div class="account-footer">
+                                        <p><a href="/cars" class="btn-link">Modify Car Inventory</a></p>
+                                    </div>
+                                }
+                                @if (profile.AccountType == "Admin")
+                                {
+                                    <div class="account-footer">
+                                        <p><a href="#" class="btn-link">Contact Messages</a></p>
+                                    </div>
+                                }
+
+
+
                             }
                             else
                             {
