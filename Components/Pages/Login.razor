@@ -1,4 +1,5 @@
 @page "/login"
+@using Microsoft.AspNetCore.Components.Authorization
 @rendermode InteractiveServer
 @using MyMuscleCars.Models
 @using System.ComponentModel.DataAnnotations
@@ -6,6 +7,7 @@
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager Navigation
 @inject IJSRuntime JS
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <PageTitle>CSE Muscle Cars - Login</PageTitle>
 
@@ -104,6 +106,17 @@
     private bool isLoading = false;
     private string errorMessage = string.Empty;
     private string successMessage = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var auth = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        if (auth.User?.Identity?.IsAuthenticated == true)
+        {
+            // already logged in, redirect to home
+            Navigation.NavigateTo("/", forceLoad: true);
+            return;
+        }
+    }
 
     private void HandleInvalidSubmit(EditContext ctx)
     {

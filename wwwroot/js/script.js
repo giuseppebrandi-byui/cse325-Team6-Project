@@ -41,4 +41,16 @@ window.getJson = async function (url) {
   return { status: res.status, body: text };
 };
 
+// Logout helper: tells the server to clear auth cookie, returns { status, body }
+window.logout = async function (url) {
+  console.debug('[logout] POST', url);
+  const res = await fetch(url, {
+    method: 'POST',
+    credentials: 'include',
+  });
+  const text = await res.text();
+  console.debug('[logout] response', { status: res.status, body: text });
+  return { status: res.status, body: text };
+};
+
 // (debug helper removed)

@@ -22,5 +22,17 @@ namespace MyMuscleCars.Services
                 return null;
             }
         }
+
+        public static async Task<BrowserPostResult?> GetJson(IJSRuntime js, string url)
+        {
+            try
+            {
+                return await js.InvokeAsync<BrowserPostResult>("getJson", url);
+            }
+            catch (JSException)
+            {
+                return null;
+            }
+        }
     }
 }

@@ -87,6 +87,10 @@ namespace MyMuscleCars.Controllers
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, account.Email),
+                new Claim(ClaimTypes.Email, account.Email),
+                new Claim("email", account.Email),
+                new Claim(ClaimTypes.Name, string.IsNullOrEmpty(account.FirstName) && string.IsNullOrEmpty(account.LastName) ? account.Email : (account.FirstName + " " + account.LastName)),
+                new Claim(ClaimTypes.NameIdentifier, account.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 

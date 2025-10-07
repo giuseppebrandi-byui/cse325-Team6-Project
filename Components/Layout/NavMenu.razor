@@ -16,6 +16,7 @@
   <!-- NAV MENU -->
   <nav class="nav__menu" id="nav-menu">
   @inject NavigationManager Nav
+  @inject IJSRuntime JS
 
     <ul class="nav__list">
       <li><a href="/" class="nav__link">Home</a></li>
@@ -26,7 +27,13 @@
 
       <AuthorizeView>
         <Authorized>
-          <li><a href="/account" class="nav__link">My Account</a></li>
+          <li class="nav__item nav__account">
+            <a href="#" class="nav__link" @onclick="ToggleAccountMenu" @onclick:preventDefault="true">My Account ▾</a>
+            <ul class="nav__submenu @(showAccountMenu ? "visible" : "")">
+              <li><a href="/account" class="nav__link">Profile</a></li>
+              <li><a href="#" class="nav__link" @onclick="OnLogoutClicked" @onclick:preventDefault="true">Logout</a></li>
+            </ul>
+          </li>
         </Authorized>
         <NotAuthorized>
           <li><a href="/login" class="nav__link">Login</a></li>
@@ -36,3 +43,28 @@
 
   </nav>
 </nav>
+
+  @code {
+    private bool showAccountMenu = false;
+
+    private void ToggleAccountMenu()
+    {
+      showAccountMenu = !showAccountMenu;
+    }
+
+    private async Task OnLogoutClicked()
+    {
+      try
+      {
+        // call JS helper to POST /api/auth/logout (credentials included)
+        var result = await JS.InvokeAsync<object>("logout", "/api/auth/logout");
+        // force navigation to home so auth state refreshes
+        Nav.NavigateTo("/", forceLoad: true);
+      }
+      catch
+      {
+        // best-effort: still navigate home
+        Nav.NavigateTo("/", forceLoad: true);
+      }
+    }
+  }

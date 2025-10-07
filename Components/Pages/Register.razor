@@ -11,15 +11,20 @@
 
 <PageTitle>CSE Muscle Cars - Register</PageTitle>
 
-<main>
+  <main>
     <article>
-        <section class="section registration" aria-labelledby="registration-label">
-            <div class="container">
-                <p class="section-subtitle :light" id="registration-label">Join Our Community</p>
-                <h2 class="h2 section-title">Create Your Account</h2>
+      <!-- 
+        - #REGISTRATION SECTION
+      -->
+      <section class="section registration" aria-labelledby="registration-label">
+        <div class="container">
 
-                <div class="registration-container">
-                    <div class="registration-form-container">
+          <p class="section-subtitle :light" id="registration-label">Join Our Community</p>
+
+          <h2 class="h2 section-title">Create Your Account</h2>
+
+          <div class="registration-container">
+            <div class="registration-form-container">
                         <EditForm Model="@RegisterModel"
                                   OnValidSubmit="HandleSubmit"
                                   OnInvalidSubmit="HandleInvalidSubmit"
@@ -112,12 +117,48 @@
                         <div class="registration-footer">
                             <p>Already have an account? <a href="/login" class="btn-link">Sign In</a></p>
                         </div>
-                    </div>
-                </div>
+                        </div>
+
+                            <div class="registration-info">
+              <div class="info-card">
+                <figure class="info-icon">
+                  <img src="images/services-1.png" width="80" height="80" loading="lazy" alt="Car Purchase">
+                </figure>
+                <h3 class="h3 info-title">Purchase Cars</h3>
+                <p class="info-text">
+                  Browse and purchase from our collection of premium muscle cars including Chevrolet, Ford, and Dodge
+                  models.
+                </p>
+              </div>
+
+              <div class="info-card">
+                <figure class="info-icon">
+                  <img src="images/services-2.png" width="80" height="80" loading="lazy" alt="Repair Services">
+                </figure>
+                <h3 class="h3 info-title">Repair Services</h3>
+                <p class="info-text">
+                  Access our professional repair and maintenance services with expert mechanics and engineers.
+                </p>
+              </div>
+
+              <div class="info-card">
+                <figure class="info-icon">
+                  <img src="images/services-3.png" width="80" height="80" loading="lazy" alt="Warranty">
+                </figure>
+                <h3 class="h3 info-title">12-Month Warranty</h3>
+                <p class="info-text">
+                  All our cars come with a comprehensive 12-month warranty for your peace of mind.
+                </p>
+              </div>
             </div>
-        </section>
+
+          </div>
+
+        </div>
+      </section>
+
     </article>
-</main>
+  </main>
 
 @code {
     [SupplyParameterFromForm]
