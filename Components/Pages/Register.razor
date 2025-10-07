@@ -188,8 +188,7 @@
             }
 
             Logger.LogInformation("📡 Sending POST request to /api/register via browser fetch (to allow Set-Cookie)");
-            // Use browser fetch (via JS) with credentials included so the server's Set-Cookie is applied to the browser.
-            var jsResult = await JS.InvokeAsync<BrowserPostResult>("postJson", "/api/register", RegisterModel);
+            var jsResult = await MyMuscleCars.Services.JsInteropHelpers.PostJson(JS, "/api/register", RegisterModel!);
 
             if (jsResult?.Status == 200)
             {

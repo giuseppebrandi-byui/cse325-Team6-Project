@@ -1,4 +1,7 @@
-﻿<nav class="nav container">
+﻿@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+
+<nav class="nav container">
   <div class="nav__data">
     <a href="" class="nav__logo">
       <img src="images/logo.png" width="128" height="63" alt="cse muscle cars home">
@@ -12,13 +15,24 @@
 
   <!-- NAV MENU -->
   <nav class="nav__menu" id="nav-menu">
+  @inject NavigationManager Nav
+
     <ul class="nav__list">
       <li><a href="/" class="nav__link">Home</a></li>
       <li><a href="/about" class="nav__link">About</a></li>
       <li><a href="/vehicles" class="nav__link">Vehicles</a></li>
       <li><a href="/services" class="nav__link">Services</a></li>
       <li><a href="/contact" class="nav__link">Contact</a></li>
-      <li><a href="/login" class="nav__link">Login</a></li>
+
+      <AuthorizeView>
+        <Authorized>
+          <li><a href="/account" class="nav__link">My Account</a></li>
+        </Authorized>
+        <NotAuthorized>
+          <li><a href="/login" class="nav__link">Login</a></li>
+        </NotAuthorized>
+      </AuthorizeView>
     </ul>
+
   </nav>
 </nav>

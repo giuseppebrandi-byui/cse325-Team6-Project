@@ -71,6 +71,12 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+// Provide cascading authentication state to Blazor components
+builder.Services.AddCascadingAuthenticationState();
+
+// Register client-side auth helper
+// AuthService removed in favor of built-in AuthenticationStateProvider
+
 var app = builder.Build();
 
 // Ensuring database migrations are applied
