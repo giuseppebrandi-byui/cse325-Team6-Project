@@ -34,7 +34,7 @@ window.getJson = async function (url) {
   console.debug('[getJson] GET', url);
   const res = await fetch(url, {
     method: 'GET',
-    credentials: 'include'
+    credentials: 'include',
   });
   const text = await res.text();
   console.debug('[getJson] response', { status: res.status, body: text });
