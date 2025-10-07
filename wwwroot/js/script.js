@@ -14,3 +14,15 @@ const showMenu = (toggleId, navId) => {
 }
 
 showMenu('nav-toggle', 'nav-menu');
+
+// Posts JSON using the browser fetch API and returns an object { status, body }
+window.postJson = async function (url, data) {
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    body: JSON.stringify(data)
+  });
+  const text = await res.text();
+  return { status: res.status, body: text };
+};

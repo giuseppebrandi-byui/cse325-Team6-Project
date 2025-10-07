@@ -18,7 +18,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddHttpClient("ServerAPI", client =>
 {
-    client.BaseAddress = new Uri("http://localhost:5154/"); // your backend API base URL
+    client.BaseAddress = new Uri("Database_Host"); // your backend API base URL
 });
 
 
@@ -53,9 +53,21 @@ builder.Services.AddAuthentication(options =>
             Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
         )
     };
+    // Also allow the JWT to be read from an HttpOnly cookie named 'jwtToken'
+    options.Events = new Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents
+    {
+        OnMessageReceived = context =>
+        {
+            if (context.Request.Cookies.ContainsKey("jwtToken"))
+            {
+                context.Token = context.Request.Cookies["jwtToken"];
+            }
+            return Task.CompletedTask;
+        }
+    };
 });
 
-// Adding Razor components
+// Adding Razor components (interactive server components)
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
@@ -98,8 +110,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-//  Razor pages
 app.MapRazorComponents<App>()
-   .AddInteractiveServerRenderMode();
+    .AddInteractiveServerRenderMode();
 
 app.Run();

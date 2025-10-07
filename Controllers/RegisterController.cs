@@ -50,7 +50,21 @@ namespace MyMuscleCars.Controllers
             // Generate JWT
             var token = GenerateJwtToken(newAccount);
 
-            return Ok(new { token, user = newAccount.Email });
+            // Set token as an HttpOnly cookie so client-side JS cannot read it.
+            // Use Secure=true when the request is over HTTPS.
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = HttpContext.Request.IsHttps,
+                SameSite = SameSiteMode.Lax,
+                Path = "/",
+                Expires = DateTimeOffset.UtcNow.AddHours(2)
+            };
+
+            Response.Cookies.Append("jwtToken", token, cookieOptions);
+
+            // Return minimal user info (token is in httpOnly cookie)
+            return Ok(new { user = newAccount.Email });
         }
 
         private static string HashPassword(string password)
@@ -63,7 +77,7 @@ namespace MyMuscleCars.Controllers
 
         private string GenerateJwtToken(Account account)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]

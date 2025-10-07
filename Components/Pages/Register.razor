@@ -1,4 +1,5 @@
 @page "/register"
+@rendermode InteractiveServer
 @using MyMuscleCars.Models
 @using System.ComponentModel.DataAnnotations
 @using System.Text.Json.Serialization;
@@ -6,6 +7,7 @@
 @inject IHttpClientFactory HttpClientFactory
 @inject NavigationManager Navigation
 @inject IJSRuntime JS
+
 
 <PageTitle>CSE Muscle Cars - Register</PageTitle>
 
@@ -31,7 +33,6 @@
                                 <InputText id="firstName"
                                            class="form-input"
                                            @bind-Value="RegisterModel!.FirstName"
-                                           @bind-Value:event="oninput"
                                            placeholder="Enter your first name" />
                                 <ValidationMessage For="@(() => RegisterModel!.FirstName)" />
                             </div>
@@ -42,7 +43,6 @@
                                 <InputText id="lastName"
                                            class="form-input"
                                            @bind-Value="RegisterModel!.LastName"
-                                           @bind-Value:event="oninput"
                                            placeholder="Enter your last name" />
                                 <ValidationMessage For="@(() => RegisterModel!.LastName)" />
                             </div>
@@ -53,7 +53,6 @@
                                 <InputText id="email"
                                            class="form-input"
                                            @bind-Value="RegisterModel!.Email"
-                                           @bind-Value:event="oninput"
                                            placeholder="Enter your email" />
                                 <ValidationMessage For="@(() => RegisterModel!.Email)" />
                             </div>
@@ -64,7 +63,6 @@
                                 <InputText id="password"
                                            class="form-input"
                                            @bind-Value="RegisterModel!.Password"
-                                           @bind-Value:event="oninput"
                                            placeholder="Create a secure password"
                                            type="password" />
                                 <ValidationMessage For="@(() => RegisterModel!.Password)" />
@@ -76,7 +74,6 @@
                                 <InputText id="confirmPassword"
                                            class="form-input"
                                            @bind-Value="RegisterModel!.ConfirmPassword"
-                                           @bind-Value:event="oninput"
                                            placeholder="Confirm your password"
                                            type="password" />
                                 <ValidationMessage For="@(() => RegisterModel!.ConfirmPassword)" />
@@ -131,6 +128,7 @@
     private string successMessage = string.Empty;
 
     private string? _pendingToken = null;
+    private bool _pendingRedirect = false;
     private bool _browserRendered = false;
 
     protected override void OnInitialized()
@@ -139,7 +137,7 @@
         RegisterModel ??= new();
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override Task OnAfterRenderAsync(bool firstRender)
     {
         Logger.LogInformation("🔹 OnAfterRenderAsync triggered. firstRender={FirstRender}, pendingToken={Token}", firstRender, _pendingToken);
 
@@ -149,36 +147,22 @@
             Logger.LogInformation("🔹 First render complete, browserRendered set to true");
         }
 
-        if (_browserRendered && !string.IsNullOrEmpty(_pendingToken))
+        // If we need to redirect after server sets the auth cookie, do it now when browser is ready.
+        if (_browserRendered)
         {
-            try
+            if (_pendingRedirect)
             {
-                Logger.LogInformation("💾 Attempting to store JWT in localStorage: {Token}", _pendingToken);
-                await JS.InvokeVoidAsync("localStorage.setItem", "jwtToken", _pendingToken);
-                Logger.LogInformation("✅ JWT token stored successfully in localStorage");
-
-                _pendingToken = null;
-
-                Logger.LogInformation("➡ Redirecting to homepage...");
+                _pendingRedirect = false;
+                Logger.LogInformation("➡ Redirecting to homepage from OnAfterRenderAsync...");
                 Navigation.NavigateTo("/");
             }
-            catch (JSException jsEx)
-            {
-                Logger.LogError("❌ JSException while storing JWT: {Message}", jsEx.Message);
-                errorMessage = $"JSException storing token: {jsEx.Message}";
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError("❌ Exception while storing JWT: {Message}", ex.Message);
-                errorMessage = $"Exception storing token: {ex.Message}";
-            }
-
-            StateHasChanged();
+            return Task.CompletedTask;
         }
         else
         {
             Logger.LogInformation("⏳ Skipping token storage. _browserRendered={BrowserRendered}, _pendingToken={Token}", _browserRendered, _pendingToken);
         }
+        return Task.CompletedTask;
     }
 
     private void HandleInvalidSubmit(EditContext ctx)
@@ -203,25 +187,32 @@
                 return;
             }
 
-            var client = HttpClientFactory.CreateClient();
-            Logger.LogInformation("📡 Sending POST request to /api/register");
-            var response = await client.PostAsJsonAsync("http://localhost:5154/api/register", RegisterModel);
+            Logger.LogInformation("📡 Sending POST request to /api/register via browser fetch (to allow Set-Cookie)");
+            // Use browser fetch (via JS) with credentials included so the server's Set-Cookie is applied to the browser.
+            var jsResult = await JS.InvokeAsync<BrowserPostResult>("postJson", "/api/register", RegisterModel);
 
-            if (response.IsSuccessStatusCode)
+            if (jsResult?.Status == 200)
             {
-                var result = await response.Content.ReadFromJsonAsync<RegisterResult>();
                 successMessage = "Account created successfully! Redirecting...";
-                Logger.LogInformation("✅ Received response from API: {Token}", result?.Token);
+                Logger.LogInformation("✅ Registration succeeded (browser fetch)");
 
-                _pendingToken = result?.Token;
-                StateHasChanged(); // Trigger OnAfterRenderAsync
-                Logger.LogInformation("⏳ Triggered StateHasChanged to store JWT in OnAfterRenderAsync");
+                if (_browserRendered)
+                {
+                    Navigation.NavigateTo("/", forceLoad: true);
+                    return;
+                }
+                else
+                {
+                    _pendingRedirect = true;
+                    StateHasChanged();
+                    return;
+                }
             }
             else
             {
-                var error = await response.Content.ReadAsStringAsync();
+                var error = jsResult?.Body ?? "Unknown error";
                 errorMessage = $"Server error: {error}";
-                Logger.LogError("❌ Server error: {Error}", error);
+                Logger.LogError("❌ Server error (browser fetch): {Error}", error);
             }
         }
         catch (Exception ex)
@@ -242,5 +233,11 @@
 
         [JsonPropertyName("user")]
         public string User { get; set; } = string.Empty;
+    }
+
+    private class BrowserPostResult
+    {
+        public int Status { get; set; }
+        public string? Body { get; set; }
     }
 }
