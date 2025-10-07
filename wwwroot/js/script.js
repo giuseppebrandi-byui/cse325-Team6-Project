@@ -10,8 +10,8 @@ const showMenu = (toggleId, navId) => {
   toggle.addEventListener('click', () => {
     nav.classList.toggle('show-menu');
     toggle.classList.toggle('show-icon');
-  })
-}
+  });
+};
 
 showMenu('nav-toggle', 'nav-menu');
 
@@ -21,7 +21,7 @@ window.postJson = async function (url, data) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
   });
   const text = await res.text();
   return { status: res.status, body: text };
