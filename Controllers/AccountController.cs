@@ -190,5 +190,37 @@ namespace cse325_Team6_Project.Controllers
 
             return Ok(new { message = "Password changed" });
         }
+        [HttpPost("delete")]
+        [Authorize]
+        public IActionResult DeleteAccount()
+        {
+            var email = User?.Claims.FirstOrDefault(c => c.Type == "email")?.Value
+                        ?? User?.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Email)?.Value
+                        ?? User?.Claims.FirstOrDefault(c => c.Type == System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Sub)?.Value
+                        ?? User?.Identity?.Name;
+
+            if (string.IsNullOrWhiteSpace(email)) return Unauthorized();
+
+            var acct = _db.Accounts.FirstOrDefault(a => a.Email.ToLower() == email.ToLower());
+            if (acct == null) return NotFound();
+
+            // Delete the account
+            _db.Accounts.Remove(acct);
+            _db.SaveChanges();
+
+            // Clear the JWT cookie to log the user out
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = Request.IsHttps,
+                Expires = DateTimeOffset.UtcNow.AddDays(-1),
+                Path = "/",
+            };
+
+            Response.Cookies.Append("jwtToken", string.Empty, cookieOptions);
+
+            return Ok(new { message = "Account deleted" });
+        }
     }
+
 }

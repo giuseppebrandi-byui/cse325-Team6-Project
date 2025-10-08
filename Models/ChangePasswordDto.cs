@@ -11,7 +11,7 @@ namespace MyMuscleCars.Models
 
         [JsonPropertyName("newPassword")]
         [Required]
-        [MinLength(8)]
+        [MinLength(6)]
         public string NewPassword { get; set; } = string.Empty;
     }
 }

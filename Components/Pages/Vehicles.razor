@@ -71,7 +71,7 @@
         try
         {   Console.WriteLine("Fetching inventories...");
             var http = new HttpClient { BaseAddress = new Uri(NavigationManager.BaseUri) };
-            cars = await http.GetFromJsonAsync<List<Inventory>>("api/inventory");
+            cars = await http.GetFromJsonAsync<List<Inventory>>("api/inventory") ?? new List<Inventory>();
             Console.WriteLine($"Fetched {cars.Count} inventories.");
         }
         catch (Exception ex)
