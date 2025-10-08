@@ -1,5 +1,7 @@
-﻿@using Microsoft.AspNetCore.Authorization
+﻿@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
+@using System.Diagnostics.Eventing.Reader
 
 <nav class="nav container">
   <div class="nav__data">
@@ -7,14 +9,14 @@
       <img src="images/logo.png" width="128" height="63" alt="cse muscle cars home">
     </a>
 
-    <div class="nav__toggle" id="nav-toggle">
+    <div class="nav__toggle @(showMenu?"show-icon": "")" id="nav-toggle" @onclick="ToggleMenu" style="cursor:pointer;">
       <i class="ri-menu-line nav__burger"></i>
       <i class="ri-close-line nav__close"></i>
     </div>
   </div>
 
   <!-- NAV MENU -->
-  <nav class="nav__menu" id="nav-menu">
+  <nav class="nav__menu @(showMenu?"show-menu":"")" id="nav-menu">
   @inject NavigationManager Nav
   @inject IJSRuntime JS
 
@@ -49,9 +51,15 @@
   @code {
     private bool showAccountMenu = false;
 
+    private bool showMenu = false;
     private void ToggleAccountMenu()
     {
       showAccountMenu = !showAccountMenu;
+    }
+
+     private void ToggleMenu()
+    {
+      showMenu = !showMenu;
     }
 
     private async Task OnLogoutClicked()

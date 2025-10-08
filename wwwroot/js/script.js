@@ -60,4 +60,3 @@ window.redirect = function (url) {
   window.location.replace(url);
 };
 
-// (debug helper removed)

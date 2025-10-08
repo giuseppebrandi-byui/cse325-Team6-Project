@@ -4,10 +4,10 @@
 <div class="contact-page">
     <div class="contact-card">
         <p class="contact-welcome">WELCOME TO OUR SUPPORT</p>
-        <h1 class="contact-title">We’d Love to Hear from You always</h1>
-        <p class="contact-subtitle">Fill out the form below and we’ll get back to you as soon as possible.</p>
+        <h1 class="contact-title">We'd Love to Hear from You always</h1>
+        <p class="contact-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
 
-        <EditForm Model="@message" OnValidSubmit="HandleValidSubmit" class="contact-form">
+        <EditForm Model="@message" OnValidSubmit="HandleValidSubmit" FormName="contactForm" class="contact-form">
             <DataAnnotationsValidator />
             <ValidationSummary />
 
@@ -44,7 +44,8 @@
 </div>
 
 @code {
-    private ContactMessage message = new();
+    [SupplyParameterFromForm]
+    private ContactMessage message { get; set; } = new ();
     private bool submitted = false;
 
     private async Task HandleValidSubmit()
