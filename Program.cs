@@ -110,10 +110,10 @@ else
 }
 
 // Middlewares
-app.UseAntiforgery();
 app.MapStaticAssets();
-app.UseAuthentication();  
+app.UseAuthentication();
 app.UseAuthorization();
+app.UseAntiforgery();
 app.MapControllers();
 
 app.MapRazorComponents<App>()
