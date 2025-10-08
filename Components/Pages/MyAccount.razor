@@ -5,6 +5,7 @@
 @using MyMuscleCars.Models
 @inject IJSRuntime JS
 @inject ILogger<MyAccount> Logger
+@inject NavigationManager Navigation
 
 <PageTitle>CSE Muscle Cars - My Account</PageTitle>
 
@@ -61,8 +62,10 @@
                                     <input class="form-input" readonly value="@(profile.AccountType ?? "Client")" />
                                 </div>
 
-                                <div class="account-footer">
-                                    <p><a href="/account/edit" class="btn-link">Edit Profile</a></p>
+                                <div class="account-footer form-actions">
+                                    <a href="/account/edit" class="btn-link">Edit Profile</a>
+                                    <span class="divider" aria-hidden="true"></span>
+                                    <button class="btn-link" @onclick="DeleteAccountAsync" disabled="@isDeleting">Delete Profile</button>
                                 </div>
                                 @if (profile.AccountType == "Admin")
                                 {
@@ -76,8 +79,6 @@
                                         <p><a href="#" class="btn-link">Contact Messages</a></p>
                                     </div>
                                 }
-
-
 
                             }
                             else
@@ -93,10 +94,12 @@
         </section>
     </article>
 </main>
+
 @code {
     private bool isLoading = true;
     private bool isUnauthorized = false;
     private string? errorMessage;
+    private bool isDeleting = false;
 
     private ProfileDto? profile;
 
@@ -111,9 +114,9 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-    if (!firstRender) return;
-    if (_profileRequested) return;
-    _profileRequested = true;
+        if (!firstRender) return;
+        if (_profileRequested) return;
+        _profileRequested = true;
 
         try
         {
@@ -177,4 +180,43 @@
         }
     }
 
+    private async Task DeleteAccountAsync()
+    {
+        try
+        {
+            var confirmed = await JS.InvokeAsync<bool>("confirm", "Are you sure you want to permanently delete your account? This action cannot be undone.");
+            if (!confirmed) return;
+
+            isDeleting = true;
+            StateHasChanged();
+
+            var result = await MyMuscleCars.Services.JsInteropHelpers.PostJson(JS, "/api/account/delete", new { });
+            if (result == null)
+            {
+                errorMessage = "Failed to contact server when attempting to delete account.";
+                return;
+            }
+
+            if (result.Status >= 200 && result.Status < 300)
+            {
+                // successful delete — redirect to home with a full load so cookie changes apply
+                await JS.InvokeVoidAsync("redirect", "/");
+                return;
+            }
+
+            // show server error message if present
+            errorMessage = string.IsNullOrEmpty(result.Body) ? $"Server returned {result.Status}" : result.Body;
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isDeleting = false;
+            StateHasChanged();
+        }
+    }
 }
+
+
