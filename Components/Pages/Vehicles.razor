@@ -31,7 +31,7 @@
               <div class="work-card">
 
               <figure class="card-banner img-holder" style="--width: 650; --height: 433;">
-                <img src="@car.InvImage" width="650" height="433" loading="lazy" alt="2024 Camaro 9v2"
+                <img src="@car.InvImage" width="650" height="433" loading="lazy" alt="@car.InvYear @car.InvMake @car.InvModel"
                   class="img-cover">
               </figure>
 
@@ -44,7 +44,7 @@
                   <p>Year: @car.InvYear</p>
                 </div>  
 
-                <a href="#" class="card-btn">
+                <a href="/singlevehicle/@car.InvId" class="card-btn">
                   <span class="material-symbols-rounded">arrow_forward</span>
                 </a>
               </div>

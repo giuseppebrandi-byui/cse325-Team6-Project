@@ -32,10 +32,10 @@ namespace MyMuscleCars.Controllers
         public async Task<ActionResult<Inventory>> GetInventory(int id)
         {
             var inventory = await _context.Inventories
-                .Include(i => i.InvMake)
+                .Include(i => i.MakeRef)
                 .FirstOrDefaultAsync(i => i.InvId == id);
 
-            if (inventory == null) 
+            if (inventory == null)
                 return NotFound();
 
             return Ok(inventory);

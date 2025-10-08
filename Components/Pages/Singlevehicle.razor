@@ -1,7 +1,9 @@
 @using System;
 @using System.Globalization;
+@inject NavigationManager NavigationManager
+@using MyMuscleCars.Models
 
-@page "/singlevehicle"
+@page "/singlevehicle/{id:int}"
 <PageTitle>CSE Muscle Cars - Car Sales & Repair Service</PageTitle>
 
 <main>
@@ -11,37 +13,79 @@
       -->
       <section class="section vehicle-page" aria-labelledby="vehicle-label">
         <div class="container">
-
-          <p class="section-subtitle :light" id="vehiclepage-label">Camaro Redline Edition LT1</p>
-          <h2 class="h2 section-title">Chevrolet</h2>
+        @if (isLoading)
+        {
+          <div>
+            <p>Loading Vehicles...</p>
+          </div>
+        }
+        else if (car == null)
+        {
+          <div>
+            <p>Vehicles not found</p>
+            <a href="/vehicles">Back to vehicles page</a>
+          </div>
+        }
+        else { 
+          <p class="section-subtitle :light" id="vehiclepage-label">@car.InvModel</p>
+          <h2 class="h2 section-title">@car.InvMake</h2>
           <div class="grid grid--2-cols">
           <div class="info-img-box">
             <figure class="card-banner img-holder" style="--width: 650; --height: 433;">
-                <img src="images/vehicles/2024-camaro-9v2.jpg" width="650" height="433" loading="lazy" alt="Camaro Redline Edition"
+                <img src="@car.InvImage" width="650" height="433" loading="lazy" alt="@car.InvYear @car.InvMake @car.InvModel"
                   class="img-cover">
               </figure>
           </div>
             <div class="info-text-box">
-              <p class="info-car-text"><span class="vehicle-label">Price:</span> $60,000</p>
+              <p class="info-car-text"><span class="vehicle-label">Price:</span> $@car.InvPrice</p>
 
-              <p class="info-car-text"<span class="vehicle-label">Year:</span> 2024</p>
+              <p class="info-car-text"><span class="vehicle-label">Year:</span> @car.InvYear</p>
 
-              <p class="info-car-text"<span class="vehicle-label">Mileage:</span> 44,300</p>
+              <p class="info-car-text"><span class="vehicle-label">Mileage:</span> @car.InvMiles</p>
 
-              <p class="info-car-text"><span class="vehicle-label">Color:</span> White</p>
+              <p class="info-car-text"><span class="vehicle-label">Color:</span> @car.InvColor</p>
 
-              <p class="info-car-text"><span class="vehicle-label">Description:</span> If you want an authentic modern-day muscle car, the Camaro hits many of the right notes and it's a more compelling overall package than a Mustang</p>
+              <p class="info-car-text"><span class="vehicle-label">Description:</span> @car.InvDescription</p>
 
-              <a href="/checkout" class="btn buy-car-btn">
+              <a href="/checkout?vehicleId=@car.InvId" class="btn buy-car-btn">
                 <span class="span">Order it now</span>
 
                 <span class="material-symbols-rounded">arrow_forward</span>
               </a>
             </div>
           </div>
+        }
                      
         </div>
       </section>
 
     </article>
   </main>
+
+@code {
+  [Parameter]
+  public int Id { get; set; }
+  public Inventory? car;
+  public bool isLoading = true;
+
+  protected override async Task OnInitializedAsync() {
+    Console.WriteLine($"Giuseppe 1 {Id}");
+    try
+    {
+    Console.WriteLine($"Giuseppe 2 {isLoading}");
+      var http = new HttpClient { BaseAddress = new Uri(NavigationManager.BaseUri) };
+      car = await http.GetFromJsonAsync<Inventory>($"api/inventory/{Id}");
+    Console.WriteLine($"Giuseppe 3 {car}");
+      if (car == null)
+      {
+        Console.WriteLine($"Vehicle {Id} not found!");
+      }
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"Error fetching vehicle: {ex.Message}");
+    }
+    finally { isLoading = false; }
+  }
+
+}
