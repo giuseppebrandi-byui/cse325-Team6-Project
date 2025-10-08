@@ -1,0 +1,195 @@
+@using System;
+@using System.Globalization;
+
+@page "/checkout"
+<PageTitle>CSE Muscle Cars - Car Sales & Repair Service</PageTitle>
+
+
+  <main>
+    <article>
+      <!-- 
+        - #LOGIN SECTION
+      -->
+      <section class="section login" aria-labelledby="login-label">
+        <div class="container">
+
+          <p class="section-subtitle :light" id="registration-label">You are a step away from your dream</p>
+          <h2 class="h2 section-title">Check Out Form</h2>
+
+          <div class="login-container">
+            <div class="login-form-container">
+
+              <EditForm Model="checkoutModel" OnValidSubmit="HandleSubmit" class="login-form">
+                <DataAnnotationsValidator />
+
+                <div class="form-group">
+                  <label for="name" class="form-label">Full Name</label>
+                  <InputText id="name" class="form-input" @bind-Value="checkoutModel.Name"
+                    placeholder="Enter your Full name" />
+                  <ValidationMessage For="@(() => checkoutModel.Name)" />
+                </div>
+               
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address</label>
+                  <InputText id="email" class="form-input" @bind-Value="checkoutModel.Email"
+                    placeholder="Enter your email" />
+                  <ValidationMessage For="@(() => checkoutModel.Email)" />
+                </div>
+
+                <div class="form-group">
+                  <label for="address" class="form-label">Address</label>
+                  <InputText type="text" id="address" class="form-input" @bind-Value="checkoutModel.Address"
+                    placeholder="Enter your address" />
+                  <ValidationMessage For="@(() => checkoutModel.Address)" />
+                </div>
+
+                <div class="form-group">
+                  <label for="postcode" class="form-label">Postcode</label>
+                  <InputText id="postcode" class="form-input" @bind-Value="checkoutModel.Postcode"
+                            placeholder="Enter your postcode" />
+                  <ValidationMessage For="@(() => checkoutModel.Postcode)" />
+              </div>
+
+              <div class="form-group">
+                  <label for="telephone" class="form-label">Telephone Number</label>
+                  <InputText id="telephone" class="form-input" @bind-Value="checkoutModel.Telephone"
+                            placeholder="Enter your phone number" />
+                  <ValidationMessage For="@(() => checkoutModel.Telephone)" />
+              </div>
+
+            <div class="form-group">
+                <label for="cardNumber" class="form-label">Credit Card Number</label>
+                <InputText id="cardNumber" class="form-input" @bind-Value="checkoutModel.CardNumber"
+                          placeholder="Enter your card number" maxlength="16" />
+                <ValidationMessage For="@(() => checkoutModel.CardNumber)" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" style="display:inline-block; width:48%; margin-right:4%;">
+                  <label for="expiryDate" class="form-label">Expiration Date</label>
+                  <InputText id="expiryDate" class="form-input" @bind-Value="checkoutModel.ExpiryDate"
+                            placeholder="MM/YY" maxlength="5" />
+                  <ValidationMessage For="@(() => checkoutModel.ExpiryDate)" />
+              </div>
+
+              <div class="form-group" style="display:inline-block; width:48%;">
+                  <label for="cvv" class="form-label">CVV</label>
+                  <InputText id="cvv" class="form-input" @bind-Value="checkoutModel.CVV"
+                            placeholder="CVV" maxlength="4" />
+                  <ValidationMessage For="@(() => checkoutModel.CVV)" />
+              </div>
+          </div>
+
+                @if (!string.IsNullOrEmpty(errorMessage))
+                {
+                  <div class="error-message">
+                    <i class="ri-error-warning-line"></i>
+                    @errorMessage
+                  </div>
+                }
+
+                @if (!string.IsNullOrEmpty(successMessage))
+                {
+                  <div class="success-message">
+                    <i class="ri-check-line"></i>
+                    @successMessage
+                  </div>
+                }
+
+                <button type="submit" class="btn login-btn" disabled="@isLoading">
+                  @if (isLoading)
+                  {
+                    <span class="loading-spinner"></span>
+                    <span>Check Out...</span>
+                  }
+                  else
+                  {
+                    <span class="span">Pay Now</span>
+                    <span class="material-symbols-rounded">arrow_forward</span>
+                  }
+                </button>
+
+              </EditForm>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+@code {
+  private CheckoutModel checkoutModel = new();
+  private bool isLoading = false;
+  private string errorMessage = string.Empty;
+  private string successMessage = string.Empty;
+
+  private async Task HandleSubmit()
+  {
+    try
+    {
+      isLoading = true;
+      errorMessage = string.Empty;
+      successMessage = string.Empty;
+
+      // Simulate API call - replace with actual implementation
+      await Task.Delay(2000);
+
+      // For now, just show success message
+      successMessage = "Check Out was successfull!";
+
+      // Reset form
+      checkoutModel = new CheckoutModel();
+    }
+    catch (Exception)
+    {
+      errorMessage = "An error occurred while making your payment. Please try again.";
+    }
+    finally
+    {
+      isLoading = false;
+    }
+  }
+
+
+  public class CheckoutModel
+  {
+    [Required(ErrorMessage = "Full Name is required.")]
+    [StringLength(100, MinimumLength = 4, ErrorMessage = "Full name must be between 4 and 100 characters.")]
+    public string Name { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Email address is required.")]
+    [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
+    public string Email { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Address is required.")]
+    [StringLength(100, MinimumLength = 6, ErrorMessage = "Please enter a valid address.")]
+    public string Address { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Postcode is required.")]
+    [RegularExpression(@"^[A-Za-z0-9\s]{4,10}$", ErrorMessage = "Please enter a valid postcode.")]
+    public string Postcode { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Telephone number is required.")]
+    [Phone(ErrorMessage = "Please enter a valid telephone number.")]
+    [StringLength(15, MinimumLength = 7, ErrorMessage = "Telephone number must be between 7 and 15 digits.")]
+    public string Telephone { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Credit card number is required.")]
+    [CreditCard(ErrorMessage = "Please enter a valid credit card number.")]
+    [StringLength(19, MinimumLength = 13, ErrorMessage = "Credit card number must be between 13 and 19 digits.")]
+    public string CardNumber { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Expiration date is required.")]
+    [RegularExpression(@"^(0[1-9]|1[0-2])\/\d{2}$", ErrorMessage = "Please use the MM/YY format.")]
+    public string ExpiryDate { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "CVV is required.")]
+    [RegularExpression(@"^\d{3,4}$", ErrorMessage = "CVV must be 3 or 4 digits.")]
+    public string CVV { get; set; } = string.Empty;
+    }
+}
+
