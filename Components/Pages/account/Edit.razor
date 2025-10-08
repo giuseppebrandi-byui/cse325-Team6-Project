@@ -1,0 +1,283 @@
+@page "/account/edit"
+@rendermode InteractiveServer
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using MyMuscleCars.Models
+@using Microsoft.AspNetCore.Components.Forms
+@inject IJSRuntime JS
+@inject NavigationManager Nav
+@inject ILogger<Edit> Logger
+
+<PageTitle>CSE Muscle Cars - Edit Profile</PageTitle>
+
+<main>
+    <article>
+    <!-- ACCOUNT (uses account-specific classes) -->
+    <section class="section account" aria-labelledby="account-label">
+            <div class="container">
+
+                <p class="section-subtitle :light" id="account-label">Edit Account</p>
+                <h2 class="h2 section-title">My Account</h2>
+
+                <div class="account-container">
+                    <div class="account-form-container">
+
+                        <div class="account-form">
+                            @if (isLoading)
+                            {
+                                <p>Loading your account...</p>
+                            }
+                            else if (isUnauthorized)
+                            {
+                                <div class="unauthenticated">
+                                    <p>You are not signed in. <a href="/login">Sign in</a> to view your account details.</p>
+                                </div>
+                            }
+                            else if (!string.IsNullOrEmpty(errorMessage))
+                            {
+                                <div class="error-message">
+                                    <i class="ri-error-warning-line"></i>
+                                    @errorMessage
+                                </div>
+                            }
+                            else if (profile != null)
+                            {
+                                @if (!string.IsNullOrEmpty(successMessage))
+                                {
+                                    <div class="success-message">@successMessage</div>
+                                }
+
+                                <EditForm Model="editModel" OnValidSubmit="HandleSubmit" class="account-form">
+                                    <DataAnnotationsValidator />
+                                    <ValidationSummary />
+
+                                    <div class="form-group">
+                                        <label class="form-label">First Name</label>
+                                        <InputText class="form-input" @bind-Value="editModel.FirstName" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Last Name</label>
+                                        <InputText class="form-input" @bind-Value="editModel.LastName" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">New Email</label>
+                                        <InputText class="form-input" @bind-Value="editModel.Email" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Previous Email</label>
+                                        <input class="form-input" readonly value="@(profile.Email ?? string.Empty)" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">Account Type</label>
+                                        <select class="form-input" @bind="editModel.AccountType">
+                                            <option value="Client">Client</option>
+                                            <option value="Admin">Admin</option>
+                                        </select>
+                                    </div>
+
+                                    <h3>Change password (optional)</h3>
+                                    <div class="form-group">
+                                        <label class="form-label">Current Password</label>
+                                        <InputText type="password" class="form-input" @bind-Value="currentPassword" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">New Password</label>
+                                        <InputText type="password" class="form-input" @bind-Value="newPassword" />
+                                    </div>
+
+                                    <div class="account-footer form-actions">
+                                        <button class="btn-link" type="submit" disabled="@isSubmitting">
+                                            @if (isSubmitting)
+                                            {
+                                                <span class="loading-spinner"></span>
+                                                <span>Saving...</span>
+                                            }
+                                            else
+                                            {
+                                                <span>Save Changes</span>
+                                            }
+                                        </button>
+                                        <span class="divider" aria-hidden="true"></span>
+                                        <a href="/account" class="btn-link">Cancel</a>
+                                    </div>
+                                </EditForm>
+                            }
+                            else
+                            {
+                                <p>No profile data available.</p>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </article>
+</main>
+@code {
+    private bool isLoading = true;
+    private bool isUnauthorized = false;
+    private string? errorMessage;
+    private string? successMessage;
+
+    private ProfileDto? profile;
+    private ProfileUpdateDto editModel = new();
+    private bool isSubmitting = false;
+    private string currentPassword = string.Empty;
+    private string newPassword = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        // default state
+        isLoading = true;
+    }
+
+    // ensure we only request once
+    private bool _profileRequested = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+        if (_profileRequested) return;
+        _profileRequested = true;
+
+        try
+        {
+            // Call server profile endpoint via browser fetch so auth cookie is included
+            Logger.LogInformation("[Edit] calling /api/account/profile");
+            var jsResult = await MyMuscleCars.Services.JsInteropHelpers.GetJson(JS, "/api/account/profile");
+            if (jsResult == null)
+            {
+                Logger.LogWarning("[Edit] jsResult was null");
+                errorMessage = "Failed to contact server.";
+                isLoading = false;
+                StateHasChanged();
+                return;
+            }
+            if (jsResult.Status == 401)
+            {
+                Logger.LogInformation("[Edit] server returned 401 -> unauthorized");
+                isUnauthorized = true;
+                isLoading = false;
+                StateHasChanged();
+                return;
+            }
+
+            if (jsResult.Status == 404)
+            {
+                Logger.LogInformation("[Edit] server returned 404 -> profile not found");
+                errorMessage = "Profile not found (404). If you just registered, try refreshing the page.";
+                isLoading = false;
+                StateHasChanged();
+                return;
+            }
+
+            if (jsResult.Status >= 200 && jsResult.Status < 300 && !string.IsNullOrEmpty(jsResult.Body))
+            {
+                try
+                {
+                    profile = JsonSerializer.Deserialize<ProfileDto>(jsResult.Body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                    Logger.LogInformation("[Edit] profile deserialized: {@Profile}", profile);
+                    if (profile != null)
+                    {
+                        editModel.FirstName = profile.FirstName ?? string.Empty;
+                        editModel.LastName = profile.LastName ?? string.Empty;
+                            editModel.Email = profile.Email ?? string.Empty;
+                            editModel.AccountType = profile.AccountType ?? "Client";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogWarning(ex, "[Edit] json parse error");
+                    errorMessage = "Failed to parse profile response: " + ex.Message;
+                    Logger.LogError(ex, "Failed to deserialize profile");
+                }
+            }
+            else
+            {
+                Logger.LogInformation("[Edit] unexpected server response: {Status}", jsResult.Status);
+                errorMessage = $"Server returned status {jsResult.Status}: {jsResult.Body}";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task HandleSubmit()
+    {
+        isSubmitting = true;
+        errorMessage = null;
+        try
+        {
+            // If user provided a password change, do that first
+            if (!string.IsNullOrEmpty(currentPassword) || !string.IsNullOrEmpty(newPassword))
+            {
+                if (string.IsNullOrEmpty(currentPassword) || string.IsNullOrEmpty(newPassword))
+                {
+                    errorMessage = "To change password you must provide both current and new password.";
+                    return;
+                }
+
+                var pwdResult = await MyMuscleCars.Services.JsInteropHelpers.PostJson(JS, "/api/account/change-password", new { currentPassword = currentPassword, newPassword = newPassword });
+                if (pwdResult == null)
+                {
+                    errorMessage = "Failed to contact server for password change.";
+                    return;
+                }
+                if (pwdResult.Status == 401)
+                {
+                    errorMessage = "Current password is incorrect.";
+                    return;
+                }
+                if (pwdResult.Status >= 400)
+                {
+                    errorMessage = pwdResult.Body ?? "Password change failed.";
+                    return;
+                }
+            }
+
+            var result = await MyMuscleCars.Services.JsInteropHelpers.PostJson(JS, "/api/account/profile", editModel);
+            if (result?.Status == 200)
+            {
+                successMessage = "Profile updated successfully.";
+                // update local profile copy so UI reflects change
+                if (profile != null)
+                {
+                    profile.FirstName = editModel.FirstName;
+                    profile.LastName = editModel.LastName;
+                    profile.Email = editModel.Email;
+                }
+                await Task.Delay(500);
+                Nav.NavigateTo("/account", forceLoad: true);
+                return;
+            }
+            else
+            {
+                errorMessage = result?.Body ?? "Failed to update profile.";
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error saving profile");
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isSubmitting = false;
+            StateHasChanged();
+        }
+    }
+
+}

@@ -1,0 +1,180 @@
+@page "/account"
+@rendermode InteractiveServer
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using MyMuscleCars.Models
+@inject IJSRuntime JS
+@inject ILogger<MyAccount> Logger
+
+<PageTitle>CSE Muscle Cars - My Account</PageTitle>
+
+<main>
+    <article>
+    <!-- ACCOUNT (uses account-specific classes) -->
+    <section class="section account" aria-labelledby="account-label">
+            <div class="container">
+
+                <p class="section-subtitle :light" id="account-label">My Account</p>
+                <h2 class="h2 section-title">Account</h2>
+
+                <div class="account-container">
+                    <div class="account-form-container">
+
+                        <div class="account-form">
+                            @if (isLoading)
+                            {
+                                <p>Loading your account…</p>
+                            }
+                            else if (isUnauthorized)
+                            {
+                                <div class="unauthenticated">
+                                    <p>You are not signed in. <a href="/login">Sign in</a> to view your account details.</p>
+                                </div>
+                            }
+                            else if (!string.IsNullOrEmpty(errorMessage))
+                            {
+                                <div class="error-message">
+                                    <i class="ri-error-warning-line"></i>
+                                    @errorMessage
+                                </div>
+                            }
+                            else if (profile != null)
+                            {
+                                <!-- readonly fields styled like the login form inputs -->
+                                <div class="form-group">
+                                    <label class="form-label">First Name</label>
+                                    <input class="form-input" readonly value="@(profile.FirstName ?? string.Empty)" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input class="form-input" readonly value="@(profile.LastName ?? string.Empty)" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input class="form-input" readonly value="@(profile.Email ?? string.Empty)" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Account Type</label>
+                                    <input class="form-input" readonly value="@(profile.AccountType ?? "Client")" />
+                                </div>
+
+                                <div class="account-footer">
+                                    <p><a href="/account/edit" class="btn-link">Edit Profile</a></p>
+                                </div>
+                                @if (profile.AccountType == "Admin")
+                                {
+                                    <div class="account-footer">
+                                        <p><a href="/cars" class="btn-link">Modify Car Inventory</a></p>
+                                    </div>
+                                }
+                                @if (profile.AccountType == "Admin")
+                                {
+                                    <div class="account-footer">
+                                        <p><a href="#" class="btn-link">Contact Messages</a></p>
+                                    </div>
+                                }
+
+
+
+                            }
+                            else
+                            {
+                                <p>No profile data available.</p>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </article>
+</main>
+@code {
+    private bool isLoading = true;
+    private bool isUnauthorized = false;
+    private string? errorMessage;
+
+    private ProfileDto? profile;
+
+    protected override void OnInitialized()
+    {
+        // default state
+        isLoading = true;
+    }
+
+    // ensure we only request once
+    private bool _profileRequested = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+    if (!firstRender) return;
+    if (_profileRequested) return;
+    _profileRequested = true;
+
+        try
+        {
+            // Call server profile endpoint via browser fetch so auth cookie is included
+            Logger.LogInformation("[MyAccount] calling /api/account/profile");
+            var jsResult = await MyMuscleCars.Services.JsInteropHelpers.GetJson(JS, "/api/account/profile");
+            if (jsResult == null)
+            {
+                Logger.LogWarning("[MyAccount] jsResult was null");
+                errorMessage = "Failed to contact server.";
+                isLoading = false;
+                StateHasChanged();
+                return;
+            }
+            if (jsResult.Status == 401)
+            {
+                Logger.LogInformation("[MyAccount] server returned 401 -> unauthorized");
+                isUnauthorized = true;
+                isLoading = false;
+                StateHasChanged();
+                return;
+            }
+
+            if (jsResult.Status == 404)
+            {
+                Logger.LogInformation("[MyAccount] server returned 404 -> profile not found");
+                errorMessage = "Profile not found (404). If you just registered, try refreshing the page.";
+                isLoading = false;
+                StateHasChanged();
+                return;
+            }
+
+            if (jsResult.Status >= 200 && jsResult.Status < 300 && !string.IsNullOrEmpty(jsResult.Body))
+            {
+                try
+                {
+                    profile = JsonSerializer.Deserialize<ProfileDto>(jsResult.Body, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                    Logger.LogInformation("[MyAccount] profile deserialized: {@Profile}", profile);
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogWarning(ex, "[MyAccount] json parse error");
+                    errorMessage = "Failed to parse profile response: " + ex.Message;
+                    Logger.LogError(ex, "Failed to deserialize profile");
+                }
+            }
+            else
+            {
+                Logger.LogInformation("[MyAccount] unexpected server response: {Status}", jsResult.Status);
+                errorMessage = $"Server returned status {jsResult.Status}: {jsResult.Body}";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+}

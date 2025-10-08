@@ -7,7 +7,6 @@
 \*-----------------------------------*/
 
 :root {
-
   /**
    * colors
    */
@@ -67,9 +66,7 @@
 
   --transition: 0.25s ease;
   --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
-
 }
-
 
 /*-----------------------------------*\
   #RESET
@@ -146,8 +143,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: hsl(0, 0%, 70%);
 }
-
-
 
 /*-----------------------------------*\
   #REUSED STYLE
@@ -344,7 +339,7 @@ body {
   left: 0;
   width: 100%;
   background-color: var(--oxford-blue-3);
-  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  box-shadow: 0 2px 16px hsla(220, 32%, 8%, 0.3);
   z-index: 100;
 }
 
@@ -379,7 +374,7 @@ body {
   margin: auto;
   font-size: var(--fs-4);
   cursor: pointer;
-  transition: opacity .1s, transform .4s;
+  transition: opacity 0.1s, transform 0.4s;
 }
 
 .nav__close {
@@ -406,7 +401,7 @@ body {
     overflow: auto;
     pointer-events: none;
     opacity: 0;
-    transition: top .4s, opacity .3s;
+    transition: top 0.4s, opacity 0.3s;
   }
 
   .nav__menu::-webkit-scrollbar {
@@ -427,11 +422,63 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
 
 .nav__link:hover {
   background-color: var(--international-orange-engineering);
+}
+
+/* Account dropdown submenu styles */
+.nav__item {
+  position: relative;
+}
+
+.nav__submenu {
+  position: absolute;
+  /* place directly below the parent so there's no gap when moving the mouse */
+  top: 100%;
+  right: 0;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, 0.12);
+  min-width: 180px;
+  z-index: 250;
+  padding: 8px 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* hidden by default, shown on hover or when .visible is applied */
+.nav__submenu {
+  opacity: 0;
+  /* slightly overlap the parent while hidden to avoid a mouse gap */
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.nav__item:hover .nav__submenu,
+.nav__submenu.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav__submenu li {
+  margin: 0;
+}
+
+.nav__submenu .nav__link {
+  color: var(--oxford-blue-3);
+  background: transparent;
+  padding: 10px 16px;
+}
+
+.nav__submenu .nav__link:is(:hover, :focus-visible) {
+  background-color: var(--light-gray);
+  color: var(--international-orange-engineering);
+  transform: none;
 }
 
 .show-menu {
@@ -457,7 +504,7 @@ body {
 .dropdown__arrow {
   font-size: 1.25rem;
   font-weight: initial;
-  transition: transform .4s;
+  transition: transform 0.4s;
 }
 
 .dropdown__link {
@@ -466,9 +513,9 @@ body {
   background-color: var(--oxford-blue-1);
   display: flex;
   align-items: center;
-  column-gap: .5rem;
+  column-gap: 0.5rem;
   font-weight: 600;
-  background-color: .3s;
+  background-color: 0.3s;
 }
 
 .dropdown__link i {
@@ -483,12 +530,12 @@ body {
 .dropdown__menu {
   max-height: 0;
   overflow: hidden;
-  transition: max-height .4s ease-out;
+  transition: max-height 0.4s ease-out;
 }
 
 .dropdown__item:hover .dropdown__menu {
   max-height: 1000px;
-  transition: max-height .4s ease-in;
+  transition: max-height 0.4s ease-in;
 }
 
 .dropdown__item:hover .dropdown__arrow {
@@ -530,7 +577,7 @@ body {
     height: 100%;
     padding: 0;
     justify-content: initial;
-    column-gap: .25rem;
+    column-gap: 0.25rem;
     background-color: var(--oxford-blue-3);
   }
 
@@ -551,7 +598,7 @@ body {
     top: 6rem;
     opacity: 0;
     pointer-events: none;
-    transition: opacity .3s, top .3s;
+    transition: opacity 0.3s, top 0.3s;
   }
 
   .dropdown__link {
@@ -562,10 +609,9 @@ body {
     opacity: 1;
     top: 5.5rem;
     pointer-events: initial;
-    transition: top .3s;
+    transition: top 0.3s;
   }
 }
-
 
 /*-----------------------------------*\
   #HERO
@@ -608,7 +654,6 @@ body {
   z-index: -1;
 }
 
-
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
@@ -639,8 +684,6 @@ body {
 .service .btn {
   margin-inline: auto;
 }
-
-
 
 /*-----------------------------------*\
   #ABOUT
@@ -685,7 +728,6 @@ body {
   display: block;
   line-height: 1.1;
 }
-
 
 /*-----------------------------------*\
   #WORK
@@ -736,8 +778,6 @@ body {
   place-items: center;
   border-radius: var(--radius-circle);
 }
-
-
 
 /*-----------------------------------*\
   #FOOTER
@@ -821,23 +861,25 @@ body {
   font-size: var(--fs-6);
 }
 
-
 /*-----------------------------------*\
   #REGISTRATION AND LOGIN FORMS
 \*-----------------------------------*/
 .registration,
 .login,
-.create {
+.create,
+.account {
   padding-block: 120px 80px;
 }
 
 .registration,
-.login {
+.login,
+.account {
   background-color: var(--light-gray);
 }
 
 .registration-container,
 .login-container,
+.account-container,
 .create-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -850,6 +892,7 @@ body {
 }
 
 .login-container,
+.account-container,
 .create-container {
   max-width: 600px;
 }
@@ -860,15 +903,17 @@ body {
 
 .registration-form-container,
 .login-form-container,
+.account-form-container,
 .create-form-container {
   background-color: var(--white);
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .1);
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, 0.1);
 }
 
 .registration-form,
 .login-form,
+.account-form,
 .create-form {
   display: grid;
   gap: 24px;
@@ -912,7 +957,8 @@ body {
 }
 
 .registration-btn,
-.login-btn {
+.login-btn,
+.account-btn {
   margin-block-start: 20px;
   padding: 18px 32px;
   font-size: 1.8rem;
@@ -922,7 +968,8 @@ body {
 }
 
 .registration-btn:disabled,
-.login-btn:disabled {
+.login-btn:disabled,
+.account-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
   transform: none;
@@ -948,7 +995,8 @@ body {
 }
 
 .registration-footer,
-.login-footer {
+.login-footer,
+.account-footer {
   text-align: center;
   margin-block-start: 30px;
   padding-block-start: 30px;
@@ -956,7 +1004,8 @@ body {
 }
 
 .registration-footer p,
-.login-footer p {
+.login-footer p,
+.account-footer p {
   color: var(--sonic-silver);
   font-size: 1.6rem;
 }
@@ -971,13 +1020,13 @@ body {
   padding: 30px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 5px 20px hsla(220, 32%, 8%, .05);
+  box-shadow: 0 5px 20px hsla(220, 32%, 8%, 0.05);
   transition: var(--transition);
 }
 
 .info-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .1);
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, 0.1);
 }
 
 .info-icon {
@@ -1018,6 +1067,24 @@ body {
   font-weight: var(--fw-600);
 }
 
+/* Centered form actions with divider */
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-block-start: 20px;
+}
+.form-actions .divider {
+  width: 1px;
+  height: 28px;
+  background-color: var(--light-gray);
+  display: inline-block;
+}
+.form-actions .btn-link {
+  padding: 12px 18px;
+}
+
 /*-----------------------------------*\
   #ORDER PAGE
 \*-----------------------------------*/
@@ -1044,13 +1111,13 @@ body {
   background-color: var(--white);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .1);
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, 0.1);
   transition: var(--transition);
 }
 
 .car-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px hsla(220, 32%, 8%, .15);
+  box-shadow: 0 20px 40px hsla(220, 32%, 8%, 0.15);
 }
 
 .car-image {
@@ -1142,7 +1209,7 @@ body {
   background-color: var(--white);
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .1);
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, 0.1);
   height: fit-content;
   position: sticky;
   top: 120px;
@@ -1246,7 +1313,7 @@ body {
   background-color: var(--white);
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px hsla(220, 32%, 8%, .15);
+  box-shadow: 0 10px 30px hsla(220, 32%, 8%, 0.15);
   text-align: center;
 }
 
@@ -1317,7 +1384,6 @@ body {
   letter-spacing: 1px;
 }
 
-
 /* Button matches login style */
 .btn-send {
   background-color: var(--international-orange-engineering);
@@ -1347,8 +1413,6 @@ body {
   font-size: 2rem;
   line-height: 1;
 }
-
-
 
 /* === CRUD === */
 
@@ -1390,14 +1454,10 @@ body {
   background-color: #e6e6e6;
 }
 
-
-
-
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
 @media (min-width: 575px) {
-
   /**
    * Typography
   */
@@ -1491,11 +1551,9 @@ body {
     bottom: -30px;
     right: 0;
   }
-
 }
 
 @media (min-width: 768px) {
-
   /**
    * Typography
   */
@@ -1588,11 +1646,9 @@ body {
   .copyright {
     --fs-6: 1.4rem;
   }
-
 }
 
 @media (min-width: 992px) {
-
   /**
    * Typography
    */
@@ -1676,7 +1732,7 @@ body {
     margin-block-end: 15px;
   }
 
-  .service-list li:nth-child(-2n+3) {
+  .service-list li:nth-child(-2n + 3) {
     margin-block-start: 90px;
   }
 
@@ -1730,7 +1786,7 @@ body {
   }
 
   .about::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -1753,11 +1809,9 @@ body {
   .scrollbar-item {
     min-width: calc(33.33% - 20px);
   }
-
 }
 
 @media (min-width: 1200px) {
-
   /**
    * Typography
    */
@@ -1847,7 +1901,7 @@ body {
     padding-inline: 50px;
   }
 
-  .service-list li:nth-child(-2n+3) {
+  .service-list li:nth-child(-2n + 3) {
     margin-block-start: 110px;
   }
 
@@ -1872,5 +1926,4 @@ body {
     width: 55px;
     height: 55px;
   }
-
 }

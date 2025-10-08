@@ -2,6 +2,10 @@ using cse325_Team6_Project.Components;
 using Microsoft.EntityFrameworkCore;
 using MyMuscleCars.Data;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +15,13 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 // then Register controllers
 builder.Services.AddControllers();
+
+builder.Services.AddHttpClient("ServerAPI", client =>
+{
+    client.BaseAddress = new Uri("Database_Host"); // your backend API base URL
+});
+
+
 
 // We need to Register EF Core DbContext with Postgres + retry policy
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -22,10 +33,49 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         )
     )
 );
+// ✅ Add JWT Authentication
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+        )
+    };
+    // Also allow the JWT to be read from an HttpOnly cookie named 'jwtToken'
+    options.Events = new Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents
+    {
+        OnMessageReceived = context =>
+        {
+            if (context.Request.Cookies.ContainsKey("jwtToken"))
+            {
+                context.Token = context.Request.Cookies["jwtToken"];
+            }
+            return Task.CompletedTask;
+        }
+    };
+});
 
-// Adding Razor components
+// Adding Razor components (interactive server components)
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// Provide cascading authentication state to Blazor components
+builder.Services.AddCascadingAuthenticationState();
+
+// Register client-side auth helper
+// AuthService removed in favor of built-in AuthenticationStateProvider
 
 var app = builder.Build();
 
@@ -62,10 +112,11 @@ else
 // Middlewares
 app.UseAntiforgery();
 app.MapStaticAssets();
+app.UseAuthentication();  
+app.UseAuthorization();
 app.MapControllers();
 
-//  Razor pages
 app.MapRazorComponents<App>()
-   .AddInteractiveServerRenderMode();
+    .AddInteractiveServerRenderMode();
 
 app.Run();

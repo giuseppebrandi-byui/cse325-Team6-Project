@@ -1,128 +1,168 @@
-@using System;
-@using System.Globalization;
-
 @page "/login"
-<PageTitle>CSE Muscle Cars - Car Sales & Repair Service</PageTitle>
+@using Microsoft.AspNetCore.Components.Authorization
+@rendermode InteractiveServer
+@using MyMuscleCars.Models
+@using System.ComponentModel.DataAnnotations
+@inject ILogger<Login> Logger
+@inject IHttpClientFactory HttpClientFactory
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
+<PageTitle>CSE Muscle Cars - Login</PageTitle>
 
-  <main>
+<main>
     <article>
-      <!-- 
-        - #LOGIN SECTION
-      -->
-      <section class="section login" aria-labelledby="login-label">
-        <div class="container">
+        <!-- LOGIN SECTION -->
+        <section class="section login" aria-labelledby="login-label">
+            <div class="container">
 
-          <p class="section-subtitle :light" id="registration-label">Welcome to the community</p>
-          <h2 class="h2 section-title">Login</h2>
+                <p class="section-subtitle :light" id="login-label">Welcome to the community</p>
+                <h2 class="h2 section-title">Login</h2>
 
-          <div class="login-container">
-            <div class="login-form-container">
+                <div class="login-container">
+                    <div class="login-form-container">
 
-              <EditForm Model="loginModel" OnValidSubmit="HandleSubmit" class="login-form">
-                <DataAnnotationsValidator />
-               
-                <div class="form-group">
-                  <label for="email" class="form-label">Email Address</label>
-                  <InputText id="email" class="form-input" @bind-Value="loginModel.Email"
-                    placeholder="Enter your email" />
-                  <ValidationMessage For="@(() => loginModel.Email)" />
+                        <EditForm Model="@LoginModel"
+                                  OnValidSubmit="HandleSubmit"
+                                  OnInvalidSubmit="HandleInvalidSubmit"
+                                  FormName="LoginForm"
+                                  class="login-form">
+
+                            <DataAnnotationsValidator />
+                            <ValidationSummary />
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <InputText id="email"
+                                           class="form-input"
+                                           @bind-Value="LoginModel!.Email"
+                                           placeholder="Enter your email" />
+                                <ValidationMessage For="@(() => LoginModel!.Email)" />
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label for="password" class="form-label">Password</label>
+                                <InputText id="password"
+                                           type="password"
+                                           class="form-input"
+                                           @bind-Value="LoginModel!.Password"
+                                           placeholder="Enter your password" />
+                                <ValidationMessage For="@(() => LoginModel!.Password)" />
+                            </div>
+
+                            <!-- Error / Success Messages -->
+                            @if (!string.IsNullOrEmpty(errorMessage))
+                            {
+                                <div class="error-message">
+                                    <i class="ri-error-warning-line"></i>
+                                    @errorMessage
+                                </div>
+                            }
+
+                            @if (!string.IsNullOrEmpty(successMessage))
+                            {
+                                <div class="success-message">
+                                    <i class="ri-check-line"></i>
+                                    @successMessage
+                                </div>
+                            }
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn login-btn" disabled="@isLoading">
+                                @if (isLoading)
+                                {
+                                    <span class="loading-spinner"></span>
+                                    <span>Logging in...</span>
+                                }
+                                else
+                                {
+                                    <span class="span">Login into Account</span>
+                                    <span class="material-symbols-rounded">arrow_forward</span>
+                                }
+                            </button>
+
+                        </EditForm>
+
+                        <!-- Footer -->
+                        <div class="login-footer">
+                            <p>Don't have an account? <a href="/register" class="btn-link">Create Account</a></p>
+                        </div>
+
+                    </div>
                 </div>
-
-                <div class="form-group">
-                  <label for="password" class="form-label">Password</label>
-                  <InputText type="password" id="password" class="form-input" @bind-Value="loginModel.Password"
-                    placeholder="Enter your password" />
-                  <ValidationMessage For="@(() => loginModel.Password)" />
-                </div>
-
-                @if (!string.IsNullOrEmpty(errorMessage))
-                {
-                  <div class="error-message">
-                    <i class="ri-error-warning-line"></i>
-                    @errorMessage
-                  </div>
-                }
-
-                @if (!string.IsNullOrEmpty(successMessage))
-                {
-                  <div class="success-message">
-                    <i class="ri-check-line"></i>
-                    @successMessage
-                  </div>
-                }
-
-                <button type="submit" class="btn login-btn" disabled="@isLoading">
-                  @if (isLoading)
-                  {
-                    <span class="loading-spinner"></span>
-                    <span>Login into Account...</span>
-                  }
-                  else
-                  {
-                    <span class="span">Login into Account</span>
-                    <span class="material-symbols-rounded">arrow_forward</span>
-                  }
-                </button>
-
-              </EditForm>
-
-              <div class="login-footer">
-                <p>Don't have an account? <a href="/register" class="btn-link">Create Account</a></p>
-              </div>
 
             </div>
-
-          </div>
-
-        </div>
-      </section>
-
+        </section>
     </article>
-  </main>
+</main>
 
 @code {
-  private LoginModel loginModel = new();
-  private bool isLoading = false;
-  private string errorMessage = string.Empty;
-  private string successMessage = string.Empty;
+    [SupplyParameterFromForm]
+    private LoginModel? LoginModel { get; set; } = new();
 
-  private async Task HandleSubmit()
-  {
-    try
+    private bool isLoading = false;
+    private string errorMessage = string.Empty;
+    private string successMessage = string.Empty;
+
+    protected override async Task OnInitializedAsync()
     {
-      isLoading = true;
-      errorMessage = string.Empty;
-      successMessage = string.Empty;
-
-      // Simulate API call - replace with actual implementation
-      await Task.Delay(2000);
-
-      // For now, just show success message
-      successMessage = "Login is successfull!";
-
-      // Reset form
-      loginModel = new LoginModel();
+        var auth = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        if (auth.User?.Identity?.IsAuthenticated == true)
+        {
+            // already logged in, redirect to home
+            Navigation.NavigateTo("/", forceLoad: true);
+            return;
+        }
     }
-    catch (Exception)
+
+    private void HandleInvalidSubmit(EditContext ctx)
     {
-      errorMessage = "An error occurred while logging into your account. Please try again.";
+        errorMessage = "Please fix the highlighted errors.";
+        Logger.LogWarning("❌ Invalid login attempt: {Errors}", string.Join(", ", ctx.GetValidationMessages()));
     }
-    finally
+
+    private async Task HandleSubmit()
     {
-      isLoading = false;
-    }
-  }
+        try
+        {
+            isLoading = true;
+            errorMessage = string.Empty;
+            successMessage = string.Empty;
 
+            var jsResult = await MyMuscleCars.Services.JsInteropHelpers.PostJson(JS, "/api/login", LoginModel!);
 
-  public class LoginModel
-  {
-    [Required(ErrorMessage = "Email address is required.")]
-    [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
-    public string Email { get; set; } = string.Empty;
+            if (jsResult?.Status == 200)
+            {
+                successMessage = "Login successful! Redirecting...";
+                Logger.LogInformation("✅ User logged in: {Email}", LoginModel?.Email);
+                LoginModel = new LoginModel(); // reset form
 
-    [Required(ErrorMessage = "Password is required.")]
-    [StringLength(100, MinimumLength = 6, ErrorMessage = "Password must be between 6 and 100 characters.")]
-    public string Password { get; set; } = string.Empty;
+                Navigation.NavigateTo("/", forceLoad: true);
+            }
+            else
+            {
+                var error = jsResult?.Body ?? "Invalid login";
+                errorMessage = $"Invalid login: {error}";
+                Logger.LogWarning("❌ Login failed: {Error}", error);
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Unexpected error: {ex.Message}";
+            Logger.LogError(ex, "🚨 Error during login process");
+        }
+        finally
+        {
+            isLoading = false;
+        }
+        }
+
+    private class BrowserPostResult
+    {
+        public int Status { get; set; }
+        public string? Body { get; set; }
     }
 }
