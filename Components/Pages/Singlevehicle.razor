@@ -69,13 +69,10 @@
   public bool isLoading = true;
 
   protected override async Task OnInitializedAsync() {
-    Console.WriteLine($"Giuseppe 1 {Id}");
     try
     {
-    Console.WriteLine($"Giuseppe 2 {isLoading}");
       var http = new HttpClient { BaseAddress = new Uri(NavigationManager.BaseUri) };
       car = await http.GetFromJsonAsync<Inventory>($"api/inventory/{Id}");
-    Console.WriteLine($"Giuseppe 3 {car}");
       if (car == null)
       {
         Console.WriteLine($"Vehicle {Id} not found!");
