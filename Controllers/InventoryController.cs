@@ -40,5 +40,17 @@ namespace MyMuscleCars.Controllers
 
             return Ok(inventory);
         }
+
+        // GET: api/inventory/newest
+        [HttpGet("newest")]
+        public async Task<ActionResult<IEnumerable<Inventory>>> GetNewest()
+        {
+            var newestInventory = await _context.Inventories
+            .Include(i => i.MakeRef)
+            .OrderByDescending(i => i.InvYear)
+            .Take(3).ToListAsync();
+
+            return Ok(newestInventory);
+        }
     }
 }

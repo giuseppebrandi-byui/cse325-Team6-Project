@@ -1,5 +1,7 @@
 ﻿@using System;
 @using System.Globalization;
+@inject NavigationManager NavigationManager
+@using MyMuscleCars.Models
 
 @page "/"
 <PageTitle>CSE Muscle Cars - Car Sales & Repair Service</PageTitle>
@@ -23,7 +25,7 @@
               hand to assist you.
             </p>
 
-            <a href="#" class="btn">
+            <a href="/vehicles" class="btn">
               <span class="span">Buy a Car</span>
 
               <span class="material-symbols-rounded">arrow_forward</span>
@@ -50,68 +52,39 @@
 
           <ul class="has-scrollbar">
 
-            <li class="scrollbar-item">
+          @if (newestcars.Count == 0)
+          {
+            <p>Loading cars ...</p>
+          }
+          else {
+            // Loop through the list of newest cars
+            @foreach (var newcar in newestcars)
+            { 
+              <li class="scrollbar-item">
               <div class="work-card">
 
                 <figure class="card-banner img-holder" style="--width: 650; --height: 433;">
-                  <img src="images/vehicles/2024-camaro-9v2.jpg" width="650" height="433" loading="lazy" alt="2024 Camaro 9v2"
+                  <img src="@newcar.InvImage" width="650" height="433" loading="lazy" alt="@newcar.InvYear @newcar.InvMake @newcar.InvModel"
                     class="img-cover">
                 </figure>
 
                 <div class="card-content">
-                  <p class="card-subtitle">Chevrolet</p>
+                  <p class="card-subtitle">@newcar.InvMake</p>
 
-                  <h3 class="h3 card-title">2024 Camaro 9v2</h3>
-
-                  <a href="#" class="card-btn">
+                  <h3 class="h3 card-title">@newcar.InvModel</h3>
+                  <div class="info-vehicle">
+                    <p>Price: $@newcar.InvPrice</p>
+                    <p>Year: @newcar.InvYear</p>
+                  </div> 
+                  <a href="/singlevehicle/@newcar.InvId" class="card-btn">
                     <span class="material-symbols-rounded">arrow_forward</span>
                   </a>
                 </div>
 
               </div>
             </li>
-
-            <li class="scrollbar-item">
-              <div class="work-card">
-
-                <figure class="card-banner img-holder" style="--width: 650; --height: 433;">
-                  <img src="images/vehicles/2024-stingray.jpg" width="650" height="433" loading="lazy" alt="2024 Stingray"
-                    class="img-cover">
-                </figure>
-
-                <div class="card-content">
-                  <p class="card-subtitle">Chevrolet</p>
-
-                  <h3 class="h3 card-title">2024 Stingray</h3>
-
-                  <a href="#" class="card-btn">
-                    <span class="material-symbols-rounded">arrow_forward</span>
-                  </a>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="work-card">
-
-                <figure class="card-banner img-holder" style="--width: 650; --height: 433;">
-                  <img src="images/vehicles/2024-mustang.jpg" width="650" height="433" loading="lazy" alt="2024 Mustang"
-                    class="img-cover">
-                </figure>
-
-                <div class="card-content">
-                  <p class="card-subtitle">Ford</p>
-
-                  <h3 class="h3 card-title">2024 Mustang</h3>
-
-                  <a href="#" class="card-btn">
-                    <span class="material-symbols-rounded">arrow_forward</span>
-                  </a>
-                </div>
-
-              </div>
-            </li>
+            }
+          }
 
           </ul>
 
@@ -312,5 +285,26 @@
 
 @code
 {
-  
+  private List<Inventory> newestcars = new();
+
+  protected override async Task OnInitializedAsync()
+  {
+    try
+    {
+      var http = new HttpClient { BaseAddress = new Uri(NavigationManager.BaseUri) };
+      newestcars = await http.GetFromJsonAsync<List<Inventory>>
+      ("api/inventory/newest")?? new List<Inventory>();
+      if (newestcars.Count == 0)
+      {
+        Console.WriteLine("No newest cars found");
+      }
+      else {
+        Console.WriteLine("Fetched: " + newestcars.Count);
+      }
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine("Error fetching newest cars: " + ex.Message);
+    }
+  }
 }
