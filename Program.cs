@@ -11,10 +11,14 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // When running on Render (or another container host) the platform provides
-// the port to bind via the PORT environment variable. Also listen on all
-// interfaces so the container receives traffic from Render's proxy.
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+// the port to bind via the PORT environment variable. Only call UseUrls
+// when that env var exists. This keeps local development (launchSettings,
+// dotnet watch) using their configured ports like localhost:5154.
+var portEnv = Environment.GetEnvironmentVariable("PORT");
+if (!string.IsNullOrEmpty(portEnv))
+{
+    builder.WebHost.UseUrls($"http://0.0.0.0:{portEnv}");
+}
 
 // Support forwarded headers (X-Forwarded-For, X-Forwarded-Proto) so
 // authentication/URL generation sees the original scheme when behind a proxy.
