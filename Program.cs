@@ -4,10 +4,28 @@ using MyMuscleCars.Data;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.HttpOverrides;
 using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+// When running on Render (or another container host) the platform provides
+// the port to bind via the PORT environment variable. Only call UseUrls
+// when that env var exists. This keeps local development (launchSettings,
+// dotnet watch) using their configured ports like localhost:5154.
+var portEnv = Environment.GetEnvironmentVariable("PORT");
+if (!string.IsNullOrEmpty(portEnv))
+{
+    builder.WebHost.UseUrls($"http://0.0.0.0:{portEnv}");
+}
+
+// Support forwarded headers (X-Forwarded-For, X-Forwarded-Proto) so
+// authentication/URL generation sees the original scheme when behind a proxy.
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+});
 
 // First we  Read connection string from appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
@@ -97,10 +115,11 @@ using (var scope = app.Services.CreateScope())
 // Environment-specific config
 if (!app.Environment.IsDevelopment())
 {
-    // Production
+    // Production: Render terminates TLS at the edge, so do not force HTTPS
+    // or enable HSTS here. Instead we enable forwarded headers so the app
+    // can correctly observe the original request scheme.
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    app.UseHsts();
-    app.UseHttpsRedirection(); // only in prod
+    app.UseForwardedHeaders();
 }
 else
 {
