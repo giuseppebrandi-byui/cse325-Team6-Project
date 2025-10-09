@@ -880,7 +880,8 @@ body {
 .registration-container,
 .login-container,
 .account-container,
-.create-container {
+.create-container,
+.checkout-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 60px;
@@ -893,7 +894,8 @@ body {
 
 .login-container,
 .account-container,
-.create-container {
+.create-container,
+.checkout-container {
   max-width: 600px;
 }
 
@@ -904,7 +906,8 @@ body {
 .registration-form-container,
 .login-form-container,
 .account-form-container,
-.create-form-container {
+.create-form-container,
+.checkout-form-container {
   background-color: var(--white);
   padding: 40px;
   border-radius: 20px;

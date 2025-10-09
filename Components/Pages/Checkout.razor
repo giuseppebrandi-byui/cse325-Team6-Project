@@ -1,5 +1,7 @@
 @using System;
 @using System.Globalization;
+@using MyMuscleCars.Models
+@inject NavigationManager NavigationManager
 
 @page "/checkout"
 <PageTitle>CSE Muscle Cars - Car Sales & Repair Service</PageTitle>
@@ -16,8 +18,29 @@
           <p class="section-subtitle :light" id="registration-label">You are a step away from your dream</p>
           <h2 class="h2 section-title">Check Out Form</h2>
 
-          <div class="login-container">
-            <div class="login-form-container">
+          <div class="checkout-container"><!-- Change class name -->
+          @if (selectedVehicle != null)
+            { 
+              <div class="work-card">
+
+                <figure class="card-banner img-holder" style="--width: 650; --height: 433;">
+                  <img src="@selectedVehicle.InvImage" width="650" height="433" loading="lazy" alt="@selectedVehicle.InvYear @selectedVehicle.InvMake @selectedVehicle.InvModel"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">@selectedVehicle.InvMake</p>
+
+                  <h3 class="h3 card-title">@selectedVehicle.InvModel</h3>
+                  <div class="info-vehicle">
+                    <p>Price: $@selectedVehicle.InvPrice</p>
+                    <p>Year: @selectedVehicle.InvYear</p>
+                  </div> 
+                </div>
+
+              </div>
+            }
+            <div class="checkout-form-container">
 
               <EditForm Model="checkoutModel" OnValidSubmit="HandleSubmit" class="login-form">
                 <DataAnnotationsValidator />
@@ -122,11 +145,31 @@
   </main>
 
 @code {
+  [SupplyParameterFromQuery(Name = "vehicleId")]
+  public int? VehicleId { get; set; }
+
+  private Inventory? selectedVehicle;
   private CheckoutModel checkoutModel = new();
   private bool isLoading = false;
   private string errorMessage = string.Empty;
   private string successMessage = string.Empty;
 
+protected override async Task OnInitializedAsync() {
+  if (VehicleId.HasValue)
+    try
+    {
+      var http = new HttpClient { BaseAddress = new Uri(NavigationManager.BaseUri) };
+      selectedVehicle = await http.GetFromJsonAsync<Inventory>($"api/inventory/{VehicleId}");
+      if (selectedVehicle == null)
+      {
+        Console.WriteLine($"Vehicle {VehicleId} not found!");
+      }
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"Error fetching vehicle: {ex.Message}");
+    }
+  }
   private async Task HandleSubmit()
   {
     try
