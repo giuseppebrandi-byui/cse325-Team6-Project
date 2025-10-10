@@ -491,4 +491,4 @@ For questions, support, or feedback:
 
 ---
 
-**Built by Team 6 | BYU-Idaho CSE 325 | Fall 2024**
+**Built by Team 6 | BYU-Idaho CSE 325 | Fall 2025**
