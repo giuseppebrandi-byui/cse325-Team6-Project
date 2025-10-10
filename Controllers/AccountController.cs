@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyMuscleCars.Data;
 using MyMuscleCars.Models;
 
+// Account Controller handles profile viewing and updates for authenticated users
 namespace cse325_Team6_Project.Controllers
 {
     [ApiController]
@@ -17,7 +18,8 @@ namespace cse325_Team6_Project.Controllers
             _db = db;
             _logger = logger;
         }
-
+        // GET api/account/profile
+        // Returns the profile of the currently authenticated user
         [HttpGet("profile")]
         [Authorize]
         public IActionResult GetProfile()
@@ -64,7 +66,8 @@ namespace cse325_Team6_Project.Controllers
                 accountType = acct.AccountType
             });
         }
-
+        // POST api/account/profile
+        // Updates the profile of the currently authenticated user
         [HttpPost("profile")]
         [Authorize]
         public IActionResult UpdateProfile([FromBody] MyMuscleCars.Models.ProfileUpdateDto update)
@@ -160,7 +163,8 @@ namespace cse325_Team6_Project.Controllers
 
             return Ok(new { message = "Profile updated" });
         }
-
+        // POST api/account/change-password
+        // Changes password for the currently authenticated user
         [HttpPost("change-password")]
         [Authorize]
         public IActionResult ChangePassword([FromBody] MyMuscleCars.Models.ChangePasswordDto payload)
@@ -190,6 +194,8 @@ namespace cse325_Team6_Project.Controllers
 
             return Ok(new { message = "Password changed" });
         }
+        // POST api/account/delete
+        // Deletes the currently authenticated user's account
         [HttpPost("delete")]
         [Authorize]
         public IActionResult DeleteAccount()

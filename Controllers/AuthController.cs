@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+// Auth Controller handles authentication status and logout
 namespace cse325_Team6_Project.Controllers
 {
     [ApiController]
@@ -13,7 +14,8 @@ namespace cse325_Team6_Project.Controllers
         {
             _logger = logger;
         }
-
+        // GET api/auth/me
+        // Returns the email of the currently authenticated user, or 401 if not authenticated
         [HttpGet("me")]
         public IActionResult GetCurrentUser()
         {
@@ -54,7 +56,8 @@ namespace cse325_Team6_Project.Controllers
             _logger.LogInformation("[AuthController] user not authenticated - returning 401");
             return Unauthorized();
         }
-
+        // POST api/auth/logout
+        // Logs out the current user by clearing the jwtToken cookie
         [HttpPost("logout")]
         public IActionResult Logout()
         {
@@ -80,7 +83,8 @@ namespace cse325_Team6_Project.Controllers
                 return StatusCode(500, "Failed to logout");
             }
         }
-
+        // GET api/auth/logout
+        // Logs out the current user by clearing the jwtToken cookie and redirects to the specified URL (default: /)
         [HttpGet("logout")]
         public IActionResult LogoutGet([FromQuery] string? redirect = "/")
         {

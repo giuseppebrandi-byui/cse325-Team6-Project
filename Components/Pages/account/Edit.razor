@@ -12,7 +12,7 @@
 
 <main>
     <article>
-    <!-- ACCOUNT (uses account-specific classes) -->
+    <!-- Edit Account -->
     <section class="section account" aria-labelledby="account-label">
             <div class="container">
 
@@ -50,7 +50,7 @@
                                 <EditForm Model="editModel" OnValidSubmit="HandleSubmit" class="account-form">
                                     <DataAnnotationsValidator />
                                     <ValidationSummary />
-
+                                    <!-- Editable fields styled as a form -->
                                     <div class="form-group">
                                         <label class="form-label">First Name</label>
                                         <InputText class="form-input" @bind-Value="editModel.FirstName" />
@@ -131,15 +131,17 @@
     private string currentPassword = string.Empty;
     private string newPassword = string.Empty;
 
+    // ensure we only request once
+    // set loading state
     protected override void OnInitialized()
     {
-        // default state
         isLoading = true;
     }
 
     // ensure we only request once
     private bool _profileRequested = false;
-
+    // fetch profile data after first render so we can use IJSRuntime
+    //
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender) return;
@@ -153,6 +155,7 @@
             var jsResult = await MyMuscleCars.Services.JsInteropHelpers.GetJson(JS, "/api/account/profile");
             if (jsResult == null)
             {
+                // Handle null result
                 Logger.LogWarning("[Edit] jsResult was null");
                 errorMessage = "Failed to contact server.";
                 isLoading = false;
@@ -161,6 +164,7 @@
             }
             if (jsResult.Status == 401)
             {
+                // Unauthorized
                 Logger.LogInformation("[Edit] server returned 401 -> unauthorized");
                 isUnauthorized = true;
                 isLoading = false;
@@ -170,6 +174,7 @@
 
             if (jsResult.Status == 404)
             {
+                // Not found
                 Logger.LogInformation("[Edit] server returned 404 -> profile not found");
                 errorMessage = "Profile not found (404). If you just registered, try refreshing the page.";
                 isLoading = false;
@@ -214,7 +219,7 @@
             StateHasChanged();
         }
     }
-
+    // Valid form submission handler
     private async Task HandleSubmit()
     {
         isSubmitting = true;
@@ -247,7 +252,7 @@
                     return;
                 }
             }
-
+            // Now update profile
             var result = await MyMuscleCars.Services.JsInteropHelpers.PostJson(JS, "/api/account/profile", editModel);
             if (result?.Status == 200)
             {

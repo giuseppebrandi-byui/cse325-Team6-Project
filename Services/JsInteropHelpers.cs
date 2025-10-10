@@ -10,7 +10,7 @@ namespace MyMuscleCars.Services
             public int Status { get; set; }
             public string? Body { get; set; }
         }
-
+        // POST JSON data to the specified URL and return the response status and body
         public static async Task<BrowserPostResult?> PostJson(IJSRuntime js, string url, object data)
         {
             try
@@ -22,7 +22,7 @@ namespace MyMuscleCars.Services
                 return null;
             }
         }
-
+        // GET JSON data from the specified URL and return the response status and body
         public static async Task<BrowserPostResult?> GetJson(IJSRuntime js, string url)
         {
             try

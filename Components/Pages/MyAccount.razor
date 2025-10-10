@@ -11,7 +11,7 @@
 
 <main>
     <article>
-    <!-- ACCOUNT (uses account-specific classes) -->
+    <!-- My Account Profile-->
     <section class="section account" aria-labelledby="account-label">
             <div class="container">
 
@@ -41,7 +41,7 @@
                             }
                             else if (profile != null)
                             {
-                                <!-- readonly fields styled like the login form inputs -->
+                                <!-- readonly fields styled as a form -->
                                 <div class="form-group">
                                     <label class="form-label">First Name</label>
                                     <input class="form-input" readonly value="@(profile.FirstName ?? string.Empty)" />
@@ -73,13 +73,6 @@
                                         <p><a href="/cars" class="btn-link">Modify Car Inventory</a></p>
                                     </div>
                                 }
-                                @* @if (profile.AccountType == "Admin")
-                                {
-                                    <div class="account-footer">
-                                        <p><a href="#" class="btn-link">Contact Messages</a></p>
-                                    </div>
-                                } *@
-
                             }
                             else
                             {
@@ -102,16 +95,14 @@
     private bool isDeleting = false;
 
     private ProfileDto? profile;
-
-    protected override void OnInitialized()
-    {
-        // default state
-        isLoading = true;
-    }
-
-    // ensure we only request once
     private bool _profileRequested = false;
 
+    // only called once on first render
+    protected override void OnInitialized()
+    {
+        isLoading = true;
+    }    
+    // after first render, fetch profile data from server
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender) return;
@@ -179,7 +170,7 @@
             StateHasChanged();
         }
     }
-
+    // Delete account button handler
     private async Task DeleteAccountAsync()
     {
         try

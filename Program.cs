@@ -10,7 +10,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// When running on Render (or another container host) the platform provides
+// When running on Renderthe platform provides
 // the port to bind via the PORT environment variable. Only call UseUrls
 // when that env var exists. This keeps local development (launchSettings,
 // dotnet watch) using their configured ports like localhost:5154.
@@ -20,7 +20,7 @@ if (!string.IsNullOrEmpty(portEnv))
     builder.WebHost.UseUrls($"http://0.0.0.0:{portEnv}");
 }
 
-// Support forwarded headers (X-Forwarded-For, X-Forwarded-Proto) so
+// Support forwarded headers so
 // authentication/URL generation sees the original scheme when behind a proxy.
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
@@ -51,7 +51,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         )
     )
 );
-// ✅ Add JWT Authentication
+// Add JWT Authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
