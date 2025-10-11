@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
+// Register Controller handles user registration
 namespace MyMuscleCars.Controllers
 {
     [Route("api/[controller]")]
@@ -22,7 +23,8 @@ namespace MyMuscleCars.Controllers
             _context = context;
             _config = config;
         }
-
+        // POST api/register
+        // Registers a new user and returns a JWT token in an HttpOnly cookie
         [HttpPost]
         public async Task<ActionResult> RegisterUser([FromBody] RegistrationModel registration)
         {
@@ -66,7 +68,7 @@ namespace MyMuscleCars.Controllers
             // Return minimal user info (token is in httpOnly cookie)
             return Ok(new { user = newAccount.Email });
         }
-
+        // Simple SHA256 hash for password
         private static string HashPassword(string password)
         {
             using var sha256 = SHA256.Create();
@@ -74,7 +76,7 @@ namespace MyMuscleCars.Controllers
             var hash = sha256.ComputeHash(bytes);
             return Convert.ToBase64String(hash);
         }
-
+        // Generate JWT token for the given account
         private string GenerateJwtToken(Account account)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));

@@ -8,6 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 
+// Login Controller handles user login
 namespace MyMuscleCars.Controllers
 {
     [Route("api/[controller]")]
@@ -22,7 +23,8 @@ namespace MyMuscleCars.Controllers
             _context = context;
             _config = config;
         }
-
+        // POST api/login
+        // Logs in a user and returns a JWT token in an HttpOnly cookie
         [HttpPost]
         public async Task<ActionResult> LoginUser([FromBody] LoginModel login)
         {

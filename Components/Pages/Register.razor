@@ -120,6 +120,8 @@
                         </div>
 
                             <div class="registration-info">
+
+              <!-- Registration Information Cards -->
               <div class="info-card">
                 <figure class="info-icon">
                   <img src="images/services-1.png" width="80" height="80" loading="lazy" alt="Car Purchase">
@@ -172,12 +174,15 @@
     private bool _pendingRedirect = false;
     private bool _browserRendered = false;
 
+    // On component initialization, ensure RegisterModel is not null and is initialized properly.
     protected override void OnInitialized()
     {
         Logger.LogInformation("🔹 Register component initialized");
         RegisterModel ??= new();
     }
 
+    // After each render, check if we need to store the token and/or redirect.
+    // If so, do it now that the browser is ready.
     protected override Task OnAfterRenderAsync(bool firstRender)
     {
         Logger.LogInformation("🔹 OnAfterRenderAsync triggered. firstRender={FirstRender}, pendingToken={Token}", firstRender, _pendingToken);
@@ -205,16 +210,16 @@
         }
         return Task.CompletedTask;
     }
-
+    // Handle invalid form submission
     private void HandleInvalidSubmit(EditContext ctx)
     {
         errorMessage = "Please fix the highlighted errors.";
         Logger.LogWarning("❌ Invalid submit triggered: {Errors}", string.Join(", ", ctx.GetValidationMessages()));
     }
 
+    // Handle valid form submission
     private async Task HandleSubmit()
     {
-        Logger.LogInformation("📝 HandleSubmit triggered");
         errorMessage = string.Empty;
         successMessage = string.Empty;
         isLoading = true;
@@ -227,8 +232,6 @@
                 Logger.LogWarning("❌ Password mismatch");
                 return;
             }
-
-            Logger.LogInformation("📡 Sending POST request to /api/register via browser fetch (to allow Set-Cookie)");
             var jsResult = await MyMuscleCars.Services.JsInteropHelpers.PostJson(JS, "/api/register", RegisterModel!);
 
             if (jsResult?.Status == 200)
@@ -265,7 +268,7 @@
             isLoading = false;
         }
     }
-
+    
     public class RegisterResult
     {
         [JsonPropertyName("token")]

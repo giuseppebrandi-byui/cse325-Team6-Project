@@ -106,7 +106,7 @@
     private bool isLoading = false;
     private string errorMessage = string.Empty;
     private string successMessage = string.Empty;
-
+    // On component initialization, check if user is already authenticated
     protected override async Task OnInitializedAsync()
     {
         var auth = await AuthenticationStateProvider.GetAuthenticationStateAsync();
@@ -117,13 +117,13 @@
             return;
         }
     }
-
+    // Handle invalid form submission
     private void HandleInvalidSubmit(EditContext ctx)
     {
         errorMessage = "Please fix the highlighted errors.";
         Logger.LogWarning("❌ Invalid login attempt: {Errors}", string.Join(", ", ctx.GetValidationMessages()));
     }
-
+    // Handle valid form submission
     private async Task HandleSubmit()
     {
         try
