@@ -1,0 +1,37 @@
+﻿@page "/Error/500"
+@using System.Diagnostics
+
+<PageTitle>Server Error</PageTitle>
+
+<div class="contact-page">
+    <div class="contact-card">
+        <h1 class="contact-title">500 - Internal Server Error</h1>
+        <h2 class="contact-subtitle">Oops! Something went wrong on our side.</h2>
+
+        @if (ShowRequestId)
+        {
+            <p class="error-message">
+                <strong>Request ID:</strong> <code>@RequestId</code>
+            </p>
+        }
+
+        <p class="section-text">
+            Please try again later or contact support if the problem persists.
+        </p>
+
+        <a href="/" class="btn-send">
+            Return Home
+        </a>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    private HttpContext? HttpContext { get; set; }
+
+    private string? RequestId { get; set; }
+    private bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+    protected override void OnInitialized() =>
+    RequestId = Activity.Current?.Id ?? HttpContext?.TraceIdentifier;
+}

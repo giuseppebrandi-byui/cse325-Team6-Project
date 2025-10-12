@@ -1,0 +1,859 @@
+2025-10-11 19:35:39.830 -06:00 [INF] User profile is available. Using '/Users/antoniomelendez/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-10-11 19:35:39.975 -06:00 [INF] Now listening on: http://localhost:5154
+2025-10-11 19:35:39.976 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-11 19:35:39.976 -06:00 [INF] Hosting environment: Development
+2025-10-11 19:35:39.976 -06:00 [INF] Content root path: /Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project
+2025-10-11 19:35:40.556 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/ - null null
+2025-10-11 19:35:40.586 -06:00 [WRN] Failed to determine the https port for redirect.
+2025-10-11 19:35:40.587 -06:00 [INF] Executing endpoint '/ (/)'
+2025-10-11 19:35:40.659 -06:00 [INF] Executed endpoint '/ (/)'
+2025-10-11 19:35:40.663 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-10-11 19:35:40.663 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/app.css - null null
+2025-10-11 19:35:40.664 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-11 19:35:40.666 -06:00 [WRN] Status code 404 encountered for path /app.css
+2025-10-11 19:35:40.667 -06:00 [WRN] Status code 404 encountered for path /lib/bootstrap/dist/css/bootstrap.min.css
+2025-10-11 19:35:40.667 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - null null
+2025-10-11 19:35:40.661 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/ - 200 null text/html; charset=utf-8 106.9694ms
+2025-10-11 19:35:40.667 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - 200 16091 application/javascript; charset=utf-8 2.9687ms
+2025-10-11 19:35:40.667 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - 302 0 null 4.1626ms
+2025-10-11 19:35:40.667 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/app.css - 302 0 null 3.8069ms
+2025-10-11 19:35:40.668 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.670 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/app.css, Response status code: 302
+2025-10-11 19:35:40.670 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 302
+2025-10-11 19:35:40.674 -06:00 [INF] The file images/service-bg.jpg was not modified
+2025-10-11 19:35:40.675 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.675 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - 304 null image/jpeg 7.9978ms
+2025-10-11 19:35:40.698 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - null null
+2025-10-11 19:35:40.700 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/logo.png - null null
+2025-10-11 19:35:40.701 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/css/site.css - null null
+2025-10-11 19:35:40.701 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/facebook.svg - null null
+2025-10-11 19:35:40.701 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/instagram.svg - null null
+2025-10-11 19:35:40.703 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/twitter.svg - null null
+2025-10-11 19:35:40.704 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.704 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.709 -06:00 [INF] Sending file. Request path: 'cse325-Team6-Project.op45447a57.styles.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/wbkyswzg7x-op45447a57.gz'
+2025-10-11 19:35:40.709 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.709 -06:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/xvx4qeryzw-orzsgx9yr5.gz'
+2025-10-11 19:35:40.710 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.710 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - 200 5520 text/css 12.0073ms
+2025-10-11 19:35:40.710 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/css/site.css - 200 28972 text/css 9.0072ms
+2025-10-11 19:35:40.710 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/js/script.js - null null
+2025-10-11 19:35:40.710 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - null null
+2025-10-11 19:35:40.710 -06:00 [INF] Executing endpoint 'Blazor web static files'
+2025-10-11 19:35:40.710 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.711 -06:00 [INF] Sending file. Request path: 'js/script.js'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ywlpsypaa8-oj3r1z6kdp.gz'
+2025-10-11 19:35:40.711 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.711 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/js/script.js - 200 382 text/javascript 1.1794ms
+2025-10-11 19:35:40.711 -06:00 [INF] The file /_framework/blazor.web.js was not modified
+2025-10-11 19:35:40.712 -06:00 [INF] Executed endpoint 'Blazor web static files'
+2025-10-11 19:35:40.712 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - 304 null text/javascript 2.0427ms
+2025-10-11 19:35:40.712 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:35:40.712 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:35:40.713 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:35:40.713 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:35:40.717 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:35:40.717 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 4.7351ms
+2025-10-11 19:35:40.719 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:35:40.719 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 5.6746ms
+2025-10-11 19:35:40.834 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-camaro-9v2.jpg - null null
+2025-10-11 19:35:40.856 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-stingray.jpg - null null
+2025-10-11 19:35:40.894 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.894 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.893 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.894 -06:00 [INF] The file images/2024-stingray.jpg was not modified
+2025-10-11 19:35:40.894 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.894 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.894 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.893 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.894 -06:00 [INF] The file images/2024-camaro-9v2.jpg was not modified
+2025-10-11 19:35:40.894 -06:00 [INF] The file images/logo.png was not modified
+2025-10-11 19:35:40.894 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-stingray.jpg - 304 null image/jpeg 38.3667ms
+2025-10-11 19:35:40.894 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.894 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.894 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/logo.png - 304 null image/png 193.7518ms
+2025-10-11 19:35:40.894 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-camaro-9v2.jpg - 304 null image/jpeg 60.1051ms
+2025-10-11 19:35:40.895 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-mustang.jpg - null null
+2025-10-11 19:35:40.895 -06:00 [INF] Sending file. Request path: 'images/twitter.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/hp31tr84ki-ns70fd10bj.gz'
+2025-10-11 19:35:40.895 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.895 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.895 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/twitter.svg - 200 1234 image/svg+xml 192.46ms
+2025-10-11 19:35:40.895 -06:00 [INF] The file images/2024-mustang.jpg was not modified
+2025-10-11 19:35:40.895 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.895 -06:00 [INF] Sending file. Request path: 'images/facebook.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ymyfoeztlp-f8vkdjbp6c.gz'
+2025-10-11 19:35:40.895 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.895 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-mustang.jpg - 304 null image/jpeg 0.567ms
+2025-10-11 19:35:40.895 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/facebook.svg - 200 782 image/svg+xml 194.549ms
+2025-10-11 19:35:40.897 -06:00 [INF] Sending file. Request path: 'images/instagram.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/iojjayntvy-l4umkzyhdu.gz'
+2025-10-11 19:35:40.897 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:40.897 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/instagram.svg - 200 2535 image/svg+xml 195.2913ms
+2025-10-11 19:35:42.825 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/about-banner.png - null null
+2025-10-11 19:35:42.826 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:42.827 -06:00 [INF] The file images/about-banner.png was not modified
+2025-10-11 19:35:42.827 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:42.827 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/about-banner.png - 304 null image/png 2.9573ms
+2025-10-11 19:35:44.593 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-1.png - null null
+2025-10-11 19:35:44.596 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.597 -06:00 [INF] The file images/services-1.png was not modified
+2025-10-11 19:35:44.597 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.597 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-1.png - 304 null image/png 3.7685ms
+2025-10-11 19:35:44.598 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-3.png - null null
+2025-10-11 19:35:44.598 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-2.png - null null
+2025-10-11 19:35:44.598 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.598 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.598 -06:00 [INF] The file images/services-3.png was not modified
+2025-10-11 19:35:44.598 -06:00 [INF] The file images/services-2.png was not modified
+2025-10-11 19:35:44.598 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.598 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.598 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-2.png - 304 null image/png 0.6516ms
+2025-10-11 19:35:44.598 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-3.png - 304 null image/png 0.8429ms
+2025-10-11 19:35:44.638 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-4.png - null null
+2025-10-11 19:35:44.639 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.639 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-6.png - null null
+2025-10-11 19:35:44.639 -06:00 [INF] The file images/services-4.png was not modified
+2025-10-11 19:35:44.639 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.639 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.640 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-4.png - 304 null image/png 1.3066ms
+2025-10-11 19:35:44.640 -06:00 [INF] The file images/services-6.png was not modified
+2025-10-11 19:35:44.640 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.640 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-6.png - 304 null image/png 1.0165ms
+2025-10-11 19:35:44.656 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-5.png - null null
+2025-10-11 19:35:44.656 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.656 -06:00 [INF] The file images/services-5.png was not modified
+2025-10-11 19:35:44.656 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.656 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-5.png - 304 null image/png 0.4621ms
+2025-10-11 19:35:44.790 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - null null
+2025-10-11 19:35:44.790 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.791 -06:00 [INF] The file images/footer-shape-3.png was not modified
+2025-10-11 19:35:44.791 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:35:44.791 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - 304 null image/png 0.5506ms
+2025-10-11 19:35:55.261 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/services - null null
+2025-10-11 19:35:55.262 -06:00 [INF] Executing endpoint '/services (/services)'
+2025-10-11 19:35:55.273 -06:00 [INF] Executed endpoint '/services (/services)'
+2025-10-11 19:35:55.274 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/services - 200 null text/html; charset=utf-8 13.1715ms
+2025-10-11 19:36:06.151 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/services - null null
+2025-10-11 19:36:06.156 -06:00 [INF] Executing endpoint '/services (/services)'
+2025-10-11 19:36:06.167 -06:00 [INF] Executed endpoint '/services (/services)'
+2025-10-11 19:36:06.168 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/services - 200 null text/html; charset=utf-8 16.9917ms
+2025-10-11 19:36:06.470 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-10-11 19:36:06.471 -06:00 [WRN] Status code 404 encountered for path /lib/bootstrap/dist/css/bootstrap.min.css
+2025-10-11 19:36:06.471 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/app.css - null null
+2025-10-11 19:36:06.471 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - 302 0 null 0.7598ms
+2025-10-11 19:36:06.471 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 302
+2025-10-11 19:36:06.471 -06:00 [WRN] Status code 404 encountered for path /app.css
+2025-10-11 19:36:06.471 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/app.css - 302 0 null 0.2722ms
+2025-10-11 19:36:06.471 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/app.css, Response status code: 302
+2025-10-11 19:36:06.472 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - null null
+2025-10-11 19:36:06.472 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.473 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/css/site.css - null null
+2025-10-11 19:36:06.474 -06:00 [INF] Sending file. Request path: 'cse325-Team6-Project.op45447a57.styles.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/wbkyswzg7x-op45447a57.gz'
+2025-10-11 19:36:06.474 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.474 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - 200 5520 text/css 2.3198ms
+2025-10-11 19:36:06.474 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-1.png - null null
+2025-10-11 19:36:06.474 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.474 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/logo.png - null null
+2025-10-11 19:36:06.475 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.475 -06:00 [INF] The file images/services-1.png was not modified
+2025-10-11 19:36:06.475 -06:00 [INF] The file images/logo.png was not modified
+2025-10-11 19:36:06.475 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.475 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.475 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-1.png - 304 null image/png 0.7861ms
+2025-10-11 19:36:06.475 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/logo.png - 304 null image/png 0.351ms
+2025-10-11 19:36:06.475 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.476 -06:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/xvx4qeryzw-orzsgx9yr5.gz'
+2025-10-11 19:36:06.476 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.476 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/css/site.css - 200 28972 text/css 2.8587ms
+2025-10-11 19:36:06.479 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-2.png - null null
+2025-10-11 19:36:06.479 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-11 19:36:06.479 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.479 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - 200 16091 application/javascript; charset=utf-8 0.3447ms
+2025-10-11 19:36:06.479 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-4.png - null null
+2025-10-11 19:36:06.479 -06:00 [INF] The file images/services-2.png was not modified
+2025-10-11 19:36:06.479 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.479 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.480 -06:00 [INF] The file images/services-4.png was not modified
+2025-10-11 19:36:06.480 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-2.png - 304 null image/png 0.7262ms
+2025-10-11 19:36:06.480 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.480 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-3.png - null null
+2025-10-11 19:36:06.480 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-4.png - 304 null image/png 0.3071ms
+2025-10-11 19:36:06.480 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.480 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/instagram.svg - null null
+2025-10-11 19:36:06.480 -06:00 [INF] The file images/services-3.png was not modified
+2025-10-11 19:36:06.480 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.480 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.480 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-3.png - 304 null image/png 0.267ms
+2025-10-11 19:36:06.480 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-6.png - null null
+2025-10-11 19:36:06.480 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.480 -06:00 [INF] The file images/services-6.png was not modified
+2025-10-11 19:36:06.481 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.481 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-6.png - 304 null image/png 0.8768ms
+2025-10-11 19:36:06.481 -06:00 [INF] Sending file. Request path: 'images/instagram.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/iojjayntvy-l4umkzyhdu.gz'
+2025-10-11 19:36:06.481 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.481 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/instagram.svg - 200 2535 image/svg+xml 1.6954ms
+2025-10-11 19:36:06.483 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/facebook.svg - null null
+2025-10-11 19:36:06.483 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.483 -06:00 [INF] Sending file. Request path: 'images/facebook.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ymyfoeztlp-f8vkdjbp6c.gz'
+2025-10-11 19:36:06.484 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.484 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/facebook.svg - 200 782 image/svg+xml 1.03ms
+2025-10-11 19:36:06.484 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/twitter.svg - null null
+2025-10-11 19:36:06.484 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.484 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/js/script.js - null null
+2025-10-11 19:36:06.484 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - null null
+2025-10-11 19:36:06.484 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:06.484 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:06.485 -06:00 [INF] Sending file. Request path: 'images/twitter.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/hp31tr84ki-ns70fd10bj.gz'
+2025-10-11 19:36:06.485 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.485 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:06.485 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/twitter.svg - 200 1234 image/svg+xml 1.7081ms
+2025-10-11 19:36:06.486 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:06.486 -06:00 [INF] Executing endpoint 'Blazor web static files'
+2025-10-11 19:36:06.486 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:06.486 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 1.7165ms
+2025-10-11 19:36:06.486 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.486 -06:00 [INF] The file /_framework/blazor.web.js was not modified
+2025-10-11 19:36:06.486 -06:00 [INF] Executed endpoint 'Blazor web static files'
+2025-10-11 19:36:06.486 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - 304 null text/javascript 2.0814ms
+2025-10-11 19:36:06.487 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:06.487 -06:00 [INF] Sending file. Request path: 'js/script.js'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ywlpsypaa8-oj3r1z6kdp.gz'
+2025-10-11 19:36:06.487 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:06.487 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/js/script.js - 200 382 text/javascript 2.6504ms
+2025-10-11 19:36:06.487 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 1.3863ms
+2025-10-11 19:36:07.510 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/ - null null
+2025-10-11 19:36:07.510 -06:00 [INF] Executing endpoint '/ (/)'
+2025-10-11 19:36:07.512 -06:00 [INF] Executed endpoint '/ (/)'
+2025-10-11 19:36:07.512 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/ - 200 null text/html; charset=utf-8 2.1266ms
+2025-10-11 19:36:07.517 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-10-11 19:36:07.517 -06:00 [WRN] Status code 404 encountered for path /lib/bootstrap/dist/css/bootstrap.min.css
+2025-10-11 19:36:07.517 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/app.css - null null
+2025-10-11 19:36:07.517 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - 302 0 null 0.5624ms
+2025-10-11 19:36:07.518 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 302
+2025-10-11 19:36:07.517 -06:00 [WRN] Status code 404 encountered for path /app.css
+2025-10-11 19:36:07.518 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/app.css - 302 0 null 0.2376ms
+2025-10-11 19:36:07.518 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/app.css, Response status code: 302
+2025-10-11 19:36:07.518 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-11 19:36:07.518 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - 200 16091 application/javascript; charset=utf-8 0.1843ms
+2025-10-11 19:36:07.518 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-1.png - null null
+2025-10-11 19:36:07.519 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.519 -06:00 [INF] The file images/services-1.png was not modified
+2025-10-11 19:36:07.519 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.519 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-1.png - 304 null image/png 0.5346ms
+2025-10-11 19:36:07.519 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-2.png - null null
+2025-10-11 19:36:07.519 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.519 -06:00 [INF] The file images/services-2.png was not modified
+2025-10-11 19:36:07.519 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.519 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-2.png - 304 null image/png 0.4106ms
+2025-10-11 19:36:07.521 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-3.png - null null
+2025-10-11 19:36:07.522 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.522 -06:00 [INF] The file images/services-3.png was not modified
+2025-10-11 19:36:07.522 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.522 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-3.png - 304 null image/png 0.5574ms
+2025-10-11 19:36:07.523 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-4.png - null null
+2025-10-11 19:36:07.523 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.523 -06:00 [INF] The file images/services-4.png was not modified
+2025-10-11 19:36:07.523 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.523 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-4.png - 304 null image/png 0.4096ms
+2025-10-11 19:36:07.523 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-camaro-9v2.jpg - null null
+2025-10-11 19:36:07.524 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.524 -06:00 [INF] The file images/2024-camaro-9v2.jpg was not modified
+2025-10-11 19:36:07.524 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.524 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-camaro-9v2.jpg - 304 null image/jpeg 0.5455ms
+2025-10-11 19:36:07.524 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-stingray.jpg - null null
+2025-10-11 19:36:07.524 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.524 -06:00 [INF] The file images/2024-stingray.jpg was not modified
+2025-10-11 19:36:07.524 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/services-6.png - null null
+2025-10-11 19:36:07.524 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-mustang.jpg - null null
+2025-10-11 19:36:07.524 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.524 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.524 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.524 -06:00 [INF] The file images/services-6.png was not modified
+2025-10-11 19:36:07.524 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-stingray.jpg - 304 null image/jpeg 0.2889ms
+2025-10-11 19:36:07.524 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.524 -06:00 [INF] The file images/2024-mustang.jpg was not modified
+2025-10-11 19:36:07.524 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/services-6.png - 304 null image/png 0.1937ms
+2025-10-11 19:36:07.524 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.524 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-mustang.jpg - 304 null image/jpeg 0.2579ms
+2025-10-11 19:36:07.525 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - null null
+2025-10-11 19:36:07.525 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.525 -06:00 [INF] The file images/service-bg.jpg was not modified
+2025-10-11 19:36:07.525 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.525 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - 304 null image/jpeg 0.3836ms
+2025-10-11 19:36:07.529 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - null null
+2025-10-11 19:36:07.529 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.529 -06:00 [INF] The file images/footer-shape-3.png was not modified
+2025-10-11 19:36:07.529 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - null null
+2025-10-11 19:36:07.529 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.529 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - 304 null image/png 0.2946ms
+2025-10-11 19:36:07.529 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.529 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/css/site.css - null null
+2025-10-11 19:36:07.529 -06:00 [INF] Sending file. Request path: 'cse325-Team6-Project.op45447a57.styles.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/wbkyswzg7x-op45447a57.gz'
+2025-10-11 19:36:07.529 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.529 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.529 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - 200 5520 text/css 0.6047ms
+2025-10-11 19:36:07.530 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/logo.png - null null
+2025-10-11 19:36:07.530 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.530 -06:00 [INF] The file images/logo.png was not modified
+2025-10-11 19:36:07.530 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.530 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/logo.png - 304 null image/png 0.2102ms
+2025-10-11 19:36:07.530 -06:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/xvx4qeryzw-orzsgx9yr5.gz'
+2025-10-11 19:36:07.530 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.530 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/css/site.css - 200 28972 text/css 0.5192ms
+2025-10-11 19:36:07.530 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/facebook.svg - null null
+2025-10-11 19:36:07.530 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.530 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/instagram.svg - null null
+2025-10-11 19:36:07.530 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.530 -06:00 [INF] Sending file. Request path: 'images/facebook.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ymyfoeztlp-f8vkdjbp6c.gz'
+2025-10-11 19:36:07.530 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.530 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/facebook.svg - 200 782 image/svg+xml 0.4037ms
+2025-10-11 19:36:07.530 -06:00 [INF] Sending file. Request path: 'images/instagram.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/iojjayntvy-l4umkzyhdu.gz'
+2025-10-11 19:36:07.530 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.530 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/instagram.svg - 200 2535 image/svg+xml 0.3898ms
+2025-10-11 19:36:07.531 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/twitter.svg - null null
+2025-10-11 19:36:07.531 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.532 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/js/script.js - null null
+2025-10-11 19:36:07.532 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.532 -06:00 [INF] Sending file. Request path: 'images/twitter.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/hp31tr84ki-ns70fd10bj.gz'
+2025-10-11 19:36:07.532 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.532 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/twitter.svg - 200 1234 image/svg+xml 1.3744ms
+2025-10-11 19:36:07.532 -06:00 [INF] Sending file. Request path: 'js/script.js'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ywlpsypaa8-oj3r1z6kdp.gz'
+2025-10-11 19:36:07.532 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.532 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/js/script.js - 200 382 text/javascript 0.3675ms
+2025-10-11 19:36:07.532 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - null null
+2025-10-11 19:36:07.532 -06:00 [INF] Executing endpoint 'Blazor web static files'
+2025-10-11 19:36:07.532 -06:00 [INF] The file /_framework/blazor.web.js was not modified
+2025-10-11 19:36:07.532 -06:00 [INF] Executed endpoint 'Blazor web static files'
+2025-10-11 19:36:07.532 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - 304 null text/javascript 0.152ms
+2025-10-11 19:36:07.533 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:07.533 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:07.533 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:07.533 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:07.534 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:07.534 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:07.534 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 1.36ms
+2025-10-11 19:36:07.534 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 1.0897ms
+2025-10-11 19:36:07.561 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - null null
+2025-10-11 19:36:07.561 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.561 -06:00 [INF] The file images/service-bg.jpg was not modified
+2025-10-11 19:36:07.561 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:07.561 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - 304 null image/jpeg 0.3227ms
+2025-10-11 19:36:09.164 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/500 - null null
+2025-10-11 19:36:09.164 -06:00 [INF] Executing endpoint '/Error/500 (/Error/500)'
+2025-10-11 19:36:09.169 -06:00 [INF] Executed endpoint '/Error/500 (/Error/500)'
+2025-10-11 19:36:09.169 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/500 - 200 null text/html; charset=utf-8 5.2494ms
+2025-10-11 19:36:09.171 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - null null
+2025-10-11 19:36:09.171 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.171 -06:00 [INF] The file images/footer-shape-3.png was not modified
+2025-10-11 19:36:09.171 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.171 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - 304 null image/png 0.5951ms
+2025-10-11 19:36:09.173 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-10-11 19:36:09.173 -06:00 [WRN] Status code 404 encountered for path /lib/bootstrap/dist/css/bootstrap.min.css
+2025-10-11 19:36:09.174 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - 302 0 null 0.4964ms
+2025-10-11 19:36:09.174 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 302
+2025-10-11 19:36:09.175 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/app.css - null null
+2025-10-11 19:36:09.175 -06:00 [WRN] Status code 404 encountered for path /app.css
+2025-10-11 19:36:09.175 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/app.css - 302 0 null 0.2108ms
+2025-10-11 19:36:09.175 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/app.css, Response status code: 302
+2025-10-11 19:36:09.176 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - null null
+2025-10-11 19:36:09.176 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.176 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/css/site.css - null null
+2025-10-11 19:36:09.176 -06:00 [INF] Sending file. Request path: 'cse325-Team6-Project.op45447a57.styles.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/wbkyswzg7x-op45447a57.gz'
+2025-10-11 19:36:09.176 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.176 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.176 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - 200 5520 text/css 0.657ms
+2025-10-11 19:36:09.177 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/logo.png - null null
+2025-10-11 19:36:09.177 -06:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/xvx4qeryzw-orzsgx9yr5.gz'
+2025-10-11 19:36:09.177 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.177 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.177 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/css/site.css - 200 28972 text/css 0.5023ms
+2025-10-11 19:36:09.177 -06:00 [INF] The file images/logo.png was not modified
+2025-10-11 19:36:09.177 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.177 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/logo.png - 304 null image/png 0.1742ms
+2025-10-11 19:36:09.177 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/facebook.svg - null null
+2025-10-11 19:36:09.177 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.177 -06:00 [INF] Sending file. Request path: 'images/facebook.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ymyfoeztlp-f8vkdjbp6c.gz'
+2025-10-11 19:36:09.177 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.177 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/facebook.svg - 200 782 image/svg+xml 0.333ms
+2025-10-11 19:36:09.180 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/instagram.svg - null null
+2025-10-11 19:36:09.180 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.180 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/twitter.svg - null null
+2025-10-11 19:36:09.180 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.180 -06:00 [INF] Sending file. Request path: 'images/instagram.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/iojjayntvy-l4umkzyhdu.gz'
+2025-10-11 19:36:09.180 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.180 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/instagram.svg - 200 2535 image/svg+xml 0.3959ms
+2025-10-11 19:36:09.180 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/js/script.js - null null
+2025-10-11 19:36:09.180 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.180 -06:00 [INF] Sending file. Request path: 'images/twitter.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/hp31tr84ki-ns70fd10bj.gz'
+2025-10-11 19:36:09.180 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.180 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/twitter.svg - 200 1234 image/svg+xml 0.3406ms
+2025-10-11 19:36:09.180 -06:00 [INF] Sending file. Request path: 'js/script.js'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ywlpsypaa8-oj3r1z6kdp.gz'
+2025-10-11 19:36:09.180 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:09.180 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-11 19:36:09.180 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/js/script.js - 200 382 text/javascript 0.4422ms
+2025-10-11 19:36:09.180 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - 200 16091 application/javascript; charset=utf-8 0.0606ms
+2025-10-11 19:36:09.181 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - null null
+2025-10-11 19:36:09.181 -06:00 [INF] Executing endpoint 'Blazor web static files'
+2025-10-11 19:36:09.181 -06:00 [INF] The file /_framework/blazor.web.js was not modified
+2025-10-11 19:36:09.181 -06:00 [INF] Executed endpoint 'Blazor web static files'
+2025-10-11 19:36:09.181 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - 304 null text/javascript 0.2025ms
+2025-10-11 19:36:09.182 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:09.182 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:09.183 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:09.183 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:09.183 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:09.183 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 1.1638ms
+2025-10-11 19:36:09.183 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:09.183 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 0.8056ms
+2025-10-11 19:36:10.910 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - null null
+2025-10-11 19:36:10.910 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:10.910 -06:00 [INF] The file images/footer-shape-3.png was not modified
+2025-10-11 19:36:10.910 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:10.910 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - 304 null image/png 0.3462ms
+2025-10-11 19:36:20.631 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/500 - null null
+2025-10-11 19:36:20.632 -06:00 [INF] Executing endpoint '/Error/500 (/Error/500)'
+2025-10-11 19:36:20.634 -06:00 [INF] Executed endpoint '/Error/500 (/Error/500)'
+2025-10-11 19:36:20.634 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/500 - 200 null text/html; charset=utf-8 2.4571ms
+2025-10-11 19:36:20.635 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-10-11 19:36:20.636 -06:00 [WRN] Status code 404 encountered for path /lib/bootstrap/dist/css/bootstrap.min.css
+2025-10-11 19:36:20.636 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - 302 0 null 0.1939ms
+2025-10-11 19:36:20.636 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 302
+2025-10-11 19:36:20.636 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/app.css - null null
+2025-10-11 19:36:20.636 -06:00 [WRN] Status code 404 encountered for path /app.css
+2025-10-11 19:36:20.636 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/app.css - 302 0 null 0.1325ms
+2025-10-11 19:36:20.636 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/app.css, Response status code: 302
+2025-10-11 19:36:20.637 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-11 19:36:20.637 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - 200 16091 application/javascript; charset=utf-8 0.111ms
+2025-10-11 19:36:20.638 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - null null
+2025-10-11 19:36:20.638 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.638 -06:00 [INF] The file images/footer-shape-3.png was not modified
+2025-10-11 19:36:20.638 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.638 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - 304 null image/png 0.2835ms
+2025-10-11 19:36:20.642 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - null null
+2025-10-11 19:36:20.642 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.643 -06:00 [INF] Sending file. Request path: 'cse325-Team6-Project.op45447a57.styles.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/wbkyswzg7x-op45447a57.gz'
+2025-10-11 19:36:20.643 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.643 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - 200 5520 text/css 1.1719ms
+2025-10-11 19:36:20.644 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/css/site.css - null null
+2025-10-11 19:36:20.644 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/logo.png - null null
+2025-10-11 19:36:20.644 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.644 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.644 -06:00 [INF] The file images/logo.png was not modified
+2025-10-11 19:36:20.644 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.644 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/logo.png - 304 null image/png 0.1925ms
+2025-10-11 19:36:20.644 -06:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/xvx4qeryzw-orzsgx9yr5.gz'
+2025-10-11 19:36:20.644 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/facebook.svg - null null
+2025-10-11 19:36:20.644 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.645 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/css/site.css - 200 28972 text/css 0.8182ms
+2025-10-11 19:36:20.645 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.645 -06:00 [INF] Sending file. Request path: 'images/facebook.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ymyfoeztlp-f8vkdjbp6c.gz'
+2025-10-11 19:36:20.645 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.645 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/facebook.svg - 200 782 image/svg+xml 0.3339ms
+2025-10-11 19:36:20.645 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/instagram.svg - null null
+2025-10-11 19:36:20.645 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.645 -06:00 [INF] Sending file. Request path: 'images/instagram.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/iojjayntvy-l4umkzyhdu.gz'
+2025-10-11 19:36:20.645 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.645 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/instagram.svg - 200 2535 image/svg+xml 0.332ms
+2025-10-11 19:36:20.645 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:20.645 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:20.646 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:20.647 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 1.0807ms
+2025-10-11 19:36:20.647 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/twitter.svg - null null
+2025-10-11 19:36:20.647 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.647 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/js/script.js - null null
+2025-10-11 19:36:20.647 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.647 -06:00 [INF] Sending file. Request path: 'images/twitter.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/hp31tr84ki-ns70fd10bj.gz'
+2025-10-11 19:36:20.648 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.648 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/twitter.svg - 200 1234 image/svg+xml 0.5804ms
+2025-10-11 19:36:20.648 -06:00 [INF] Sending file. Request path: 'js/script.js'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ywlpsypaa8-oj3r1z6kdp.gz'
+2025-10-11 19:36:20.648 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:20.648 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/js/script.js - 200 382 text/javascript 0.5055ms
+2025-10-11 19:36:20.648 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - null null
+2025-10-11 19:36:20.648 -06:00 [INF] Executing endpoint 'Blazor web static files'
+2025-10-11 19:36:20.648 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:20.648 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:20.648 -06:00 [INF] The file /_framework/blazor.web.js was not modified
+2025-10-11 19:36:20.648 -06:00 [INF] Executed endpoint 'Blazor web static files'
+2025-10-11 19:36:20.648 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - 304 null text/javascript 0.3695ms
+2025-10-11 19:36:20.649 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:20.649 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 1.1ms
+2025-10-11 19:36:22.339 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/401 - null null
+2025-10-11 19:36:22.340 -06:00 [INF] Executing endpoint '/Error/401 (/Error/401)'
+2025-10-11 19:36:22.342 -06:00 [INF] Executed endpoint '/Error/401 (/Error/401)'
+2025-10-11 19:36:22.342 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/401 - 200 null text/html; charset=utf-8 3.3409ms
+2025-10-11 19:36:22.344 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - null null
+2025-10-11 19:36:22.344 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.344 -06:00 [INF] The file images/footer-shape-3.png was not modified
+2025-10-11 19:36:22.344 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.344 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - 304 null image/png 0.2981ms
+2025-10-11 19:36:22.348 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-10-11 19:36:22.348 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/app.css - null null
+2025-10-11 19:36:22.348 -06:00 [WRN] Status code 404 encountered for path /app.css
+2025-10-11 19:36:22.348 -06:00 [WRN] Status code 404 encountered for path /lib/bootstrap/dist/css/bootstrap.min.css
+2025-10-11 19:36:22.348 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - 302 0 null 0.6684ms
+2025-10-11 19:36:22.348 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/app.css - 302 0 null 0.3407ms
+2025-10-11 19:36:22.348 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/app.css, Response status code: 302
+2025-10-11 19:36:22.348 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 302
+2025-10-11 19:36:22.349 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - null null
+2025-10-11 19:36:22.349 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.349 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/css/site.css - null null
+2025-10-11 19:36:22.349 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.350 -06:00 [INF] Sending file. Request path: 'cse325-Team6-Project.op45447a57.styles.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/wbkyswzg7x-op45447a57.gz'
+2025-10-11 19:36:22.350 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.350 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - 200 5520 text/css 1.0114ms
+2025-10-11 19:36:22.350 -06:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/xvx4qeryzw-orzsgx9yr5.gz'
+2025-10-11 19:36:22.350 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.350 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/css/site.css - 200 28972 text/css 0.4374ms
+2025-10-11 19:36:22.350 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/logo.png - null null
+2025-10-11 19:36:22.350 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.350 -06:00 [INF] The file images/logo.png was not modified
+2025-10-11 19:36:22.350 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.350 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/logo.png - 304 null image/png 0.1278ms
+2025-10-11 19:36:22.350 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/facebook.svg - null null
+2025-10-11 19:36:22.350 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.351 -06:00 [INF] Sending file. Request path: 'images/facebook.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ymyfoeztlp-f8vkdjbp6c.gz'
+2025-10-11 19:36:22.351 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.351 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/facebook.svg - 200 782 image/svg+xml 0.4245ms
+2025-10-11 19:36:22.353 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/instagram.svg - null null
+2025-10-11 19:36:22.353 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.353 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/twitter.svg - null null
+2025-10-11 19:36:22.353 -06:00 [INF] Sending file. Request path: 'images/instagram.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/iojjayntvy-l4umkzyhdu.gz'
+2025-10-11 19:36:22.353 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.353 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.353 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/instagram.svg - 200 2535 image/svg+xml 0.2771ms
+2025-10-11 19:36:22.353 -06:00 [INF] Sending file. Request path: 'images/twitter.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/hp31tr84ki-ns70fd10bj.gz'
+2025-10-11 19:36:22.353 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/js/script.js - null null
+2025-10-11 19:36:22.353 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.353 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/twitter.svg - 200 1234 image/svg+xml 0.264ms
+2025-10-11 19:36:22.353 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.354 -06:00 [INF] Sending file. Request path: 'js/script.js'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ywlpsypaa8-oj3r1z6kdp.gz'
+2025-10-11 19:36:22.354 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:22.354 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/js/script.js - 200 382 text/javascript 0.2289ms
+2025-10-11 19:36:22.354 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-11 19:36:22.354 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - 200 16091 application/javascript; charset=utf-8 0.0528ms
+2025-10-11 19:36:22.354 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - null null
+2025-10-11 19:36:22.354 -06:00 [INF] Executing endpoint 'Blazor web static files'
+2025-10-11 19:36:22.354 -06:00 [INF] The file /_framework/blazor.web.js was not modified
+2025-10-11 19:36:22.354 -06:00 [INF] Executed endpoint 'Blazor web static files'
+2025-10-11 19:36:22.354 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - 304 null text/javascript 0.2168ms
+2025-10-11 19:36:22.354 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:22.354 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:22.356 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:22.356 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:22.356 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:22.356 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 1.3314ms
+2025-10-11 19:36:22.356 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:22.356 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 0.6764ms
+2025-10-11 19:36:23.347 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - null null
+2025-10-11 19:36:23.348 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:23.348 -06:00 [INF] The file images/footer-shape-3.png was not modified
+2025-10-11 19:36:23.348 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:23.348 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - 304 null image/png 0.4678ms
+2025-10-11 19:36:29.565 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/ - null null
+2025-10-11 19:36:29.565 -06:00 [INF] Executing endpoint '/ (/)'
+2025-10-11 19:36:29.567 -06:00 [INF] Executed endpoint '/ (/)'
+2025-10-11 19:36:29.567 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/ - 200 null text/html; charset=utf-8 2.42ms
+2025-10-11 19:36:29.584 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - null null
+2025-10-11 19:36:29.584 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:29.585 -06:00 [INF] The file images/service-bg.jpg was not modified
+2025-10-11 19:36:29.585 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:29.585 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - 304 null image/jpeg 0.5056ms
+2025-10-11 19:36:29.588 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-camaro-9v2.jpg - null null
+2025-10-11 19:36:29.588 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:29.588 -06:00 [INF] The file images/2024-camaro-9v2.jpg was not modified
+2025-10-11 19:36:29.588 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:29.588 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-camaro-9v2.jpg - 304 null image/jpeg 0.4685ms
+2025-10-11 19:36:29.589 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-stingray.jpg - null null
+2025-10-11 19:36:29.589 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:29.589 -06:00 [INF] The file images/2024-stingray.jpg was not modified
+2025-10-11 19:36:29.589 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:29.589 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-stingray.jpg - 304 null image/jpeg 0.2411ms
+2025-10-11 19:36:29.590 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-mustang.jpg - null null
+2025-10-11 19:36:29.590 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:29.590 -06:00 [INF] The file images/2024-mustang.jpg was not modified
+2025-10-11 19:36:29.590 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:29.590 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-mustang.jpg - 304 null image/jpeg 0.2149ms
+2025-10-11 19:36:34.611 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/ - null null
+2025-10-11 19:36:34.612 -06:00 [INF] Executing endpoint '/ (/)'
+2025-10-11 19:36:34.613 -06:00 [INF] Executed endpoint '/ (/)'
+2025-10-11 19:36:34.613 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/ - 200 null text/html; charset=utf-8 1.9831ms
+2025-10-11 19:36:34.614 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-10-11 19:36:34.614 -06:00 [WRN] Status code 404 encountered for path /lib/bootstrap/dist/css/bootstrap.min.css
+2025-10-11 19:36:34.614 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - 302 0 null 0.2708ms
+2025-10-11 19:36:34.614 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 302
+2025-10-11 19:36:34.616 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/app.css - null null
+2025-10-11 19:36:34.616 -06:00 [WRN] Status code 404 encountered for path /app.css
+2025-10-11 19:36:34.616 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/app.css - 302 0 null 0.2183ms
+2025-10-11 19:36:34.616 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/app.css, Response status code: 302
+2025-10-11 19:36:34.616 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:34.616 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:34.616 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-11 19:36:34.617 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - 200 16091 application/javascript; charset=utf-8 0.62ms
+2025-10-11 19:36:34.625 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:34.625 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 8.81ms
+2025-10-11 19:36:34.625 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - null null
+2025-10-11 19:36:34.626 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.626 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/css/site.css - null null
+2025-10-11 19:36:34.626 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.626 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/logo.png - null null
+2025-10-11 19:36:34.627 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/facebook.svg - null null
+2025-10-11 19:36:34.627 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/twitter.svg - null null
+2025-10-11 19:36:34.627 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.627 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.627 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.627 -06:00 [INF] Sending file. Request path: 'cse325-Team6-Project.op45447a57.styles.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/wbkyswzg7x-op45447a57.gz'
+2025-10-11 19:36:34.627 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.627 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - 200 5520 text/css 1.3379ms
+2025-10-11 19:36:34.627 -06:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/xvx4qeryzw-orzsgx9yr5.gz'
+2025-10-11 19:36:34.627 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.627 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/css/site.css - 200 28972 text/css 1.1965ms
+2025-10-11 19:36:34.627 -06:00 [INF] The file images/logo.png was not modified
+2025-10-11 19:36:34.627 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.627 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/logo.png - 304 null image/png 0.4544ms
+2025-10-11 19:36:34.627 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/instagram.svg - null null
+2025-10-11 19:36:34.627 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.627 -06:00 [INF] Sending file. Request path: 'images/twitter.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/hp31tr84ki-ns70fd10bj.gz'
+2025-10-11 19:36:34.627 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.627 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/twitter.svg - 200 1234 image/svg+xml 0.6179ms
+2025-10-11 19:36:34.627 -06:00 [INF] Sending file. Request path: 'images/facebook.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ymyfoeztlp-f8vkdjbp6c.gz'
+2025-10-11 19:36:34.627 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.627 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/facebook.svg - 200 782 image/svg+xml 0.7436ms
+2025-10-11 19:36:34.627 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/js/script.js - null null
+2025-10-11 19:36:34.627 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.628 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - null null
+2025-10-11 19:36:34.628 -06:00 [INF] Executing endpoint 'Blazor web static files'
+2025-10-11 19:36:34.628 -06:00 [INF] The file /_framework/blazor.web.js was not modified
+2025-10-11 19:36:34.628 -06:00 [INF] Executed endpoint 'Blazor web static files'
+2025-10-11 19:36:34.628 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - 304 null text/javascript 0.1705ms
+2025-10-11 19:36:34.628 -06:00 [INF] Sending file. Request path: 'images/instagram.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/iojjayntvy-l4umkzyhdu.gz'
+2025-10-11 19:36:34.628 -06:00 [INF] Sending file. Request path: 'js/script.js'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ywlpsypaa8-oj3r1z6kdp.gz'
+2025-10-11 19:36:34.628 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.628 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.628 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/instagram.svg - 200 2535 image/svg+xml 1.2627ms
+2025-10-11 19:36:34.628 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/js/script.js - 200 382 text/javascript 0.8669ms
+2025-10-11 19:36:34.651 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - null null
+2025-10-11 19:36:34.651 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.651 -06:00 [INF] The file images/service-bg.jpg was not modified
+2025-10-11 19:36:34.651 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:34.651 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - 304 null image/jpeg 0.296ms
+2025-10-11 19:36:36.644 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/401 - null null
+2025-10-11 19:36:36.645 -06:00 [INF] Executing endpoint '/Error/401 (/Error/401)'
+2025-10-11 19:36:36.646 -06:00 [INF] Executed endpoint '/Error/401 (/Error/401)'
+2025-10-11 19:36:36.647 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/401 - 200 null text/html; charset=utf-8 2.4067ms
+2025-10-11 19:36:36.648 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-10-11 19:36:36.648 -06:00 [WRN] Status code 404 encountered for path /lib/bootstrap/dist/css/bootstrap.min.css
+2025-10-11 19:36:36.648 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - 302 0 null 0.1564ms
+2025-10-11 19:36:36.648 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 302
+2025-10-11 19:36:36.648 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/app.css - null null
+2025-10-11 19:36:36.649 -06:00 [WRN] Status code 404 encountered for path /app.css
+2025-10-11 19:36:36.649 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/app.css - 302 0 null 0.1519ms
+2025-10-11 19:36:36.649 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/app.css, Response status code: 302
+2025-10-11 19:36:36.650 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-11 19:36:36.650 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - null null
+2025-10-11 19:36:36.650 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.650 -06:00 [INF] The file images/footer-shape-3.png was not modified
+2025-10-11 19:36:36.650 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.650 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - 304 null image/png 0.3244ms
+2025-10-11 19:36:36.650 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - 200 16091 application/javascript; charset=utf-8 0.3426ms
+2025-10-11 19:36:36.657 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - null null
+2025-10-11 19:36:36.658 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/css/site.css - null null
+2025-10-11 19:36:36.658 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/logo.png - null null
+2025-10-11 19:36:36.658 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] The file images/logo.png was not modified
+2025-10-11 19:36:36.658 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/logo.png - 304 null image/png 0.1757ms
+2025-10-11 19:36:36.658 -06:00 [INF] Sending file. Request path: 'cse325-Team6-Project.op45447a57.styles.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/wbkyswzg7x-op45447a57.gz'
+2025-10-11 19:36:36.658 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/xvx4qeryzw-orzsgx9yr5.gz'
+2025-10-11 19:36:36.658 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/instagram.svg - null null
+2025-10-11 19:36:36.658 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/css/site.css - 200 28972 text/css 0.4148ms
+2025-10-11 19:36:36.658 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - 200 5520 text/css 0.5807ms
+2025-10-11 19:36:36.658 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/twitter.svg - null null
+2025-10-11 19:36:36.658 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/facebook.svg - null null
+2025-10-11 19:36:36.658 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Sending file. Request path: 'images/instagram.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/iojjayntvy-l4umkzyhdu.gz'
+2025-10-11 19:36:36.658 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/instagram.svg - 200 2535 image/svg+xml 0.2812ms
+2025-10-11 19:36:36.658 -06:00 [INF] Sending file. Request path: 'images/twitter.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/hp31tr84ki-ns70fd10bj.gz'
+2025-10-11 19:36:36.658 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/twitter.svg - 200 1234 image/svg+xml 0.2361ms
+2025-10-11 19:36:36.658 -06:00 [INF] Sending file. Request path: 'images/facebook.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ymyfoeztlp-f8vkdjbp6c.gz'
+2025-10-11 19:36:36.658 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.658 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/facebook.svg - 200 782 image/svg+xml 0.806ms
+2025-10-11 19:36:36.659 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/js/script.js - null null
+2025-10-11 19:36:36.659 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.660 -06:00 [INF] Sending file. Request path: 'js/script.js'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ywlpsypaa8-oj3r1z6kdp.gz'
+2025-10-11 19:36:36.660 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:36.660 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:36.660 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/js/script.js - 200 382 text/javascript 0.4293ms
+2025-10-11 19:36:36.660 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:36.660 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - null null
+2025-10-11 19:36:36.660 -06:00 [INF] Executing endpoint 'Blazor web static files'
+2025-10-11 19:36:36.660 -06:00 [INF] The file /_framework/blazor.web.js was not modified
+2025-10-11 19:36:36.660 -06:00 [INF] Executed endpoint 'Blazor web static files'
+2025-10-11 19:36:36.660 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - 304 null text/javascript 0.2182ms
+2025-10-11 19:36:36.660 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:36.660 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:36.661 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:36.661 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 0.982ms
+2025-10-11 19:36:36.661 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:36.661 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 0.6757ms
+2025-10-11 19:36:45.818 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/401 - null null
+2025-10-11 19:36:45.819 -06:00 [INF] Executing endpoint '/Error/401 (/Error/401)'
+2025-10-11 19:36:45.819 -06:00 [INF] Executed endpoint '/Error/401 (/Error/401)'
+2025-10-11 19:36:45.820 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/401 - 200 null text/html; charset=utf-8 1.6884ms
+2025-10-11 19:36:45.821 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-10-11 19:36:45.821 -06:00 [WRN] Status code 404 encountered for path /lib/bootstrap/dist/css/bootstrap.min.css
+2025-10-11 19:36:45.821 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - 302 0 null 0.1522ms
+2025-10-11 19:36:45.821 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 302
+2025-10-11 19:36:45.822 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/app.css - null null
+2025-10-11 19:36:45.822 -06:00 [WRN] Status code 404 encountered for path /app.css
+2025-10-11 19:36:45.822 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/app.css - 302 0 null 0.1285ms
+2025-10-11 19:36:45.822 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/app.css, Response status code: 302
+2025-10-11 19:36:45.822 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-11 19:36:45.822 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - 200 16091 application/javascript; charset=utf-8 0.0836ms
+2025-10-11 19:36:45.823 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - null null
+2025-10-11 19:36:45.823 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.823 -06:00 [INF] The file images/footer-shape-3.png was not modified
+2025-10-11 19:36:45.823 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.823 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - 304 null image/png 0.3037ms
+2025-10-11 19:36:45.826 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - null null
+2025-10-11 19:36:45.826 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.827 -06:00 [INF] Sending file. Request path: 'cse325-Team6-Project.op45447a57.styles.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/wbkyswzg7x-op45447a57.gz'
+2025-10-11 19:36:45.828 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.828 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - 200 5520 text/css 1.4201ms
+2025-10-11 19:36:45.829 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/css/site.css - null null
+2025-10-11 19:36:45.829 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.829 -06:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/xvx4qeryzw-orzsgx9yr5.gz'
+2025-10-11 19:36:45.830 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.830 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/css/site.css - 200 28972 text/css 0.9713ms
+2025-10-11 19:36:45.830 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/logo.png - null null
+2025-10-11 19:36:45.830 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.830 -06:00 [INF] The file images/logo.png was not modified
+2025-10-11 19:36:45.830 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.830 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/logo.png - 304 null image/png 0.1727ms
+2025-10-11 19:36:45.830 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/facebook.svg - null null
+2025-10-11 19:36:45.830 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.830 -06:00 [INF] Sending file. Request path: 'images/facebook.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ymyfoeztlp-f8vkdjbp6c.gz'
+2025-10-11 19:36:45.830 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.830 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/facebook.svg - 200 782 image/svg+xml 0.36ms
+2025-10-11 19:36:45.830 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/instagram.svg - null null
+2025-10-11 19:36:45.830 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.831 -06:00 [INF] Sending file. Request path: 'images/instagram.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/iojjayntvy-l4umkzyhdu.gz'
+2025-10-11 19:36:45.831 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.831 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/instagram.svg - 200 2535 image/svg+xml 0.3136ms
+2025-10-11 19:36:45.831 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/twitter.svg - null null
+2025-10-11 19:36:45.831 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.831 -06:00 [INF] Sending file. Request path: 'images/twitter.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/hp31tr84ki-ns70fd10bj.gz'
+2025-10-11 19:36:45.831 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.831 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/twitter.svg - 200 1234 image/svg+xml 0.2868ms
+2025-10-11 19:36:45.832 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/js/script.js - null null
+2025-10-11 19:36:45.832 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.832 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - null null
+2025-10-11 19:36:45.832 -06:00 [INF] Executing endpoint 'Blazor web static files'
+2025-10-11 19:36:45.833 -06:00 [INF] Sending file. Request path: 'js/script.js'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ywlpsypaa8-oj3r1z6kdp.gz'
+2025-10-11 19:36:45.833 -06:00 [INF] The file /_framework/blazor.web.js was not modified
+2025-10-11 19:36:45.833 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:45.833 -06:00 [INF] Executed endpoint 'Blazor web static files'
+2025-10-11 19:36:45.833 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/js/script.js - 200 382 text/javascript 0.5235ms
+2025-10-11 19:36:45.833 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - 304 null text/javascript 0.3437ms
+2025-10-11 19:36:45.833 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:45.833 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:45.834 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:45.834 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:45.834 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:45.834 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 0.9335ms
+2025-10-11 19:36:45.834 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:45.834 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 0.6805ms
+2025-10-11 19:36:47.591 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:47.592 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:47.593 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:47.594 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 2.1328ms
+2025-10-11 19:36:47.599 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-10-11 19:36:47.599 -06:00 [WRN] Status code 404 encountered for path /lib/bootstrap/dist/css/bootstrap.min.css
+2025-10-11 19:36:47.599 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css - 302 0 null 0.4301ms
+2025-10-11 19:36:47.600 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/lib/bootstrap/dist/css/bootstrap.min.css, Response status code: 302
+2025-10-11 19:36:47.602 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/app.css - null null
+2025-10-11 19:36:47.602 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - null null
+2025-10-11 19:36:47.602 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.602 -06:00 [WRN] Status code 404 encountered for path /app.css
+2025-10-11 19:36:47.602 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/app.css - 302 0 null 0.28ms
+2025-10-11 19:36:47.602 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5154/app.css, Response status code: 302
+2025-10-11 19:36:47.602 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/css/site.css - null null
+2025-10-11 19:36:47.602 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.603 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/facebook.svg - null null
+2025-10-11 19:36:47.603 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/logo.png - null null
+2025-10-11 19:36:47.603 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.603 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.603 -06:00 [INF] Sending file. Request path: 'css/site.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/xvx4qeryzw-orzsgx9yr5.gz'
+2025-10-11 19:36:47.603 -06:00 [INF] Sending file. Request path: 'cse325-Team6-Project.op45447a57.styles.css'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/wbkyswzg7x-op45447a57.gz'
+2025-10-11 19:36:47.603 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.603 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.603 -06:00 [INF] The file images/logo.png was not modified
+2025-10-11 19:36:47.603 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/css/site.css - 200 28972 text/css 0.9407ms
+2025-10-11 19:36:47.603 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/cse325-Team6-Project.op45447a57.styles.css - 200 5520 text/css 0.8977ms
+2025-10-11 19:36:47.603 -06:00 [INF] Sending file. Request path: 'images/facebook.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ymyfoeztlp-f8vkdjbp6c.gz'
+2025-10-11 19:36:47.603 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.603 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.603 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/facebook.svg - 200 782 image/svg+xml 0.4562ms
+2025-10-11 19:36:47.603 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/logo.png - 304 null image/png 0.2985ms
+2025-10-11 19:36:47.605 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/instagram.svg - null null
+2025-10-11 19:36:47.606 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.606 -06:00 [INF] Sending file. Request path: 'images/instagram.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/iojjayntvy-l4umkzyhdu.gz'
+2025-10-11 19:36:47.606 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.606 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/instagram.svg - 200 2535 image/svg+xml 0.4576ms
+2025-10-11 19:36:47.606 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-11 19:36:47.606 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/aspnetcore-browser-refresh.js - 200 16091 application/javascript; charset=utf-8 0.0682ms
+2025-10-11 19:36:47.606 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/twitter.svg - null null
+2025-10-11 19:36:47.606 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.607 -06:00 [INF] Sending file. Request path: 'images/twitter.svg'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/hp31tr84ki-ns70fd10bj.gz'
+2025-10-11 19:36:47.607 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.607 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/twitter.svg - 200 1234 image/svg+xml 0.4068ms
+2025-10-11 19:36:47.607 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/js/script.js - null null
+2025-10-11 19:36:47.607 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.607 -06:00 [INF] Sending file. Request path: 'js/script.js'. Physical path: '/Users/antoniomelendez/Desktop/Antonio/CSE325 - .Net Software Development/Team6Project/cse325-Team6-Project/obj/Debug/net9.0/compressed/ywlpsypaa8-oj3r1z6kdp.gz'
+2025-10-11 19:36:47.607 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:47.607 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/js/script.js - 200 382 text/javascript 0.4167ms
+2025-10-11 19:36:47.607 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - null null
+2025-10-11 19:36:47.607 -06:00 [INF] Executing endpoint 'Blazor web static files'
+2025-10-11 19:36:47.607 -06:00 [INF] The file /_framework/blazor.web.js was not modified
+2025-10-11 19:36:47.607 -06:00 [INF] Executed endpoint 'Blazor web static files'
+2025-10-11 19:36:47.607 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/_framework/blazor.web.js - 304 null text/javascript 0.1656ms
+2025-10-11 19:36:47.608 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:47.608 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:47.609 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:47.609 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 0.79ms
+2025-10-11 19:36:47.609 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/Error/404 - null null
+2025-10-11 19:36:47.609 -06:00 [INF] Executing endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:47.610 -06:00 [INF] Executed endpoint '/Error/404 (/Error/404)'
+2025-10-11 19:36:47.610 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/Error/404 - 200 null text/html; charset=utf-8 0.7893ms
+2025-10-11 19:36:48.486 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - null null
+2025-10-11 19:36:48.487 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:48.487 -06:00 [INF] The file images/footer-shape-3.png was not modified
+2025-10-11 19:36:48.487 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:48.487 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/footer-shape-3.png - 304 null image/png 0.4472ms
+2025-10-11 19:36:58.124 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/ - null null
+2025-10-11 19:36:58.125 -06:00 [INF] Executing endpoint '/ (/)'
+2025-10-11 19:36:58.127 -06:00 [INF] Executed endpoint '/ (/)'
+2025-10-11 19:36:58.127 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/ - 200 null text/html; charset=utf-8 2.6901ms
+2025-10-11 19:36:58.148 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - null null
+2025-10-11 19:36:58.148 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:58.148 -06:00 [INF] The file images/service-bg.jpg was not modified
+2025-10-11 19:36:58.148 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:58.148 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/service-bg.jpg - 304 null image/jpeg 0.3466ms
+2025-10-11 19:36:58.152 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-camaro-9v2.jpg - null null
+2025-10-11 19:36:58.152 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:58.152 -06:00 [INF] The file images/2024-camaro-9v2.jpg was not modified
+2025-10-11 19:36:58.152 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:58.152 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-camaro-9v2.jpg - 304 null image/jpeg 0.1692ms
+2025-10-11 19:36:58.153 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-stingray.jpg - null null
+2025-10-11 19:36:58.153 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:58.153 -06:00 [INF] The file images/2024-stingray.jpg was not modified
+2025-10-11 19:36:58.153 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:58.153 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-stingray.jpg - 304 null image/jpeg 0.2727ms
+2025-10-11 19:36:58.153 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5154/images/2024-mustang.jpg - null null
+2025-10-11 19:36:58.154 -06:00 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:58.154 -06:00 [INF] The file images/2024-mustang.jpg was not modified
+2025-10-11 19:36:58.154 -06:00 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2025-10-11 19:36:58.154 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5154/images/2024-mustang.jpg - 304 null image/jpeg 0.2877ms
