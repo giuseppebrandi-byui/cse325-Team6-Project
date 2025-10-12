@@ -58,9 +58,27 @@
   -->
 <header class="header">
 <NavMenu/>
+
 </header>
 
 @Body
+
+@{
+  // Compute the region English name safely. On some hosts (containers)
+  // CurrentCulture may be the InvariantCulture which has no region and
+  // will throw when constructing RegionInfo. Catch and fall back to
+  // an empty string so rendering doesn't fail.
+  string regionEnglishName;
+  try
+  {
+    var cultureName = CultureInfo.CurrentCulture.Name;
+    regionEnglishName = string.IsNullOrEmpty(cultureName) ? string.Empty : new RegionInfo(cultureName).EnglishName;
+  }
+  catch
+  {
+    regionEnglishName = string.Empty;
+  }
+}
 
 <!-- 
     - #FOOTER
@@ -173,7 +191,7 @@
   <div class="footer-bottom">
     <div class="container">
 
-      <p class="copyright"> &copy; CSE Muscle Cars @DateTime.UtcNow.Year, Team 6, All Rights Reserved, @(new RegionInfo(CultureInfo.CurrentCulture.Name).EnglishName) </p>
+  <p class="copyright"> &copy; CSE Muscle Cars @DateTime.UtcNow.Year, Team 6, All Rights Reserved@(string.IsNullOrEmpty(regionEnglishName) ? "" : $", {regionEnglishName}") </p>
 
       <img src="./images/footer-shape-2.png" width="778" height="335" loading="lazy" alt="Shape" class="shape shape-2">
 
@@ -185,19 +203,18 @@
 
 </footer>
 
-<!-- 
-    - custom js link
-  -->
-<script src="js/script.js"></script>
-
 <!-- Smooth scroll for anchor links -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
+        // defensively ensure href is a hash selector before querying
+        const href = this.getAttribute('href');
+        if (!href || href[0] !== '#') return;
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',
@@ -214,3 +231,5 @@
   <a href="." class="reload">Reload</a>
   <span class="dismiss">🗙</span>
 </div>
+<!-- Ensure site JS helpers are loaded for Blazor interop (postJson/getJson/logout/redirect) -->
+<script src="js/script.js"></script>
