@@ -2,234 +2,212 @@
 @using System.Globalization;
 @inherits LayoutComponentBase
 
-<!-- 
-    - #HEAD
-  -->
+
+  <!-- 
+        - #HEAD
+    -->
+
   <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- primary meta tags -->
+    <meta name="title" content="CSE Muscle Cars - Car Sales & Repair Service">
+    <meta name="description" content="This is a car sales and repair service website">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.png" type="image/png">
+
+    <!-- remixicon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap"
+      rel="stylesheet">
+
+    <!-- material icon font -->
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+
+    <!-- custom css link -->
+    <link rel="stylesheet" href="css/site.css">
+
+    <!-- preload images -->
+    <link rel="preload" as="image" href="images/hero-banner.png">
+    <link rel="preload" as="image" href="images/hero-bg.jpg">
+  </head>
 
   <!-- 
-    - primary meta tags
-  --> 
-  <meta name="title" content="CSE Muscle Cars - Car Sales & Repair Service">
-  <meta name="description" content="This is a car sales and repair service website">
+        - #HEADER
+    -->
+  <header class="header">
+    <NavMenu />
+  </header>
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon.png" type="image/png">
+  @Body
 
-  <!-- 
-    - remixicon
-  -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap"
-    rel="stylesheet">
-
-  <!-- 
-    - material icon font
-  -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
-
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="css/site.css">
-
-  <!-- 
-    - preload images
-  -->
-  <link rel="preload" as="image" href="images/hero-banner.png">
-  <link rel="preload" as="image" href="images/hero-bg.jpg">
-
-</head>
-
-   <!-- 
-    - #HEADER
-  -->
-<header class="header">
-<NavMenu/>
-
-</header>
-
-@Body
-
-@{
-  // Compute the region English name safely. On some hosts (containers)
-  // CurrentCulture may be the InvariantCulture which has no region and
-  // will throw when constructing RegionInfo. Catch and fall back to
-  // an empty string so rendering doesn't fail.
-  string regionEnglishName;
-  try
-  {
-    var cultureName = CultureInfo.CurrentCulture.Name;
-    regionEnglishName = string.IsNullOrEmpty(cultureName) ? string.Empty : new RegionInfo(cultureName).EnglishName;
+  @{
+    // Compute the region English name safely. On some hosts (containers)
+    string regionEnglishName;
+    try
+    {
+      var cultureName = CultureInfo.CurrentCulture.Name;
+      regionEnglishName = string.IsNullOrEmpty(cultureName) ? string.Empty : new RegionInfo(cultureName).EnglishName;
+    }
+    catch
+    {
+      regionEnglishName = string.Empty;
+    }
   }
-  catch
-  {
-    regionEnglishName = string.Empty;
-  }
-}
 
-<!-- 
-    - #FOOTER
-  -->
-<footer id="contact" class="footer">
+  <!-- 
+        - #FOOTER
+    -->
+  <footer id="contact" class="footer">
 
-  <div class="footer-top section">
-    <div class="container">
+    <div class="footer-top section">
+      <div class="container">
 
-      <div class="footer-brand">
+        <div class="footer-brand">
 
-        <a class="logo" href="">
-          <img src="images/logo.png" width="128" height="63" alt="autofix home">
-        </a>
+          <a class="logo" href="">
+            <img src="images/logo.png" width="128" height="63" alt="autofix home">
+          </a>
 
-        <p class="footer-text">
-          CSE Muscle Cars is authorised and regulated by the Financial Conduct Authority. Our FCA firm reference number
-          is 3344557.
-        </p>
+          <p class="footer-text">
+            CSE Muscle Cars is authorised and regulated by the Financial Conduct Authority. Our FCA firm reference
+            number
+            is 3344557.
+          </p>
 
-        <ul class="social-list">
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <img src="images/facebook.svg" alt="facebook">
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <img src="images/instagram.svg" alt="instagram">
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <img src="images/twitter.svg" alt="twitter">
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
 
           <li>
-            <a href="#" class="social-link">
-              <img src="images/facebook.svg" alt="facebook">
+            <p class="h3">Opening Hours</p>
+          </li>
+
+          <li>
+            <p class="p">Monday – Friday</p>
+            <span class="span">9.00 – 18.00</span>
+          </li>
+
+          <li>
+            <p class="p">Sutarday</p>
+            <span class="span">10.00 – 17.00</span>
+          </li>
+
+          <li>
+            <p class="p">Sunday</p>
+            <span class="span">Closed</span>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h3">Contact Info</p>
+          </li>
+
+          <li>
+            <a href="tel:+01234567890" class="footer-link">
+              <span class="material-symbols-rounded">call</span>
+              <span class="span">+44 0113 243 2559</span>
             </a>
           </li>
 
           <li>
-            <a href="#" class="social-link">
-              <img src="images/instagram.svg" alt="instagram">
+            <a href="mailto:info@autofix.com" class="footer-link">
+              <span class="material-symbols-rounded">mail</span>
+              <span class="span">info@cse-muscle-cars.com</span>
             </a>
           </li>
 
           <li>
-            <a href="#" class="social-link">
-              <img src="images/twitter.svg" alt="twitter">
-            </a>
+            <address class="footer-link address">
+              <span class="material-symbols-rounded">location_on</span>
+              <span class="span">88 Compton Road, LS9 6DG, Leeds, United Kingdom</span>
+            </address>
           </li>
 
         </ul>
 
       </div>
 
-      <ul class="footer-list">
-
-        <li>
-          <p class="h3">Opening Hours</p>
-        </li>
-
-        <li>
-          <p class="p">Monday – Friday</p>
-
-          <span class="span">9.00 – 18.00</span>
-        </li>
-
-        <li>
-          <p class="p">Sutarday</p>
-
-          <span class="span">10.00 – 17.00</span>
-        </li>
-
-        <li>
-          <p class="p">Sunday</p>
-
-          <span class="span">Closed</span>
-        </li>
-
-      </ul>
-
-      <ul class="footer-list">
-
-        <li>
-          <p class="h3">Contact Info</p>
-        </li>
-
-        <li>
-          <a href="tel:+01234567890" class="footer-link">
-            <span class="material-symbols-rounded">call</span>
-
-            <span class="span">+44 0113 243 2559</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="mailto:info@autofix.com" class="footer-link">
-            <span class="material-symbols-rounded">mail</span>
-
-            <span class="span">info@cse-muscle-cars.com</span>
-          </a>
-        </li>
-
-        <li>
-          <address class="footer-link address">
-            <span class="material-symbols-rounded">location_on</span>
-
-            <span class="span">88 Compton Road, LS9 6DG, Leeds, United Kingdom</span>
-          </address>
-        </li>
-
-      </ul>
+      <img src="./images/footer-shape-3.png" width="637" height="173" loading="lazy" alt="Shape"
+        class="shape shape-3 move-anim">
 
     </div>
 
-    <img src="./images/footer-shape-3.png" width="637" height="173" loading="lazy" alt="Shape"
-      class="shape shape-3 move-anim">
+    <div class="footer-bottom">
+      <div class="container">
 
-  </div>
+        <p class="copyright"> &copy; CSE Muscle Cars @DateTime.UtcNow.Year, Team 6, All Rights
+          Reserved@(string.IsNullOrEmpty(regionEnglishName) ? "" : $", {regionEnglishName}") </p>
 
-  <div class="footer-bottom">
-    <div class="container">
+        <img src="./images/footer-shape-2.png" width="778" height="335" loading="lazy" alt="Shape"
+          class="shape shape-2">
 
-  <p class="copyright"> &copy; CSE Muscle Cars @DateTime.UtcNow.Year, Team 6, All Rights Reserved@(string.IsNullOrEmpty(regionEnglishName) ? "" : $", {regionEnglishName}") </p>
+        <img src="./images/footer-shape-1.png" width="805" height="652" loading="lazy" alt="Red Car"
+          class="shape shape-1 move-anim">
 
-      <img src="./images/footer-shape-2.png" width="778" height="335" loading="lazy" alt="Shape" class="shape shape-2">
-
-      <img src="./images/footer-shape-1.png" width="805" height="652" loading="lazy" alt="Red Car"
-        class="shape shape-1 move-anim">
-
+      </div>
     </div>
-  </div>
 
-</footer>
+  </footer>
 
-<!-- Smooth scroll for anchor links -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        // defensively ensure href is a hash selector before querying
-        const href = this.getAttribute('href');
+  <!-- Smooth scroll for anchor links -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        const href = anchor.getAttribute('href');
         if (!href || href[0] !== '#') return;
 
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
 
-<div id="blazor-error-ui" data-nosnippet>
-  An unhandled error has occurred.
-  <a href="." class="reload">Reload</a>
-  <span class="dismiss">🗙</span>
-</div>
-<!-- Ensure site JS helpers are loaded for Blazor interop (postJson/getJson/logout/redirect) -->
-<script src="js/script.js"></script>
+  <div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+  </div>
+
+  <script src="js/script.js"></script>
