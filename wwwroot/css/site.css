@@ -263,6 +263,19 @@ body {
   animation: moving 2s ease-in-out infinite alternate;
 }
 
+.mb-4 {
+  margin-block-end: 24px;
+}
+
+.mb-5 {
+  margin-block-end: 36px;
+}
+
+.mt-4 {
+  margin-top: 24px;
+  ;
+}
+
 @keyframes moving {
   0% {
     transform: translateY(0);
