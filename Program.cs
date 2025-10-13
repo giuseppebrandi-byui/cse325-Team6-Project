@@ -115,12 +115,11 @@ using (var scope = app.Services.CreateScope())
 // Environment-specific config
 if (!app.Environment.IsDevelopment())
 {
-    // Production: Render terminates TLS at the edge, so do not force HTTPS
-    // or enable HSTS here. Instead we enable forwarded headers so the app
-    // can correctly observe the original request scheme.
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
+    app.UseExceptionHandler("/Error500"); // handles 500
+    app.UseStatusCodePagesWithReExecute("/Error/{0}"); // handles 401, 404, etc.
     app.UseForwardedHeaders();
 }
+
 else
 {
     // Development

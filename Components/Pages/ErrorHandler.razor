@@ -1,0 +1,22 @@
+@page "/Error/{code:int}"
+@inject NavigationManager NavigationManager
+
+@code {
+    [Parameter] public int code { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        switch (code)
+        {
+            case 401:
+                NavigationManager.NavigateTo("/Error/401", forceLoad: true);
+                break;
+            case 404:
+                NavigationManager.NavigateTo("/Error/404", forceLoad: true);
+                break;
+            default:
+                NavigationManager.NavigateTo("/Error", forceLoad: true);
+                break;
+        }
+    }
+}
