@@ -7,7 +7,7 @@
 - **Giuseppe Brandi**
 - **Braxton Goode**
 - **Ifeanyi**
-- **Antonio (Jose) Melendez**
+- **Jose Antonio Melendez**
 - **Jaydan Valencia**
 
 ---
